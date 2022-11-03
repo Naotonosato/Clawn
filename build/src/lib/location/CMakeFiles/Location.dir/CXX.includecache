@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/include/hierarchy/hierarchy.hpp
+vector
+-
+unordered_map
+-
+string
+-
+include/utils/unique_number.hpp
+../src/include/hierarchy/include/utils/unique_number.hpp
+include/utils/hash_table.hpp
+../src/include/hierarchy/include/utils/hash_table.hpp
+
+../src/include/location/location.hpp
+string
+-
+include/utils/hash_table.hpp
+-
+include/hierarchy/hierarchy.hpp
+-
+
+../src/include/utils/hash_table.hpp
+type_traits
+-
+experimental/type_traits
+-
+unordered_map
+-
+
+../src/include/utils/unique_number.hpp
+
+/Users/ueharanaoto/Desktop/Clawn/src/lib/location/location.cpp
+include/location/location.hpp
+/Users/ueharanaoto/Desktop/Clawn/src/lib/location/include/location/location.hpp
+
