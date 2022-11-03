@@ -1,0 +1,43 @@
+// ----clawn code---
+// function f(a b)
+// (
+//     return tuple(a,b)
+// )
+
+// result1 = f(1,"....")
+// result2 = f(1.1,'a')
+
+// pseudo code that expresses hir
+// generate match expression for first argument
+// -> generate match expression for next argument
+// -> generate match expression for next argument
+// ...
+// keep generating match expression till the arguments are all unboxed.
+
+// function f(a: variant<int,float>, b: variant<string,char>)
+// (
+//     using ReturnType = variant<
+//         tuple<int,string>,
+//         tuple<int,char>,
+//         tuple<float,string>,
+//         tuple<float,char>
+//         >
+//
+//     match(a)
+//     {
+//         int a_int => 
+//             match(b)
+//             {
+//                 string b_string => {return ReturnType(tuple(a_int,b_string))},
+//                 char b_char => {return ReturnType(tuple(a_int,b_char))}
+//             },
+//         float a_float => match(b)
+//             {
+//                 string b_string => return ReturnType(tuple(a_float,b_string)),
+//                 char b_char => return ReturnType(tuple(a_float,b_char))
+//             }
+//     }
+// )
+
+// result1 = f(1,"....").get<tuple<int,string>>() 
+// result2 = f(1.1,'a').get<tuple<float,char>>()

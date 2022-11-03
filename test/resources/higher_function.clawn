@@ -1,0 +1,17 @@
+function f(x)
+{
+    return x
+}
+
+function g(functor,argument)
+{
+    res = functor(argument)
+    return res
+}
+
+function high(functor,argument,argument2)
+{
+    return functor(argument,argument2)
+}
+
+result = high(g,f,"string")

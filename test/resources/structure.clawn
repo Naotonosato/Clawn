@@ -1,0 +1,16 @@
+structure S
+{
+    x
+}
+
+function f(x)
+{
+    return x
+}
+
+function a(x)
+{
+    return x.x(9)
+}
+
+a(S{x:f})

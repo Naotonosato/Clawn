@@ -1,0 +1,4 @@
+import "/Users/ueharanaoto/Desktop/Clawn/sample/graphics.c"
+title = "this title is setted by Clawn!!"->string
+window = create_window(title)
+draw(window)

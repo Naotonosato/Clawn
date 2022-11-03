@@ -1,0 +1,14 @@
+union U
+{
+    A
+    B
+}
+
+u = U#A(0)
+u = U#B(10.0)
+
+match(u)
+{
+    A=>u.a
+    B=>100
+}

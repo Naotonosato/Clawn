@@ -1,0 +1,28 @@
+union U
+{
+    A
+    B
+}
+
+u = U#A(0)
+u = U#B(10.0)
+
+match(u)
+{
+    A=>u.A
+    B=>0
+}
+
+structure S
+{
+    x
+    y
+}
+
+function f(x:S)
+{
+    return x.x
+}
+
+instance = S{x:0,y:0}
+f(instance)
