@@ -192,7 +192,7 @@ extern "C" String* input()
     char_ptr = (char*)malloc(input.size());
     char_ptr[0] = '\0';
     strcat(char_ptr, input.c_str());
-    return string_constructor(char_ptr,input.size());
+    return string_constructor(char_ptr, input.size());
 }
 
 extern "C" char* to_char_ptr(String* string) { return string->string; }

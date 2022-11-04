@@ -6,5 +6,4 @@ dev_utils/
 *.tmp
 *.s
 *.DS_Store
-*.txt
 idea.md
