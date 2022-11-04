@@ -1,8 +1,0 @@
-function f(x)
-{
-    return x
-}
-
-f(0)
-f(0.1)
-f("")

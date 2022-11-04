@@ -1,9 +1,0 @@
-tmp/
-.vscode/
-dev_utils/
-*.code-workspace
-*.swp
-*.tmp
-*.s
-*.DS_Store
-idea.md

@@ -1,3 +1,0 @@
-value = "value"
-reference = refer value
-print(access reference)
