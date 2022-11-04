@@ -639,7 +639,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
         if (!llvm_blocks.empty())
         {
             ir_builder.SetInsertPoint(llvm_blocks.at(0));
-            auto session_id =
+            session_id =
                 ir_builder.CreateCall(get_builtin_get_unique_number());
             current_function_session_id = session_id;
         }
