@@ -1,3 +1,70 @@
-value = "value"
-reference = refer value
-print(access reference)
+print("Clawn can print.")
+
+function f(x)
+{
+    return x
+}
+
+f(0)
+f(0.1)
+f("ABC")
+
+function call(functor,x)
+{
+    print("'call' function was called!")
+    return functor(x)
+}
+
+result = call(f,0)
+
+message = if result == 0
+          {
+              print("Result was verified.")
+              => "OK"
+          } else
+          {
+              =>"Something went wrong."
+          }
+print(message)
+
+structure S
+{
+    x
+}
+
+s = S{x:10}
+s2 = S{x:0.1}
+
+union U
+{
+    A
+    B
+}
+
+u = U#A(0)
+u = U#B("U#B")
+
+match u
+{
+    A=>print(int_to_str(u.A))
+    B=>print(u.B)
+}
+
+
+
+function repeat_hello(x)
+{
+    print("hello")
+    return 0
+}
+
+function repeat_hey(x)
+{
+    print("hey")
+    return 0
+}
+
+
+various_function = various repeat_hello
+various_function = various repeat_hey
+various_function..(5)

@@ -1,1 +1,5 @@
 print("Hello, World!")
+repeat i:i<10
+{
+    print(int_to_str(i))
+}

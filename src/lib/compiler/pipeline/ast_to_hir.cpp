@@ -420,8 +420,9 @@ class ConverterImpl : public ast::Visitor<std::unique_ptr<hir::HIR>>
             integer_type, node.get_counter_name(), location);
         std::vector<std::unique_ptr<hir::HIR>> body;
         auto body_content = node.get_body().accept(*this);
+        auto body_content_type = body_content->get_type();
         body.push_back(hir::HIR::create<hir::SetResult>(
-            body_content->get_type(), location, std::move(body_content)));
+            body_content_type, location, std::move(body_content)));
         auto incremented = hir::HIR::create<hir::BinaryExpression>(
             type_environment->get_integer_type(), node.get_location(),
             std::make_pair(std::move(counter_), hir::HIR::create<hir::Integer>(
@@ -430,6 +431,7 @@ class ConverterImpl : public ast::Visitor<std::unique_ptr<hir::HIR>>
         auto assignment = hir::HIR::create<hir::Assignment>(
             integer_type, location, std::move(incremented), std::move(counter));
         body.push_back(std::move(assignment));
+        auto body_type = body[0]->get_type();
         return hir::HIR::create<hir::Loop>(
             body[0]->get_type(), location, std::move(condition),
             hir::HIR::create<hir::Block>(body[0]->get_type(),
