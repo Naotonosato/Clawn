@@ -1,5 +1,6 @@
 #include <vector>
 #include <type_traits>
+#include <algorithm>
 
 namespace clawn::utils
 {

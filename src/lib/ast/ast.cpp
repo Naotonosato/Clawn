@@ -358,7 +358,7 @@ const AST& Return::get_expression() const { return *expression; }
 
 const std::string& CTypeDeclaration::get_name() const { return name; }
 
-const std::vector<std::pair<const std::string, CTypeDescriptor>>&
+const std::vector<std::pair<std::string, CTypeDescriptor>>&
 CTypeDeclaration::get_member_types() const
 {
     return member_types;

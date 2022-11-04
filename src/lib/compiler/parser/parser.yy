@@ -155,9 +155,9 @@
 %type <std::vector<std::pair<std::string,std::optional<std::shared_ptr<requirement::Requirement>>>>> elements
 %type <std::vector<std::tuple<std::string,std::optional<std::shared_ptr<requirement::Requirement>>,std::optional<std::unique_ptr<ast::AST>> >>> structure_elements
 %type <std::pair<std::string,std::optional<std::shared_ptr<requirement::Requirement>>>> element
-%type <std::vector<const std::string>> C_type_descriptor
-%type <std::vector<std::pair<const std::string,std::vector<const std::string>>>> C_members_descriptions
-%type <std::vector<std::vector<const std::string>>> C_arguments
+%type <std::vector<std::string>> C_type_descriptor
+%type <std::vector<std::pair<std::string,std::vector<std::string>>>> C_members_descriptions
+%type <std::vector<std::vector<std::string>>> C_arguments
 %type <std::string> function_start
 %type <std::string> method_start
 %type <std::string> structure_start

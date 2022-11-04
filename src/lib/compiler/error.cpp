@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "include/compiler/error.hpp"
 
 namespace clawn::compiler

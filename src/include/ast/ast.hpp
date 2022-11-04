@@ -33,7 +33,7 @@ class Parameters
     }
 };
 
-using CTypeDescriptor = std::vector<const std::string>;
+using CTypeDescriptor = std::vector<std::string>;
 
 class NodeBase
 {
@@ -720,20 +720,20 @@ class Return : public NodeBase
 class CTypeDeclaration : public NodeBase
 {
     const std::string name;
-    const std::vector<std::pair<const std::string, CTypeDescriptor>>
+    const std::vector<std::pair<std::string, CTypeDescriptor>>
         member_types;
 
     public:
     CTypeDeclaration(
         std::shared_ptr<location::Location> location, const std::string& name,
-        const std::vector<std::pair<const std::string, CTypeDescriptor>>&
+        const std::vector<std::pair<std::string, CTypeDescriptor>>&
             member_types)
         : NodeBase(location), name(name), member_types(member_types)
     {
     }
 
     const std::string& get_name() const;
-    const std::vector<std::pair<const std::string, CTypeDescriptor>>&
+    const std::vector<std::pair<std::string, CTypeDescriptor>>&
     get_member_types() const;
 };
 
