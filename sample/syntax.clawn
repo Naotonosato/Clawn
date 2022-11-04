@@ -54,19 +54,13 @@ match u
 
 function repeat_hello(x)
 {
-    repeat count:count<x
-    {
-        print("Hello!" + int_to_str(count))
-    }
+    print("hello")
     return 0
 }
 
 function repeat_hey(x)
 {
-    repeat count:count<x
-    {
-        print("Hey!" + int_to_str(count))
-    }
+    print("hey")
     return 0
 }
 
