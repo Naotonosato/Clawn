@@ -1,0 +1,6 @@
+@Ctype Position
+    @x : __C_DOUBLE__SIZE_8
+    @y : __C_DOUBLE__SIZE_8
+@Cfunction get_position
+    arguments: 
+    return: Position

@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libRequirements.a CMakeFiles/Requirements.dir/type.cpp.o CMakeFiles/Requirements.dir/type_solver.cpp.o CMakeFiles/Requirements.dir/requirement.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libRequirements.a

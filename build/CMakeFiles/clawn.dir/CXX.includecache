@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/include/compiler/compiler.hpp
+
+/Users/ueharanaoto/Desktop/Clawn/src/lib/main.cpp
+include/compiler/compiler.hpp
+/Users/ueharanaoto/Desktop/Clawn/src/lib/include/compiler/compiler.hpp
+
