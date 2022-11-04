@@ -506,7 +506,7 @@ repeat_first_start:
             $2,driver.ast_builder->create_integer(0)
         );
         $$ = std::make_pair($2,std::move(counter));
-    }
+    };
 
 
 else_body:

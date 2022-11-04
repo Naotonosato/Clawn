@@ -1,6 +1,29 @@
 ; ModuleID = 'Clawn'
 source_filename = "Clawn"
 
+@"addr:op_equal_int" = global i1 (i64, i64)* null
+@"addr:[GLOBAL]/U#A_1779" = global { i64, i64 } (i64)* null
+@"addr:[GLOBAL]/U#B_1813" = global { i64, i64 } ({ i8*, i64 }*)* null
+@"addr:[GLOBAL]/Various#0_1879" = global { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)* null
+@"addr:[GLOBAL]/Various#1_1946" = global { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)* null
+@"addr:op_and" = global i1 (i1, i1)* null
+@"addr:[GLOBAL]/call_1683" = global i64 ({ i64, i64 } ({ i64, i64 })*, i64)* null
+@"addr:string_constructor" = global { i8*, i64 }* (i8*, i64)* null
+@0 = private unnamed_addr constant [28 x i8] c"'call' function was called!\00", align 1
+@"addr:[GLOBAL]/print" = global void ({ i8*, i64 }*)* null
+@"addr:[GLOBAL]/constructor@S_1715" = global { i64 } (i64)* null
+@"addr:[GLOBAL]/constructor@S_1743" = global { double } (double)* null
+@"addr:[GLOBAL]/f_1513" = global i64 (i64)* null
+@"addr:[GLOBAL]/f_1538" = global double (double)* null
+@"addr:[GLOBAL]/f_1563" = global { i8*, i64 }* ({ i8*, i64 }*)* null
+@"addr:[GLOBAL]/repeat_hello_2311" = global i64 (i64)* null
+@"addr:op_less_than_int" = global i1 (i64, i64)* null
+@1 = private unnamed_addr constant [7 x i8] c"Hello!\00", align 1
+@"addr:[GLOBAL]/int_to_str" = global { i8*, i64 }* (i64)* null
+@"addr:get_appended_string" = global { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)* null
+@"addr:add_int" = global i64 (i64, i64)* null
+@"addr:[GLOBAL]/repeat_hey_2774" = global i64 (i64)* null
+@2 = private unnamed_addr constant [5 x i8] c"Hey!\00", align 1
 @"addr:get_unique_number" = global i64 ()* null
 @"addr:use_heap" = global i64* (i64)* null
 @"addr:register_calling_id" = global void ()* null
@@ -24,26 +47,20 @@ source_filename = "Clawn"
 @"addr:append" = global void ({ i64, i64, i64, i64* }*, i64*)* null
 @"addr:get" = global i64* ({ i64, i64, i64, i64* }*, i64)* null
 @"addr:print" = global void ({ i8*, i64 }*)* null
-@"addr:string_constructor" = global { i8*, i64 }* (i8*, i64)* null
 @"addr:input" = global { i8*, i64 }* ()* null
-@"addr:get_appended_string" = global { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)* null
 @"addr:to_char_ptr" = global i8* ({ i8*, i64 }*)* null
 @"addr:append_string" = global void ({ i8*, i64 }*, { i8*, i64 }*)* null
 @"addr:int_to_str" = global { i8*, i64 }* (i64)* null
 @"addr:float_to_str" = global { i8*, i64 }* (double)* null
 @"addr:to_real_number" = global double (i64)* null
 @"addr:to_integer" = global i64 (double)* null
-@"addr:op_and" = global i1 (i1, i1)* null
 @"addr:op_or" = global i1 (i1, i1)* null
 @"addr:op_equal_string" = global i1 ({ i8*, i64 }*, { i8*, i64 }*)* null
-@"addr:add_int" = global i64 (i64, i64)* null
 @"addr:sub_int" = global i64 (i64, i64)* null
 @"addr:mul_int" = global i64 (i64, i64)* null
 @"addr:op_greater_than_int" = global i1 (i64, i64)* null
 @"addr:op_greater_than_or_equal_int" = global i1 (i64, i64)* null
-@"addr:op_less_than_int" = global i1 (i64, i64)* null
 @"addr:op_less_than_or_equal_int" = global i1 (i64, i64)* null
-@"addr:op_equal_int" = global i1 (i64, i64)* null
 @"addr:op_not_equal_int" = global i1 (i64, i64)* null
 @"addr:add_double" = global double (double, double)* null
 @"addr:sub_double" = global double (double, double)* null
@@ -58,8 +75,15 @@ source_filename = "Clawn"
 @"addr:op_less_than_or_equal_double" = global i1 (double, double)* null
 @"addr:op_equal_double" = global i1 (double, double)* null
 @"addr:op_not_equal_double" = global i1 (double, double)* null
-@"addr:[GLOBAL]/Various#0" = global {} ({})* null
-@"addr:[GLOBAL]/Various#1" = global {} ({})* null
+@"addr:[GLOBAL]/f" = global { i64, i64 } ({ i64, i64 })* null
+@"addr:[GLOBAL]/call" = global { i64, i64 } ({ i64, i64 }, { i64, i64 })* null
+@"addr:[GLOBAL]/constructor@S" = global { i64, i64 } ({ i64, i64 })* null
+@"addr:[GLOBAL]/U#A" = global { i64, i128 } ({ i64, i64 })* null
+@"addr:[GLOBAL]/U#B" = global { i64, i128 } ({ i64, i64 })* null
+@"addr:[GLOBAL]/repeat_hello" = global { i64, i64 } ({ i64, i64 })* null
+@"addr:[GLOBAL]/repeat_hey" = global { i64, i64 } ({ i64, i64 })* null
+@"addr:[GLOBAL]/Various#0" = global { i64, i128 } ({ i64, i64 })* null
+@"addr:[GLOBAL]/Various#1" = global { i64, i128 } ({ i64, i64 })* null
 @"addr:[GLOBAL]/Various#2" = global {} ({})* null
 @"addr:[GLOBAL]/Various#3" = global {} ({})* null
 @"addr:[GLOBAL]/Various#4" = global {} ({})* null
@@ -90,13 +114,11 @@ source_filename = "Clawn"
 @"addr:[GLOBAL]/list_constructor" = global { i64, i64, i64, i64* }* (i64)* null
 @"addr:[GLOBAL]/append" = global void ({ i64, i64, i64, i64* }*, i64*)* null
 @"addr:[GLOBAL]/get" = global i64* ({ i64, i64, i64, i64* }*, i64)* null
-@"addr:[GLOBAL]/print" = global void ({ i8*, i64 }*)* null
 @"addr:[GLOBAL]/string_constructor" = global { i8*, i64 }* (i8*, i64)* null
 @"addr:[GLOBAL]/input" = global { i8*, i64 }* ()* null
 @"addr:[GLOBAL]/get_appended_string" = global { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)* null
 @"addr:[GLOBAL]/to_char_ptr" = global i8* ({ i8*, i64 }*)* null
 @"addr:[GLOBAL]/append_string" = global void ({ i8*, i64 }*, { i8*, i64 }*)* null
-@"addr:[GLOBAL]/int_to_str" = global { i8*, i64 }* (i64)* null
 @"addr:[GLOBAL]/float_to_str" = global { i8*, i64 }* (double)* null
 @"addr:[GLOBAL]/to_real_number" = global double (i64)* null
 @"addr:[GLOBAL]/to_integer" = global i64 (double)* null
@@ -125,50 +147,380 @@ source_filename = "Clawn"
 @"addr:[GLOBAL]/op_less_than_or_equal_double" = global i1 (double, double)* null
 @"addr:[GLOBAL]/op_equal_double" = global i1 (double, double)* null
 @"addr:[GLOBAL]/op_not_equal_double" = global i1 (double, double)* null
-@0 = private unnamed_addr constant [14 x i8] c"Hello, World!\00", align 1
+@3 = private unnamed_addr constant [17 x i8] c"Clawn can print.\00", align 1
+@4 = private unnamed_addr constant [4 x i8] c"ABC\00", align 1
+@"addr:[GLOBAL]/result" = global i64 0
+@"addr:[GLOBAL]/message" = global { i8*, i64 }* null
+@5 = private unnamed_addr constant [21 x i8] c"Result was verified.\00", align 1
+@6 = private unnamed_addr constant [3 x i8] c"OK\00", align 1
+@7 = private unnamed_addr constant [22 x i8] c"Something went wrong.\00", align 1
+@"addr:[GLOBAL]/s" = global { i64 } zeroinitializer
+@"addr:[GLOBAL]/s2" = global { double } zeroinitializer
+@"addr:[GLOBAL]/u" = global { i64, i64 } zeroinitializer
+@8 = private unnamed_addr constant [4 x i8] c"U#B\00", align 1
+@"addr:[GLOBAL]/various_function" = global { i64, i64 } zeroinitializer
+@"addr:[GLOBAL]/281" = global i64 0
+@"addr:[GLOBAL]/279" = global { i64, i64 } zeroinitializer
 
-define {} @"[GLOBAL]/Various#0"({} %arg0) {
-"[GLOBAL]/Various#0":
+define { i64, i128 } @"[GLOBAL]/U#A"({ i64, i64 } %arg0) {
+"[GLOBAL]/U#A":
   %0 = call i64 @get_unique_number()
-  %ptr_arg_0 = alloca {}
-  store {} %arg0, {}* %ptr_arg_0
-  %1 = load {}, {}* %ptr_arg_0
-  %2 = alloca {}
-  %casted_for_union_access = bitcast {}* %2 to { i64, i64 }*
-  %3 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access, i32 0, i32 0
-  store i64 0, i64* %3
-  %4 = load i64, i64* %3
-  %casted_for_union_access1 = bitcast {}* %2 to { i64, i64 }*
-  %5 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access1, i32 0, i32 0
-  store i64 0, i64* %5
-  %6 = load i64, i64* %5
-  %7 = load {}, {}* %2
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i128 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 128)
+  %8 = bitcast i64* %7 to { i64, i64 }*
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/U#A"
+  %9 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load i64, i64* %"ptr_of_elm_'0'"
+  %"[GLOBAL]/U#A_1779" = load { i64, i64 } (i64)*, { i64, i64 } (i64)** @"addr:[GLOBAL]/U#A_1779"
+  %10 = call { i64, i64 } %"[GLOBAL]/U#A_1779"(i64 %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %11 = call i64* @use_heap(i64 192)
+  %12 = bitcast i64* %11 to { i64, i128 }*
+  %casted_for_union_access = bitcast { i64, i128 }* %12 to { i64, i64 }*
+  %13 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access, i32 0, i32 0
+  store i64 1, i64* %13
+  %14 = load i64, i64* %13
+  %casted_for_union_access4 = bitcast { i64, i128 }* %12 to { i64, { i64, i64 } }*
+  %15 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access4, i32 0, i32 1
+  store { i64, i64 } %10, { i64, i64 }* %15
+  %16 = load { i64, i64 }, { i64, i64 }* %15
+  %17 = load { i64, i128 }, { i64, i128 }* %12
   call void @free_heaps_associated_calling_id(i64 %0)
-  ret {} %7
+  ret { i64, i128 } %17
+
+else:                                             ; preds = %"[GLOBAL]/U#A"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %18 = load { i64, i64 }, { i64, i64 }* %8
+  %19 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag5 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag6 = load i64, i64* %ptr_of_tag5
+  %20 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %21 = call i1 %20(i64 %load_ptr_of_tag6, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %22 = call i64* @use_heap(i64 128)
+  %23 = bitcast i64* %22 to { i64, i64 }*
+  br i1 %21, label %then1, label %else2
+
+then1:                                            ; preds = %merge
+  %24 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'7" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'8" = load i64, i64* %"ptr_of_elm_'0'7"
+  %25 = load { i64, i64 } (i64)*, { i64, i64 } (i64)** @"addr:[GLOBAL]/U#A_1779"
+  %26 = call { i64, i64 } %25(i64 %"load_ptr_of_elm_'0'8")
+  call void @register_calling_id()
+  %27 = call i64* @use_heap(i64 192)
+  %28 = bitcast i64* %27 to { i64, i128 }*
+  %casted_for_union_access9 = bitcast { i64, i128 }* %28 to { i64, i64 }*
+  %29 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access9, i32 0, i32 0
+  store i64 1, i64* %29
+  %30 = load i64, i64* %29
+  %casted_for_union_access10 = bitcast { i64, i128 }* %28 to { i64, { i64, i64 } }*
+  %31 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access10, i32 0, i32 1
+  store { i64, i64 } %26, { i64, i64 }* %31
+  %32 = load { i64, i64 }, { i64, i64 }* %31
+  %33 = load { i64, i128 }, { i64, i128 }* %28
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %33
+
+else2:                                            ; preds = %merge
+  br label %merge3
+
+merge3:                                           ; preds = %else2
+  %34 = load { i64, i64 }, { i64, i64 }* %23
+  %35 = load { i64, i128 }, { i64, i128 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %35
 }
 
 declare i64 @get_unique_number()
 
+declare i64* @use_heap(i64)
+
+declare void @register_calling_id_to_free(i64)
+
+declare void @register_calling_id()
+
 declare void @free_heaps_associated_calling_id(i64)
 
-define {} @"[GLOBAL]/Various#1"({} %arg0) {
+define { i64, i64 } @"[GLOBAL]/U#A_1779"(i64 %arg0) {
+"[GLOBAL]/U#A_1779":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca i64
+  store i64 %arg0, i64* %ptr_arg_0
+  %1 = load i64, i64* %ptr_arg_0
+  %2 = alloca { i64, i64 }
+  %3 = load i64, i64* %ptr_arg_0
+  %4 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  store i64 %3, i64* %4
+  %5 = load i64, i64* %4
+  %6 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  store i64 1, i64* %6
+  %7 = load i64, i64* %6
+  %8 = load { i64, i64 }, { i64, i64 }* %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %8
+}
+
+define { i64, i128 } @"[GLOBAL]/U#B"({ i64, i64 } %arg0) {
+"[GLOBAL]/U#B":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i128 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 128)
+  %8 = bitcast i64* %7 to { i64, i64 }*
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/U#B"
+  %9 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, { i8*, i64 }* }*
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load { i8*, i64 }*, { i8*, i64 }** %"ptr_of_elm_'0'"
+  %"[GLOBAL]/U#B_1813" = load { i64, i64 } ({ i8*, i64 }*)*, { i64, i64 } ({ i8*, i64 }*)** @"addr:[GLOBAL]/U#B_1813"
+  %10 = call { i64, i64 } %"[GLOBAL]/U#B_1813"({ i8*, i64 }* %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %11 = call i64* @use_heap(i64 192)
+  %12 = bitcast i64* %11 to { i64, i128 }*
+  %casted_for_union_access4 = bitcast { i64, i128 }* %12 to { i64, i64 }*
+  %13 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access4, i32 0, i32 0
+  store i64 1, i64* %13
+  %14 = load i64, i64* %13
+  %casted_for_union_access5 = bitcast { i64, i128 }* %12 to { i64, { i64, i64 } }*
+  %15 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access5, i32 0, i32 1
+  store { i64, i64 } %10, { i64, i64 }* %15
+  %16 = load { i64, i64 }, { i64, i64 }* %15
+  %17 = load { i64, i128 }, { i64, i128 }* %12
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %17
+
+else:                                             ; preds = %"[GLOBAL]/U#B"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %18 = load { i64, i64 }, { i64, i64 }* %8
+  %19 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag6 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag7 = load i64, i64* %ptr_of_tag6
+  %20 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %21 = call i1 %20(i64 %load_ptr_of_tag7, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %22 = call i64* @use_heap(i64 128)
+  %23 = bitcast i64* %22 to { i64, i64 }*
+  br i1 %21, label %then1, label %else2
+
+then1:                                            ; preds = %merge
+  %24 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access8 = bitcast { i64, i64 }* %2 to { i64, { i8*, i64 }* }*
+  %"ptr_of_elm_'0'9" = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access8, i32 0, i32 1
+  %"load_ptr_of_elm_'0'10" = load { i8*, i64 }*, { i8*, i64 }** %"ptr_of_elm_'0'9"
+  %25 = load { i64, i64 } ({ i8*, i64 }*)*, { i64, i64 } ({ i8*, i64 }*)** @"addr:[GLOBAL]/U#B_1813"
+  %26 = call { i64, i64 } %25({ i8*, i64 }* %"load_ptr_of_elm_'0'10")
+  call void @register_calling_id()
+  %27 = call i64* @use_heap(i64 192)
+  %28 = bitcast i64* %27 to { i64, i128 }*
+  %casted_for_union_access11 = bitcast { i64, i128 }* %28 to { i64, i64 }*
+  %29 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access11, i32 0, i32 0
+  store i64 1, i64* %29
+  %30 = load i64, i64* %29
+  %casted_for_union_access12 = bitcast { i64, i128 }* %28 to { i64, { i64, i64 } }*
+  %31 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access12, i32 0, i32 1
+  store { i64, i64 } %26, { i64, i64 }* %31
+  %32 = load { i64, i64 }, { i64, i64 }* %31
+  %33 = load { i64, i128 }, { i64, i128 }* %28
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %33
+
+else2:                                            ; preds = %merge
+  br label %merge3
+
+merge3:                                           ; preds = %else2
+  %34 = load { i64, i64 }, { i64, i64 }* %23
+  %35 = load { i64, i128 }, { i64, i128 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %35
+}
+
+define { i64, i64 } @"[GLOBAL]/U#B_1813"({ i8*, i64 }* %arg0) {
+"[GLOBAL]/U#B_1813":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca { i8*, i64 }*
+  store { i8*, i64 }* %arg0, { i8*, i64 }** %ptr_arg_0
+  %1 = load { i8*, i64 }*, { i8*, i64 }** %ptr_arg_0
+  %2 = alloca { i64, i64 }
+  %3 = load { i8*, i64 }*, { i8*, i64 }** %ptr_arg_0
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, { i8*, i64 }* }*
+  %4 = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access, i32 0, i32 1
+  store { i8*, i64 }* %3, { i8*, i64 }** %4
+  %5 = load { i8*, i64 }*, { i8*, i64 }** %4
+  %6 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  store i64 2, i64* %6
+  %7 = load i64, i64* %6
+  %8 = load { i64, i64 }, { i64, i64 }* %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %8
+}
+
+define { i64, i128 } @"[GLOBAL]/Various#0"({ i64, i64 } %arg0) {
+"[GLOBAL]/Various#0":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i128 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 128)
+  %8 = bitcast i64* %7 to { i64, i64 }*
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/Various#0"
+  %9 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %"ptr_of_elm_'0'"
+  %"[GLOBAL]/Various#0_1879" = load { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)*, { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)** @"addr:[GLOBAL]/Various#0_1879"
+  %10 = call { i64, i64 } %"[GLOBAL]/Various#0_1879"({ i64, i64 } ({ i64, i64 })* %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %11 = call i64* @use_heap(i64 192)
+  %12 = bitcast i64* %11 to { i64, i128 }*
+  %casted_for_union_access1 = bitcast { i64, i128 }* %12 to { i64, i64 }*
+  %13 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access1, i32 0, i32 0
+  store i64 1, i64* %13
+  %14 = load i64, i64* %13
+  %casted_for_union_access2 = bitcast { i64, i128 }* %12 to { i64, { i64, i64 } }*
+  %15 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access2, i32 0, i32 1
+  store { i64, i64 } %10, { i64, i64 }* %15
+  %16 = load { i64, i64 }, { i64, i64 }* %15
+  %17 = load { i64, i128 }, { i64, i128 }* %12
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %17
+
+else:                                             ; preds = %"[GLOBAL]/Various#0"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %18 = load { i64, i64 }, { i64, i64 }* %8
+  %19 = load { i64, i128 }, { i64, i128 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %19
+}
+
+define { i64, i64 } @"[GLOBAL]/Various#0_1879"({ i64, i64 } ({ i64, i64 })* %arg0) {
+"[GLOBAL]/Various#0_1879":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca { i64, i64 } ({ i64, i64 })*
+  store { i64, i64 } ({ i64, i64 })* %arg0, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %1 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %2 = alloca { i64, i64 }
+  %3 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %4 = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access, i32 0, i32 1
+  store { i64, i64 } ({ i64, i64 })* %3, { i64, i64 } ({ i64, i64 })** %4
+  %5 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %4
+  %6 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  store i64 1, i64* %6
+  %7 = load i64, i64* %6
+  %8 = load { i64, i64 }, { i64, i64 }* %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %8
+}
+
+define { i64, i128 } @"[GLOBAL]/Various#1"({ i64, i64 } %arg0) {
 "[GLOBAL]/Various#1":
   %0 = call i64 @get_unique_number()
-  %ptr_arg_0 = alloca {}
-  store {} %arg0, {}* %ptr_arg_0
-  %1 = load {}, {}* %ptr_arg_0
-  %2 = alloca {}
-  %casted_for_union_access = bitcast {}* %2 to { i64, i64 }*
-  %3 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access, i32 0, i32 0
-  store i64 0, i64* %3
-  %4 = load i64, i64* %3
-  %casted_for_union_access1 = bitcast {}* %2 to { i64, i64 }*
-  %5 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access1, i32 0, i32 0
-  store i64 0, i64* %5
-  %6 = load i64, i64* %5
-  %7 = load {}, {}* %2
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i128 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 128)
+  %8 = bitcast i64* %7 to { i64, i64 }*
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/Various#1"
+  %9 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %"ptr_of_elm_'0'"
+  %"[GLOBAL]/Various#1_1946" = load { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)*, { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)** @"addr:[GLOBAL]/Various#1_1946"
+  %10 = call { i64, i64 } %"[GLOBAL]/Various#1_1946"({ i64, i64 } ({ i64, i64 })* %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %11 = call i64* @use_heap(i64 192)
+  %12 = bitcast i64* %11 to { i64, i128 }*
+  %casted_for_union_access1 = bitcast { i64, i128 }* %12 to { i64, i64 }*
+  %13 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %casted_for_union_access1, i32 0, i32 0
+  store i64 1, i64* %13
+  %14 = load i64, i64* %13
+  %casted_for_union_access2 = bitcast { i64, i128 }* %12 to { i64, { i64, i64 } }*
+  %15 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access2, i32 0, i32 1
+  store { i64, i64 } %10, { i64, i64 }* %15
+  %16 = load { i64, i64 }, { i64, i64 }* %15
+  %17 = load { i64, i128 }, { i64, i128 }* %12
   call void @free_heaps_associated_calling_id(i64 %0)
-  ret {} %7
+  ret { i64, i128 } %17
+
+else:                                             ; preds = %"[GLOBAL]/Various#1"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %18 = load { i64, i64 }, { i64, i64 }* %8
+  %19 = load { i64, i128 }, { i64, i128 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i128 } %19
+}
+
+define { i64, i64 } @"[GLOBAL]/Various#1_1946"({ i64, i64 } ({ i64, i64 })* %arg0) {
+"[GLOBAL]/Various#1_1946":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca { i64, i64 } ({ i64, i64 })*
+  store { i64, i64 } ({ i64, i64 })* %arg0, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %1 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %2 = alloca { i64, i64 }
+  %3 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %4 = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access, i32 0, i32 1
+  store { i64, i64 } ({ i64, i64 })* %3, { i64, i64 } ({ i64, i64 })** %4
+  %5 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %4
+  %6 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  store i64 2, i64* %6
+  %7 = load i64, i64* %6
+  %8 = load { i64, i64 }, { i64, i64 }* %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %8
 }
 
 define {} @"[GLOBAL]/Various#2"({} %arg0) {
@@ -331,6 +683,829 @@ define {} @"[GLOBAL]/Various#9"({} %arg0) {
   ret {} %7
 }
 
+define { i64, i64 } @"[GLOBAL]/call"({ i64, i64 } %arg0, { i64, i64 } %arg1) {
+"[GLOBAL]/call":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %4 = call i64* @use_heap(i64 128)
+  %5 = bitcast i64* %4 to { i64, i64 }*
+  store { i64, i64 } %arg1, { i64, i64 }* %5
+  %6 = load { i64, i64 }, { i64, i64 }* %5
+  %result_of_block = alloca { i64, i64 }
+  %7 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %8 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %9 = call i1 %8(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %10 = load { i64, i64 }, { i64, i64 }* %5
+  %ptr_of_tag4 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %5, i32 0, i32 0
+  %load_ptr_of_tag5 = load i64, i64* %ptr_of_tag4
+  %11 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %12 = call i1 %11(i64 %load_ptr_of_tag5, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %13 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:op_and"
+  %14 = call i1 %13(i1 %9, i1 %12)
+  call void @register_calling_id_to_free(i64 %0)
+  %15 = call i64* @use_heap(i64 64)
+  br i1 %14, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/call"
+  %16 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %"ptr_of_elm_'0'"
+  %17 = load { i64, i64 }, { i64, i64 }* %5
+  %"ptr_of_elm_'0'6" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %5, i32 0, i32 1
+  %"load_ptr_of_elm_'0'7" = load i64, i64* %"ptr_of_elm_'0'6"
+  %"[GLOBAL]/call_1683" = load i64 ({ i64, i64 } ({ i64, i64 })*, i64)*, i64 ({ i64, i64 } ({ i64, i64 })*, i64)** @"addr:[GLOBAL]/call_1683"
+  %18 = call i64 %"[GLOBAL]/call_1683"({ i64, i64 } ({ i64, i64 })* %"load_ptr_of_elm_'0'", i64 %"load_ptr_of_elm_'0'7")
+  call void @register_calling_id()
+  %19 = call i64* @use_heap(i64 128)
+  %20 = bitcast i64* %19 to { i64, i64 }*
+  %21 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %20, i32 0, i32 0
+  store i64 1, i64* %21
+  %22 = load i64, i64* %21
+  %23 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %20, i32 0, i32 1
+  store i64 %18, i64* %23
+  %24 = load i64, i64* %23
+  %25 = load { i64, i64 }, { i64, i64 }* %20
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %25
+
+else:                                             ; preds = %"[GLOBAL]/call"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %26 = load i64, i64* %15
+  %27 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag8 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag9 = load i64, i64* %ptr_of_tag8
+  %28 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %29 = call i1 %28(i64 %load_ptr_of_tag9, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %30 = load { i64, i64 }, { i64, i64 }* %5
+  %ptr_of_tag10 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %5, i32 0, i32 0
+  %load_ptr_of_tag11 = load i64, i64* %ptr_of_tag10
+  %31 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %32 = call i1 %31(i64 %load_ptr_of_tag11, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %33 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:op_and"
+  %34 = call i1 %33(i1 %29, i1 %32)
+  call void @register_calling_id_to_free(i64 %0)
+  %35 = call i64* @use_heap(i64 64)
+  br i1 %34, label %then1, label %else2
+
+then1:                                            ; preds = %merge
+  %36 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access12 = bitcast { i64, i64 }* %2 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %"ptr_of_elm_'0'13" = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access12, i32 0, i32 1
+  %"load_ptr_of_elm_'0'14" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %"ptr_of_elm_'0'13"
+  %37 = load { i64, i64 }, { i64, i64 }* %5
+  %"ptr_of_elm_'0'15" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %5, i32 0, i32 1
+  %"load_ptr_of_elm_'0'16" = load i64, i64* %"ptr_of_elm_'0'15"
+  %38 = load i64 ({ i64, i64 } ({ i64, i64 })*, i64)*, i64 ({ i64, i64 } ({ i64, i64 })*, i64)** @"addr:[GLOBAL]/call_1683"
+  %39 = call i64 %38({ i64, i64 } ({ i64, i64 })* %"load_ptr_of_elm_'0'14", i64 %"load_ptr_of_elm_'0'16")
+  call void @register_calling_id()
+  %40 = call i64* @use_heap(i64 128)
+  %41 = bitcast i64* %40 to { i64, i64 }*
+  %42 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %41, i32 0, i32 0
+  store i64 1, i64* %42
+  %43 = load i64, i64* %42
+  %44 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %41, i32 0, i32 1
+  store i64 %39, i64* %44
+  %45 = load i64, i64* %44
+  %46 = load { i64, i64 }, { i64, i64 }* %41
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %46
+
+else2:                                            ; preds = %merge
+  br label %merge3
+
+merge3:                                           ; preds = %else2
+  %47 = load i64, i64* %35
+  %48 = load { i64, i64 }, { i64, i64 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %48
+}
+
+define i64 @"[GLOBAL]/call_1683"({ i64, i64 } ({ i64, i64 })* %arg0, i64 %arg1) {
+"[GLOBAL]/call_1683":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca { i64, i64 } ({ i64, i64 })*
+  store { i64, i64 } ({ i64, i64 })* %arg0, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %1 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %2 = call i64* @use_heap(i64 64)
+  store i64 %arg1, i64* %2
+  %3 = load i64, i64* %2
+  %result_of_block = alloca i64
+  %4 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %5 = call { i8*, i64 }* %4(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @0, i32 0, i32 0), i64 27)
+  call void @register_calling_id_to_free(i64 %0)
+  %6 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %6({ i8*, i64 }* %5)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 128)
+  %8 = bitcast i64* %7 to { i64, i64 }*
+  %9 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %8, i32 0, i32 1
+  %10 = load i64, i64* %2
+  store i64 %10, i64* %9
+  %11 = load i64, i64* %9
+  %tag_of_arg = getelementptr inbounds { i64, i64 }, { i64, i64 }* %8, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg
+  %12 = load i64, i64* %tag_of_arg
+  %actuall_arg = load { i64, i64 }, { i64, i64 }* %8
+  %13 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %ptr_arg_0
+  %14 = call { i64, i64 } %13({ i64, i64 } %actuall_arg)
+  call void @register_calling_id()
+  %15 = call i64* @use_heap(i64 128)
+  %16 = bitcast i64* %15 to { i64, i64 }*
+  store { i64, i64 } %14, { i64, i64 }* %16
+  %17 = load { i64, i64 }, { i64, i64 }* %16
+  %18 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %16, i32 0, i32 1
+  %19 = load i64, i64* %18
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret i64 %19
+}
+
+define { i64, i64 } @"[GLOBAL]/constructor@S"({ i64, i64 } %arg0) {
+"[GLOBAL]/constructor@S":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i64 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 64)
+  %8 = bitcast i64* %7 to { i64 }*
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/constructor@S"
+  %9 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load i64, i64* %"ptr_of_elm_'0'"
+  %"[GLOBAL]/constructor@S_1715" = load { i64 } (i64)*, { i64 } (i64)** @"addr:[GLOBAL]/constructor@S_1715"
+  %10 = call { i64 } %"[GLOBAL]/constructor@S_1715"(i64 %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %11 = call i64* @use_heap(i64 128)
+  %12 = bitcast i64* %11 to { i64, i64 }*
+  %13 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %12, i32 0, i32 0
+  store i64 1, i64* %13
+  %14 = load i64, i64* %13
+  %casted_for_union_access = bitcast { i64, i64 }* %12 to { i64, { i64 } }*
+  %15 = getelementptr inbounds { i64, { i64 } }, { i64, { i64 } }* %casted_for_union_access, i32 0, i32 1
+  store { i64 } %10, { i64 }* %15
+  %16 = load { i64 }, { i64 }* %15
+  %17 = load { i64, i64 }, { i64, i64 }* %12
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %17
+
+else:                                             ; preds = %"[GLOBAL]/constructor@S"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %18 = load { i64 }, { i64 }* %8
+  %19 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag10 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag11 = load i64, i64* %ptr_of_tag10
+  %20 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %21 = call i1 %20(i64 %load_ptr_of_tag11, i64 2)
+  call void @register_calling_id_to_free(i64 %0)
+  %22 = call i64* @use_heap(i64 64)
+  %23 = bitcast i64* %22 to { double }*
+  br i1 %21, label %then1, label %else2
+
+then1:                                            ; preds = %merge
+  %24 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access12 = bitcast { i64, i64 }* %2 to { i64, double }*
+  %"ptr_of_elm_'1'" = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access12, i32 0, i32 1
+  %"load_ptr_of_elm_'1'" = load double, double* %"ptr_of_elm_'1'"
+  %"[GLOBAL]/constructor@S_1743" = load { double } (double)*, { double } (double)** @"addr:[GLOBAL]/constructor@S_1743"
+  %25 = call { double } %"[GLOBAL]/constructor@S_1743"(double %"load_ptr_of_elm_'1'")
+  call void @register_calling_id()
+  %26 = call i64* @use_heap(i64 128)
+  %27 = bitcast i64* %26 to { i64, i64 }*
+  %28 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %27, i32 0, i32 0
+  store i64 2, i64* %28
+  %29 = load i64, i64* %28
+  %casted_for_union_access13 = bitcast { i64, i64 }* %27 to { i64, { double } }*
+  %30 = getelementptr inbounds { i64, { double } }, { i64, { double } }* %casted_for_union_access13, i32 0, i32 1
+  store { double } %25, { double }* %30
+  %31 = load { double }, { double }* %30
+  %32 = load { i64, i64 }, { i64, i64 }* %27
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %32
+
+else2:                                            ; preds = %merge
+  br label %merge3
+
+merge3:                                           ; preds = %else2
+  %33 = load { double }, { double }* %23
+  %34 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag14 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag15 = load i64, i64* %ptr_of_tag14
+  %35 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %36 = call i1 %35(i64 %load_ptr_of_tag15, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %37 = call i64* @use_heap(i64 64)
+  %38 = bitcast i64* %37 to { i64 }*
+  br i1 %36, label %then4, label %else5
+
+then4:                                            ; preds = %merge3
+  %39 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'16" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'17" = load i64, i64* %"ptr_of_elm_'0'16"
+  %40 = load { i64 } (i64)*, { i64 } (i64)** @"addr:[GLOBAL]/constructor@S_1715"
+  %41 = call { i64 } %40(i64 %"load_ptr_of_elm_'0'17")
+  call void @register_calling_id()
+  %42 = call i64* @use_heap(i64 128)
+  %43 = bitcast i64* %42 to { i64, i64 }*
+  %44 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %43, i32 0, i32 0
+  store i64 1, i64* %44
+  %45 = load i64, i64* %44
+  %casted_for_union_access18 = bitcast { i64, i64 }* %43 to { i64, { i64 } }*
+  %46 = getelementptr inbounds { i64, { i64 } }, { i64, { i64 } }* %casted_for_union_access18, i32 0, i32 1
+  store { i64 } %41, { i64 }* %46
+  %47 = load { i64 }, { i64 }* %46
+  %48 = load { i64, i64 }, { i64, i64 }* %43
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %48
+
+else5:                                            ; preds = %merge3
+  br label %merge6
+
+merge6:                                           ; preds = %else5
+  %49 = load { i64 }, { i64 }* %38
+  %50 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag19 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag20 = load i64, i64* %ptr_of_tag19
+  %51 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %52 = call i1 %51(i64 %load_ptr_of_tag20, i64 2)
+  call void @register_calling_id_to_free(i64 %0)
+  %53 = call i64* @use_heap(i64 64)
+  %54 = bitcast i64* %53 to { double }*
+  br i1 %52, label %then7, label %else8
+
+then7:                                            ; preds = %merge6
+  %55 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access21 = bitcast { i64, i64 }* %2 to { i64, double }*
+  %"ptr_of_elm_'1'22" = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access21, i32 0, i32 1
+  %"load_ptr_of_elm_'1'23" = load double, double* %"ptr_of_elm_'1'22"
+  %56 = load { double } (double)*, { double } (double)** @"addr:[GLOBAL]/constructor@S_1743"
+  %57 = call { double } %56(double %"load_ptr_of_elm_'1'23")
+  call void @register_calling_id()
+  %58 = call i64* @use_heap(i64 128)
+  %59 = bitcast i64* %58 to { i64, i64 }*
+  %60 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %59, i32 0, i32 0
+  store i64 2, i64* %60
+  %61 = load i64, i64* %60
+  %casted_for_union_access24 = bitcast { i64, i64 }* %59 to { i64, { double } }*
+  %62 = getelementptr inbounds { i64, { double } }, { i64, { double } }* %casted_for_union_access24, i32 0, i32 1
+  store { double } %57, { double }* %62
+  %63 = load { double }, { double }* %62
+  %64 = load { i64, i64 }, { i64, i64 }* %59
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %64
+
+else8:                                            ; preds = %merge6
+  br label %merge9
+
+merge9:                                           ; preds = %else8
+  %65 = load { double }, { double }* %54
+  %66 = load { i64, i64 }, { i64, i64 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %66
+}
+
+define { i64 } @"[GLOBAL]/constructor@S_1715"(i64 %arg0) {
+"[GLOBAL]/constructor@S_1715":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca i64
+  store i64 %arg0, i64* %ptr_arg_0
+  %1 = load i64, i64* %ptr_arg_0
+  %2 = alloca { i64 }
+  %3 = load i64, i64* %ptr_arg_0
+  %4 = getelementptr inbounds { i64 }, { i64 }* %2, i32 0, i32 0
+  store i64 %3, i64* %4
+  %5 = load i64, i64* %4
+  %6 = load { i64 }, { i64 }* %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64 } %6
+}
+
+define { double } @"[GLOBAL]/constructor@S_1743"(double %arg0) {
+"[GLOBAL]/constructor@S_1743":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca double
+  store double %arg0, double* %ptr_arg_0
+  %1 = load double, double* %ptr_arg_0
+  %2 = alloca { double }
+  %3 = load double, double* %ptr_arg_0
+  %4 = getelementptr inbounds { double }, { double }* %2, i32 0, i32 0
+  store double %3, double* %4
+  %5 = load double, double* %4
+  %6 = load { double }, { double }* %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { double } %6
+}
+
+define { i64, i64 } @"[GLOBAL]/f"({ i64, i64 } %arg0) {
+"[GLOBAL]/f":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i64 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 64)
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/f"
+  %8 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load i64, i64* %"ptr_of_elm_'0'"
+  %"[GLOBAL]/f_1513" = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/f_1513"
+  %9 = call i64 %"[GLOBAL]/f_1513"(i64 %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %10 = call i64* @use_heap(i64 128)
+  %11 = bitcast i64* %10 to { i64, i64 }*
+  %12 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %11, i32 0, i32 0
+  store i64 1, i64* %12
+  %13 = load i64, i64* %12
+  %14 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %11, i32 0, i32 1
+  store i64 %9, i64* %14
+  %15 = load i64, i64* %14
+  %16 = load { i64, i64 }, { i64, i64 }* %11
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %16
+
+else:                                             ; preds = %"[GLOBAL]/f"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %17 = load i64, i64* %7
+  %18 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag19 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag20 = load i64, i64* %ptr_of_tag19
+  %19 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %20 = call i1 %19(i64 %load_ptr_of_tag20, i64 2)
+  call void @register_calling_id_to_free(i64 %0)
+  %21 = call i64* @use_heap(i64 64)
+  %22 = bitcast i64* %21 to double*
+  br i1 %20, label %then1, label %else2
+
+then1:                                            ; preds = %merge
+  %23 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access = bitcast { i64, i64 }* %2 to { i64, double }*
+  %"ptr_of_elm_'1'" = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access, i32 0, i32 1
+  %"load_ptr_of_elm_'1'" = load double, double* %"ptr_of_elm_'1'"
+  %"[GLOBAL]/f_1538" = load double (double)*, double (double)** @"addr:[GLOBAL]/f_1538"
+  %24 = call double %"[GLOBAL]/f_1538"(double %"load_ptr_of_elm_'1'")
+  call void @register_calling_id()
+  %25 = call i64* @use_heap(i64 128)
+  %26 = bitcast i64* %25 to { i64, i64 }*
+  %27 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %26, i32 0, i32 0
+  store i64 2, i64* %27
+  %28 = load i64, i64* %27
+  %casted_for_union_access21 = bitcast { i64, i64 }* %26 to { i64, double }*
+  %29 = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access21, i32 0, i32 1
+  store double %24, double* %29
+  %30 = load double, double* %29
+  %31 = load { i64, i64 }, { i64, i64 }* %26
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %31
+
+else2:                                            ; preds = %merge
+  br label %merge3
+
+merge3:                                           ; preds = %else2
+  %32 = load double, double* %22
+  %33 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag22 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag23 = load i64, i64* %ptr_of_tag22
+  %34 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %35 = call i1 %34(i64 %load_ptr_of_tag23, i64 3)
+  call void @register_calling_id_to_free(i64 %0)
+  %36 = call i64* @use_heap(i64 64)
+  %37 = bitcast i64* %36 to { i8*, i64 }**
+  br i1 %35, label %then4, label %else5
+
+then4:                                            ; preds = %merge3
+  %38 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access24 = bitcast { i64, i64 }* %2 to { i64, { i8*, i64 }* }*
+  %"ptr_of_elm_'2'" = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access24, i32 0, i32 1
+  %"load_ptr_of_elm_'2'" = load { i8*, i64 }*, { i8*, i64 }** %"ptr_of_elm_'2'"
+  %"[GLOBAL]/f_1563" = load { i8*, i64 }* ({ i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*)** @"addr:[GLOBAL]/f_1563"
+  %39 = call { i8*, i64 }* %"[GLOBAL]/f_1563"({ i8*, i64 }* %"load_ptr_of_elm_'2'")
+  call void @register_calling_id()
+  %40 = call i64* @use_heap(i64 128)
+  %41 = bitcast i64* %40 to { i64, i64 }*
+  %42 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %41, i32 0, i32 0
+  store i64 3, i64* %42
+  %43 = load i64, i64* %42
+  %casted_for_union_access25 = bitcast { i64, i64 }* %41 to { i64, { i8*, i64 }* }*
+  %44 = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access25, i32 0, i32 1
+  store { i8*, i64 }* %39, { i8*, i64 }** %44
+  %45 = load { i8*, i64 }*, { i8*, i64 }** %44
+  %46 = load { i64, i64 }, { i64, i64 }* %41
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %46
+
+else5:                                            ; preds = %merge3
+  br label %merge6
+
+merge6:                                           ; preds = %else5
+  %47 = load { i8*, i64 }*, { i8*, i64 }** %37
+  %48 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag26 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag27 = load i64, i64* %ptr_of_tag26
+  %49 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %50 = call i1 %49(i64 %load_ptr_of_tag27, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %51 = call i64* @use_heap(i64 64)
+  br i1 %50, label %then7, label %else8
+
+then7:                                            ; preds = %merge6
+  %52 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'28" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'29" = load i64, i64* %"ptr_of_elm_'0'28"
+  %53 = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/f_1513"
+  %54 = call i64 %53(i64 %"load_ptr_of_elm_'0'29")
+  call void @register_calling_id()
+  %55 = call i64* @use_heap(i64 128)
+  %56 = bitcast i64* %55 to { i64, i64 }*
+  %57 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %56, i32 0, i32 0
+  store i64 1, i64* %57
+  %58 = load i64, i64* %57
+  %59 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %56, i32 0, i32 1
+  store i64 %54, i64* %59
+  %60 = load i64, i64* %59
+  %61 = load { i64, i64 }, { i64, i64 }* %56
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %61
+
+else8:                                            ; preds = %merge6
+  br label %merge9
+
+merge9:                                           ; preds = %else8
+  %62 = load i64, i64* %51
+  %63 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag30 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag31 = load i64, i64* %ptr_of_tag30
+  %64 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %65 = call i1 %64(i64 %load_ptr_of_tag31, i64 2)
+  call void @register_calling_id_to_free(i64 %0)
+  %66 = call i64* @use_heap(i64 64)
+  %67 = bitcast i64* %66 to double*
+  br i1 %65, label %then10, label %else11
+
+then10:                                           ; preds = %merge9
+  %68 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access32 = bitcast { i64, i64 }* %2 to { i64, double }*
+  %"ptr_of_elm_'1'33" = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access32, i32 0, i32 1
+  %"load_ptr_of_elm_'1'34" = load double, double* %"ptr_of_elm_'1'33"
+  %69 = load double (double)*, double (double)** @"addr:[GLOBAL]/f_1538"
+  %70 = call double %69(double %"load_ptr_of_elm_'1'34")
+  call void @register_calling_id()
+  %71 = call i64* @use_heap(i64 128)
+  %72 = bitcast i64* %71 to { i64, i64 }*
+  %73 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %72, i32 0, i32 0
+  store i64 2, i64* %73
+  %74 = load i64, i64* %73
+  %casted_for_union_access35 = bitcast { i64, i64 }* %72 to { i64, double }*
+  %75 = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access35, i32 0, i32 1
+  store double %70, double* %75
+  %76 = load double, double* %75
+  %77 = load { i64, i64 }, { i64, i64 }* %72
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %77
+
+else11:                                           ; preds = %merge9
+  br label %merge12
+
+merge12:                                          ; preds = %else11
+  %78 = load double, double* %67
+  %79 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag36 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag37 = load i64, i64* %ptr_of_tag36
+  %80 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %81 = call i1 %80(i64 %load_ptr_of_tag37, i64 3)
+  call void @register_calling_id_to_free(i64 %0)
+  %82 = call i64* @use_heap(i64 64)
+  %83 = bitcast i64* %82 to { i8*, i64 }**
+  br i1 %81, label %then13, label %else14
+
+then13:                                           ; preds = %merge12
+  %84 = load { i64, i64 }, { i64, i64 }* %2
+  %casted_for_union_access38 = bitcast { i64, i64 }* %2 to { i64, { i8*, i64 }* }*
+  %"ptr_of_elm_'2'39" = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access38, i32 0, i32 1
+  %"load_ptr_of_elm_'2'40" = load { i8*, i64 }*, { i8*, i64 }** %"ptr_of_elm_'2'39"
+  %85 = load { i8*, i64 }* ({ i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*)** @"addr:[GLOBAL]/f_1563"
+  %86 = call { i8*, i64 }* %85({ i8*, i64 }* %"load_ptr_of_elm_'2'40")
+  call void @register_calling_id()
+  %87 = call i64* @use_heap(i64 128)
+  %88 = bitcast i64* %87 to { i64, i64 }*
+  %89 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %88, i32 0, i32 0
+  store i64 3, i64* %89
+  %90 = load i64, i64* %89
+  %casted_for_union_access41 = bitcast { i64, i64 }* %88 to { i64, { i8*, i64 }* }*
+  %91 = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access41, i32 0, i32 1
+  store { i8*, i64 }* %86, { i8*, i64 }** %91
+  %92 = load { i8*, i64 }*, { i8*, i64 }** %91
+  %93 = load { i64, i64 }, { i64, i64 }* %88
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %93
+
+else14:                                           ; preds = %merge12
+  br label %merge15
+
+merge15:                                          ; preds = %else14
+  %94 = load { i8*, i64 }*, { i8*, i64 }** %83
+  %95 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag42 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag43 = load i64, i64* %ptr_of_tag42
+  %96 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %97 = call i1 %96(i64 %load_ptr_of_tag43, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %98 = call i64* @use_heap(i64 64)
+  br i1 %97, label %then16, label %else17
+
+then16:                                           ; preds = %merge15
+  %99 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'44" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'45" = load i64, i64* %"ptr_of_elm_'0'44"
+  %100 = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/f_1513"
+  %101 = call i64 %100(i64 %"load_ptr_of_elm_'0'45")
+  call void @register_calling_id()
+  %102 = call i64* @use_heap(i64 128)
+  %103 = bitcast i64* %102 to { i64, i64 }*
+  %104 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %103, i32 0, i32 0
+  store i64 1, i64* %104
+  %105 = load i64, i64* %104
+  %106 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %103, i32 0, i32 1
+  store i64 %101, i64* %106
+  %107 = load i64, i64* %106
+  %108 = load { i64, i64 }, { i64, i64 }* %103
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %108
+
+else17:                                           ; preds = %merge15
+  br label %merge18
+
+merge18:                                          ; preds = %else17
+  %109 = load i64, i64* %98
+  %110 = load { i64, i64 }, { i64, i64 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %110
+}
+
+define i64 @"[GLOBAL]/f_1513"(i64 %arg0) {
+"[GLOBAL]/f_1513":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 64)
+  store i64 %arg0, i64* %1
+  %2 = load i64, i64* %1
+  %result_of_block = alloca i64
+  %3 = load i64, i64* %1
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret i64 %3
+}
+
+define double @"[GLOBAL]/f_1538"(double %arg0) {
+"[GLOBAL]/f_1538":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 64)
+  %2 = bitcast i64* %1 to double*
+  store double %arg0, double* %2
+  %3 = load double, double* %2
+  %result_of_block = alloca double
+  %4 = load double, double* %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret double %4
+}
+
+define { i8*, i64 }* @"[GLOBAL]/f_1563"({ i8*, i64 }* %arg0) {
+"[GLOBAL]/f_1563":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 64)
+  %2 = bitcast i64* %1 to { i8*, i64 }**
+  store { i8*, i64 }* %arg0, { i8*, i64 }** %2
+  %3 = load { i8*, i64 }*, { i8*, i64 }** %2
+  %result_of_block = alloca { i8*, i64 }*
+  %4 = load { i8*, i64 }*, { i8*, i64 }** %2
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i8*, i64 }* %4
+}
+
+define { i64, i64 } @"[GLOBAL]/repeat_hello"({ i64, i64 } %arg0) {
+"[GLOBAL]/repeat_hello":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i64 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 64)
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/repeat_hello"
+  %8 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load i64, i64* %"ptr_of_elm_'0'"
+  %"[GLOBAL]/repeat_hello_2311" = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/repeat_hello_2311"
+  %9 = call i64 %"[GLOBAL]/repeat_hello_2311"(i64 %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %10 = call i64* @use_heap(i64 128)
+  %11 = bitcast i64* %10 to { i64, i64 }*
+  %12 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %11, i32 0, i32 0
+  store i64 1, i64* %12
+  %13 = load i64, i64* %12
+  %14 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %11, i32 0, i32 1
+  store i64 %9, i64* %14
+  %15 = load i64, i64* %14
+  %16 = load { i64, i64 }, { i64, i64 }* %11
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %16
+
+else:                                             ; preds = %"[GLOBAL]/repeat_hello"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %17 = load i64, i64* %7
+  %18 = load { i64, i64 }, { i64, i64 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %18
+}
+
+define i64 @"[GLOBAL]/repeat_hello_2311"(i64 %arg0) {
+"[GLOBAL]/repeat_hello_2311":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca i64
+  store i64 %arg0, i64* %ptr_arg_0
+  %1 = load i64, i64* %ptr_arg_0
+  %result_of_block = alloca i64
+  %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311" = alloca i64
+  %"[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311" = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  store i64 0, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %2 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %3 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  br label %repeat
+
+repeat:                                           ; preds = %repeat_continue, %"[GLOBAL]/repeat_hello_2311"
+  %4 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %5 = load i64, i64* %ptr_arg_0
+  %6 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_less_than_int"
+  %7 = call i1 %6(i64 %4, i64 %5)
+  call void @register_calling_id_to_free(i64 %0)
+  br i1 %7, label %repeat_continue, label %merge
+
+repeat_continue:                                  ; preds = %repeat
+  %8 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %9 = call { i8*, i64 }* %8(i8* getelementptr inbounds ([7 x i8], [7 x i8]* @1, i32 0, i32 0), i64 6)
+  call void @register_calling_id_to_free(i64 %0)
+  %10 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %11 = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
+  %12 = call { i8*, i64 }* %11(i64 %10)
+  call void @register_calling_id_to_free(i64 %0)
+  %13 = load { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:get_appended_string"
+  %14 = call { i8*, i64 }* %13({ i8*, i64 }* %9, { i8*, i64 }* %12)
+  call void @register_calling_id_to_free(i64 %0)
+  %15 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %15({ i8*, i64 }* %14)
+  call void @register_calling_id_to_free(i64 %0)
+  %16 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %17 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %18 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:add_int"
+  %19 = call i64 %18(i64 %17, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  store i64 %19, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %20 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  %21 = load i64, i64* %"addr:[GLOBAL]/repeat_hello/anonymous#226/count:[GLOBAL]/repeat_hello_2311"
+  br label %repeat
+
+merge:                                            ; preds = %repeat
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret i64 0
+}
+
+define { i64, i64 } @"[GLOBAL]/repeat_hey"({ i64, i64 } %arg0) {
+"[GLOBAL]/repeat_hey":
+  %0 = call i64 @get_unique_number()
+  %1 = call i64* @use_heap(i64 128)
+  %2 = bitcast i64* %1 to { i64, i64 }*
+  store { i64, i64 } %arg0, { i64, i64 }* %2
+  %3 = load { i64, i64 }, { i64, i64 }* %2
+  %result_of_block = alloca { i64, i64 }
+  %4 = load { i64, i64 }, { i64, i64 }* %2
+  %ptr_of_tag = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 0
+  %load_ptr_of_tag = load i64, i64* %ptr_of_tag
+  %5 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %6 = call i1 %5(i64 %load_ptr_of_tag, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  %7 = call i64* @use_heap(i64 64)
+  br i1 %6, label %then, label %else
+
+then:                                             ; preds = %"[GLOBAL]/repeat_hey"
+  %8 = load { i64, i64 }, { i64, i64 }* %2
+  %"ptr_of_elm_'0'" = getelementptr inbounds { i64, i64 }, { i64, i64 }* %2, i32 0, i32 1
+  %"load_ptr_of_elm_'0'" = load i64, i64* %"ptr_of_elm_'0'"
+  %"[GLOBAL]/repeat_hey_2774" = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/repeat_hey_2774"
+  %9 = call i64 %"[GLOBAL]/repeat_hey_2774"(i64 %"load_ptr_of_elm_'0'")
+  call void @register_calling_id()
+  %10 = call i64* @use_heap(i64 128)
+  %11 = bitcast i64* %10 to { i64, i64 }*
+  %12 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %11, i32 0, i32 0
+  store i64 1, i64* %12
+  %13 = load i64, i64* %12
+  %14 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %11, i32 0, i32 1
+  store i64 %9, i64* %14
+  %15 = load i64, i64* %14
+  %16 = load { i64, i64 }, { i64, i64 }* %11
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %16
+
+else:                                             ; preds = %"[GLOBAL]/repeat_hey"
+  br label %merge
+
+merge:                                            ; preds = %else
+  %17 = load i64, i64* %7
+  %18 = load { i64, i64 }, { i64, i64 }* %result_of_block
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret { i64, i64 } %18
+}
+
+define i64 @"[GLOBAL]/repeat_hey_2774"(i64 %arg0) {
+"[GLOBAL]/repeat_hey_2774":
+  %0 = call i64 @get_unique_number()
+  %ptr_arg_0 = alloca i64
+  store i64 %arg0, i64* %ptr_arg_0
+  %1 = load i64, i64* %ptr_arg_0
+  %result_of_block = alloca i64
+  %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774" = alloca i64
+  %"[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774" = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  store i64 0, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %2 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %3 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  br label %repeat
+
+repeat:                                           ; preds = %repeat_continue, %"[GLOBAL]/repeat_hey_2774"
+  %4 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %5 = load i64, i64* %ptr_arg_0
+  %6 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_less_than_int"
+  %7 = call i1 %6(i64 %4, i64 %5)
+  call void @register_calling_id_to_free(i64 %0)
+  br i1 %7, label %repeat_continue, label %merge
+
+repeat_continue:                                  ; preds = %repeat
+  %8 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %9 = call { i8*, i64 }* %8(i8* getelementptr inbounds ([5 x i8], [5 x i8]* @2, i32 0, i32 0), i64 4)
+  call void @register_calling_id_to_free(i64 %0)
+  %10 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %11 = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
+  %12 = call { i8*, i64 }* %11(i64 %10)
+  call void @register_calling_id_to_free(i64 %0)
+  %13 = load { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:get_appended_string"
+  %14 = call { i8*, i64 }* %13({ i8*, i64 }* %9, { i8*, i64 }* %12)
+  call void @register_calling_id_to_free(i64 %0)
+  %15 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %15({ i8*, i64 }* %14)
+  call void @register_calling_id_to_free(i64 %0)
+  %16 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %17 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %18 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:add_int"
+  %19 = call i64 %18(i64 %17, i64 1)
+  call void @register_calling_id_to_free(i64 %0)
+  store i64 %19, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %20 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  %21 = load i64, i64* %"addr:[GLOBAL]/repeat_hey/anonymous#247/count:[GLOBAL]/repeat_hey_2774"
+  br label %repeat
+
+merge:                                            ; preds = %repeat
+  call void @free_heaps_associated_calling_id(i64 %0)
+  ret i64 0
+}
+
 declare double @add_double(double, double)
 
 declare i64 @add_int(i64, i64)
@@ -488,274 +1663,682 @@ define i64 @main() {
   %56 = load i1 (double, double)*, i1 (double, double)** @"addr:op_equal_double"
   store i1 (double, double)* @op_not_equal_double, i1 (double, double)** @"addr:op_not_equal_double"
   %57 = load i1 (double, double)*, i1 (double, double)** @"addr:op_not_equal_double"
-  store {} ({})* @"[GLOBAL]/Various#0", {} ({})** @"addr:[GLOBAL]/Various#0"
-  %58 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#0"
-  store {} ({})* @"[GLOBAL]/Various#1", {} ({})** @"addr:[GLOBAL]/Various#1"
-  %59 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#1"
+  store { i64, i64 } ({ i64, i64 })* @"[GLOBAL]/f", { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/f"
+  %58 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/f"
+  store { i64, i64 } ({ i64, i64 }, { i64, i64 })* @"[GLOBAL]/call", { i64, i64 } ({ i64, i64 }, { i64, i64 })** @"addr:[GLOBAL]/call"
+  %59 = load { i64, i64 } ({ i64, i64 }, { i64, i64 })*, { i64, i64 } ({ i64, i64 }, { i64, i64 })** @"addr:[GLOBAL]/call"
+  store { i64, i64 } ({ i64, i64 })* @"[GLOBAL]/constructor@S", { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/constructor@S"
+  %60 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/constructor@S"
+  store { i64, i128 } ({ i64, i64 })* @"[GLOBAL]/U#A", { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/U#A"
+  %61 = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/U#A"
+  store { i64, i128 } ({ i64, i64 })* @"[GLOBAL]/U#B", { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/U#B"
+  %62 = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/U#B"
+  store { i64, i64 } ({ i64, i64 })* @"[GLOBAL]/repeat_hello", { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hello"
+  %63 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hello"
+  store { i64, i64 } ({ i64, i64 })* @"[GLOBAL]/repeat_hey", { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hey"
+  %64 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hey"
+  store { i64, i128 } ({ i64, i64 })* @"[GLOBAL]/Various#0", { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/Various#0"
+  %65 = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/Various#0"
+  store { i64, i128 } ({ i64, i64 })* @"[GLOBAL]/Various#1", { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/Various#1"
+  %66 = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/Various#1"
   store {} ({})* @"[GLOBAL]/Various#2", {} ({})** @"addr:[GLOBAL]/Various#2"
-  %60 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#2"
+  %67 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#2"
   store {} ({})* @"[GLOBAL]/Various#3", {} ({})** @"addr:[GLOBAL]/Various#3"
-  %61 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#3"
+  %68 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#3"
   store {} ({})* @"[GLOBAL]/Various#4", {} ({})** @"addr:[GLOBAL]/Various#4"
-  %62 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#4"
+  %69 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#4"
   store {} ({})* @"[GLOBAL]/Various#5", {} ({})** @"addr:[GLOBAL]/Various#5"
-  %63 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#5"
+  %70 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#5"
   store {} ({})* @"[GLOBAL]/Various#6", {} ({})** @"addr:[GLOBAL]/Various#6"
-  %64 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#6"
+  %71 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#6"
   store {} ({})* @"[GLOBAL]/Various#7", {} ({})** @"addr:[GLOBAL]/Various#7"
-  %65 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#7"
+  %72 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#7"
   store {} ({})* @"[GLOBAL]/Various#8", {} ({})** @"addr:[GLOBAL]/Various#8"
-  %66 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#8"
+  %73 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#8"
   store {} ({})* @"[GLOBAL]/Various#9", {} ({})** @"addr:[GLOBAL]/Various#9"
-  %67 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#9"
+  %74 = load {} ({})*, {} ({})** @"addr:[GLOBAL]/Various#9"
+  store i64 (i64)* @"[GLOBAL]/f_1513", i64 (i64)** @"addr:[GLOBAL]/f_1513"
+  %75 = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/f_1513"
+  store double (double)* @"[GLOBAL]/f_1538", double (double)** @"addr:[GLOBAL]/f_1538"
+  %76 = load double (double)*, double (double)** @"addr:[GLOBAL]/f_1538"
+  store { i8*, i64 }* ({ i8*, i64 }*)* @"[GLOBAL]/f_1563", { i8*, i64 }* ({ i8*, i64 }*)** @"addr:[GLOBAL]/f_1563"
+  %77 = load { i8*, i64 }* ({ i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*)** @"addr:[GLOBAL]/f_1563"
+  store i64 ({ i64, i64 } ({ i64, i64 })*, i64)* @"[GLOBAL]/call_1683", i64 ({ i64, i64 } ({ i64, i64 })*, i64)** @"addr:[GLOBAL]/call_1683"
+  %78 = load i64 ({ i64, i64 } ({ i64, i64 })*, i64)*, i64 ({ i64, i64 } ({ i64, i64 })*, i64)** @"addr:[GLOBAL]/call_1683"
+  store { i64 } (i64)* @"[GLOBAL]/constructor@S_1715", { i64 } (i64)** @"addr:[GLOBAL]/constructor@S_1715"
+  %79 = load { i64 } (i64)*, { i64 } (i64)** @"addr:[GLOBAL]/constructor@S_1715"
+  store { double } (double)* @"[GLOBAL]/constructor@S_1743", { double } (double)** @"addr:[GLOBAL]/constructor@S_1743"
+  %80 = load { double } (double)*, { double } (double)** @"addr:[GLOBAL]/constructor@S_1743"
+  store { i64, i64 } (i64)* @"[GLOBAL]/U#A_1779", { i64, i64 } (i64)** @"addr:[GLOBAL]/U#A_1779"
+  %81 = load { i64, i64 } (i64)*, { i64, i64 } (i64)** @"addr:[GLOBAL]/U#A_1779"
+  store { i64, i64 } ({ i8*, i64 }*)* @"[GLOBAL]/U#B_1813", { i64, i64 } ({ i8*, i64 }*)** @"addr:[GLOBAL]/U#B_1813"
+  %82 = load { i64, i64 } ({ i8*, i64 }*)*, { i64, i64 } ({ i8*, i64 }*)** @"addr:[GLOBAL]/U#B_1813"
+  store { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)* @"[GLOBAL]/Various#0_1879", { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)** @"addr:[GLOBAL]/Various#0_1879"
+  %83 = load { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)*, { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)** @"addr:[GLOBAL]/Various#0_1879"
+  store { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)* @"[GLOBAL]/Various#1_1946", { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)** @"addr:[GLOBAL]/Various#1_1946"
+  %84 = load { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)*, { i64, i64 } ({ i64, i64 } ({ i64, i64 })*)** @"addr:[GLOBAL]/Various#1_1946"
+  store i64 (i64)* @"[GLOBAL]/repeat_hello_2311", i64 (i64)** @"addr:[GLOBAL]/repeat_hello_2311"
+  %85 = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/repeat_hello_2311"
+  store i64 (i64)* @"[GLOBAL]/repeat_hey_2774", i64 (i64)** @"addr:[GLOBAL]/repeat_hey_2774"
+  %86 = load i64 (i64)*, i64 (i64)** @"addr:[GLOBAL]/repeat_hey_2774"
   br label %entry
 
 entry:                                            ; preds = %"global:initialize"
+  %"[GLOBAL]/call" = load { i64, i64 } ({ i64, i64 }, { i64, i64 })*, { i64, i64 } ({ i64, i64 }, { i64, i64 })** @"addr:[GLOBAL]/call"
+  %"[GLOBAL]/f" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/f"
+  %"[GLOBAL]/repeat_hello" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hello"
+  %"[GLOBAL]/repeat_hey" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hey"
   %"[GLOBAL]/get_unique_number" = load i64 ()*, i64 ()** @"addr:[GLOBAL]/get_unique_number"
   store i64 ()* @get_unique_number, i64 ()** @"addr:[GLOBAL]/get_unique_number"
-  %68 = load i64 ()*, i64 ()** @"addr:[GLOBAL]/get_unique_number"
-  %69 = load i64 ()*, i64 ()** @"addr:[GLOBAL]/get_unique_number"
+  %87 = load i64 ()*, i64 ()** @"addr:[GLOBAL]/get_unique_number"
+  %88 = load i64 ()*, i64 ()** @"addr:[GLOBAL]/get_unique_number"
   %"[GLOBAL]/use_heap" = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/use_heap"
   store i64* (i64)* @use_heap, i64* (i64)** @"addr:[GLOBAL]/use_heap"
-  %70 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/use_heap"
-  %71 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/use_heap"
+  %89 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/use_heap"
+  %90 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/use_heap"
   %"[GLOBAL]/register_calling_id" = load void ()*, void ()** @"addr:[GLOBAL]/register_calling_id"
   store void ()* @register_calling_id, void ()** @"addr:[GLOBAL]/register_calling_id"
-  %72 = load void ()*, void ()** @"addr:[GLOBAL]/register_calling_id"
-  %73 = load void ()*, void ()** @"addr:[GLOBAL]/register_calling_id"
+  %91 = load void ()*, void ()** @"addr:[GLOBAL]/register_calling_id"
+  %92 = load void ()*, void ()** @"addr:[GLOBAL]/register_calling_id"
   %"[GLOBAL]/register_calling_id_to_free" = load void (i64)*, void (i64)** @"addr:[GLOBAL]/register_calling_id_to_free"
   store void (i64)* @register_calling_id_to_free, void (i64)** @"addr:[GLOBAL]/register_calling_id_to_free"
-  %74 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/register_calling_id_to_free"
-  %75 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/register_calling_id_to_free"
+  %93 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/register_calling_id_to_free"
+  %94 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/register_calling_id_to_free"
   %"[GLOBAL]/free_heaps_associated_calling_id" = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps_associated_calling_id"
   store void (i64)* @free_heaps_associated_calling_id, void (i64)** @"addr:[GLOBAL]/free_heaps_associated_calling_id"
-  %76 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps_associated_calling_id"
-  %77 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps_associated_calling_id"
+  %95 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps_associated_calling_id"
+  %96 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps_associated_calling_id"
   %"[GLOBAL]/free_heaps" = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps"
   store void (i64)* @free_heaps, void (i64)** @"addr:[GLOBAL]/free_heaps"
-  %78 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps"
-  %79 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps"
+  %97 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps"
+  %98 = load void (i64)*, void (i64)** @"addr:[GLOBAL]/free_heaps"
   %"[GLOBAL]/malloc" = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/malloc"
   store i64* (i64)* @malloc, i64* (i64)** @"addr:[GLOBAL]/malloc"
-  %80 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/malloc"
-  %81 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/malloc"
+  %99 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/malloc"
+  %100 = load i64* (i64)*, i64* (i64)** @"addr:[GLOBAL]/malloc"
   %"[GLOBAL]/memcpy" = load i64* (i64*, i64*, i64)*, i64* (i64*, i64*, i64)** @"addr:[GLOBAL]/memcpy"
   store i64* (i64*, i64*, i64)* @memcpy, i64* (i64*, i64*, i64)** @"addr:[GLOBAL]/memcpy"
-  %82 = load i64* (i64*, i64*, i64)*, i64* (i64*, i64*, i64)** @"addr:[GLOBAL]/memcpy"
-  %83 = load i64* (i64*, i64*, i64)*, i64* (i64*, i64*, i64)** @"addr:[GLOBAL]/memcpy"
+  %101 = load i64* (i64*, i64*, i64)*, i64* (i64*, i64*, i64)** @"addr:[GLOBAL]/memcpy"
+  %102 = load i64* (i64*, i64*, i64)*, i64* (i64*, i64*, i64)** @"addr:[GLOBAL]/memcpy"
   %"[GLOBAL]/exit" = load void (i32)*, void (i32)** @"addr:[GLOBAL]/exit"
   store void (i32)* @exit, void (i32)** @"addr:[GLOBAL]/exit"
-  %84 = load void (i32)*, void (i32)** @"addr:[GLOBAL]/exit"
-  %85 = load void (i32)*, void (i32)** @"addr:[GLOBAL]/exit"
+  %103 = load void (i32)*, void (i32)** @"addr:[GLOBAL]/exit"
+  %104 = load void (i32)*, void (i32)** @"addr:[GLOBAL]/exit"
   %"[GLOBAL]/printf" = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/printf"
   store i32 (i8*)* @printf, i32 (i8*)** @"addr:[GLOBAL]/printf"
-  %86 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/printf"
-  %87 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/printf"
+  %105 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/printf"
+  %106 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/printf"
   %"[GLOBAL]/snprintf" = load i32 (i8*, i64, i8*)*, i32 (i8*, i64, i8*)** @"addr:[GLOBAL]/snprintf"
   store i32 (i8*, i64, i8*)* @snprintf, i32 (i8*, i64, i8*)** @"addr:[GLOBAL]/snprintf"
-  %88 = load i32 (i8*, i64, i8*)*, i32 (i8*, i64, i8*)** @"addr:[GLOBAL]/snprintf"
-  %89 = load i32 (i8*, i64, i8*)*, i32 (i8*, i64, i8*)** @"addr:[GLOBAL]/snprintf"
+  %107 = load i32 (i8*, i64, i8*)*, i32 (i8*, i64, i8*)** @"addr:[GLOBAL]/snprintf"
+  %108 = load i32 (i8*, i64, i8*)*, i32 (i8*, i64, i8*)** @"addr:[GLOBAL]/snprintf"
   %"[GLOBAL]/realloc" = load i64* (i64*, i64)*, i64* (i64*, i64)** @"addr:[GLOBAL]/realloc"
   store i64* (i64*, i64)* @realloc, i64* (i64*, i64)** @"addr:[GLOBAL]/realloc"
-  %90 = load i64* (i64*, i64)*, i64* (i64*, i64)** @"addr:[GLOBAL]/realloc"
-  %91 = load i64* (i64*, i64)*, i64* (i64*, i64)** @"addr:[GLOBAL]/realloc"
+  %109 = load i64* (i64*, i64)*, i64* (i64*, i64)** @"addr:[GLOBAL]/realloc"
+  %110 = load i64* (i64*, i64)*, i64* (i64*, i64)** @"addr:[GLOBAL]/realloc"
   %"[GLOBAL]/puts" = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/puts"
   store i32 (i8*)* @puts, i32 (i8*)** @"addr:[GLOBAL]/puts"
-  %92 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/puts"
-  %93 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/puts"
+  %111 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/puts"
+  %112 = load i32 (i8*)*, i32 (i8*)** @"addr:[GLOBAL]/puts"
   %"[GLOBAL]/strcat" = load i8* (i8*, i8*)*, i8* (i8*, i8*)** @"addr:[GLOBAL]/strcat"
   store i8* (i8*, i8*)* @strcat, i8* (i8*, i8*)** @"addr:[GLOBAL]/strcat"
-  %94 = load i8* (i8*, i8*)*, i8* (i8*, i8*)** @"addr:[GLOBAL]/strcat"
-  %95 = load i8* (i8*, i8*)*, i8* (i8*, i8*)** @"addr:[GLOBAL]/strcat"
+  %113 = load i8* (i8*, i8*)*, i8* (i8*, i8*)** @"addr:[GLOBAL]/strcat"
+  %114 = load i8* (i8*, i8*)*, i8* (i8*, i8*)** @"addr:[GLOBAL]/strcat"
   %"[GLOBAL]/strcmp" = load i32 (i8*, i8*)*, i32 (i8*, i8*)** @"addr:[GLOBAL]/strcmp"
   store i32 (i8*, i8*)* @strcmp, i32 (i8*, i8*)** @"addr:[GLOBAL]/strcmp"
-  %96 = load i32 (i8*, i8*)*, i32 (i8*, i8*)** @"addr:[GLOBAL]/strcmp"
-  %97 = load i32 (i8*, i8*)*, i32 (i8*, i8*)** @"addr:[GLOBAL]/strcmp"
+  %115 = load i32 (i8*, i8*)*, i32 (i8*, i8*)** @"addr:[GLOBAL]/strcmp"
+  %116 = load i32 (i8*, i8*)*, i32 (i8*, i8*)** @"addr:[GLOBAL]/strcmp"
   %"[GLOBAL]/clawn_realloc" = load i64* (i64*, i64, i64)*, i64* (i64*, i64, i64)** @"addr:[GLOBAL]/clawn_realloc"
   store i64* (i64*, i64, i64)* @clawn_realloc, i64* (i64*, i64, i64)** @"addr:[GLOBAL]/clawn_realloc"
-  %98 = load i64* (i64*, i64, i64)*, i64* (i64*, i64, i64)** @"addr:[GLOBAL]/clawn_realloc"
-  %99 = load i64* (i64*, i64, i64)*, i64* (i64*, i64, i64)** @"addr:[GLOBAL]/clawn_realloc"
+  %117 = load i64* (i64*, i64, i64)*, i64* (i64*, i64, i64)** @"addr:[GLOBAL]/clawn_realloc"
+  %118 = load i64* (i64*, i64, i64)*, i64* (i64*, i64, i64)** @"addr:[GLOBAL]/clawn_realloc"
   %"[GLOBAL]/clawn_memcpy" = load void (i64*, i64, i64, i64*)*, void (i64*, i64, i64, i64*)** @"addr:[GLOBAL]/clawn_memcpy"
   store void (i64*, i64, i64, i64*)* @clawn_memcpy, void (i64*, i64, i64, i64*)** @"addr:[GLOBAL]/clawn_memcpy"
-  %100 = load void (i64*, i64, i64, i64*)*, void (i64*, i64, i64, i64*)** @"addr:[GLOBAL]/clawn_memcpy"
-  %101 = load void (i64*, i64, i64, i64*)*, void (i64*, i64, i64, i64*)** @"addr:[GLOBAL]/clawn_memcpy"
+  %119 = load void (i64*, i64, i64, i64*)*, void (i64*, i64, i64, i64*)** @"addr:[GLOBAL]/clawn_memcpy"
+  %120 = load void (i64*, i64, i64, i64*)*, void (i64*, i64, i64, i64*)** @"addr:[GLOBAL]/clawn_memcpy"
   %"[GLOBAL]/clawn_index" = load i64* (i64*, i64, i64, i64)*, i64* (i64*, i64, i64, i64)** @"addr:[GLOBAL]/clawn_index"
   store i64* (i64*, i64, i64, i64)* @clawn_index, i64* (i64*, i64, i64, i64)** @"addr:[GLOBAL]/clawn_index"
-  %102 = load i64* (i64*, i64, i64, i64)*, i64* (i64*, i64, i64, i64)** @"addr:[GLOBAL]/clawn_index"
-  %103 = load i64* (i64*, i64, i64, i64)*, i64* (i64*, i64, i64, i64)** @"addr:[GLOBAL]/clawn_index"
+  %121 = load i64* (i64*, i64, i64, i64)*, i64* (i64*, i64, i64, i64)** @"addr:[GLOBAL]/clawn_index"
+  %122 = load i64* (i64*, i64, i64, i64)*, i64* (i64*, i64, i64, i64)** @"addr:[GLOBAL]/clawn_index"
   %"[GLOBAL]/clawn_set_element" = load void (i64*, i64, i64, i64*, i64)*, void (i64*, i64, i64, i64*, i64)** @"addr:[GLOBAL]/clawn_set_element"
   store void (i64*, i64, i64, i64*, i64)* @clawn_set_element, void (i64*, i64, i64, i64*, i64)** @"addr:[GLOBAL]/clawn_set_element"
-  %104 = load void (i64*, i64, i64, i64*, i64)*, void (i64*, i64, i64, i64*, i64)** @"addr:[GLOBAL]/clawn_set_element"
-  %105 = load void (i64*, i64, i64, i64*, i64)*, void (i64*, i64, i64, i64*, i64)** @"addr:[GLOBAL]/clawn_set_element"
+  %123 = load void (i64*, i64, i64, i64*, i64)*, void (i64*, i64, i64, i64*, i64)** @"addr:[GLOBAL]/clawn_set_element"
+  %124 = load void (i64*, i64, i64, i64*, i64)*, void (i64*, i64, i64, i64*, i64)** @"addr:[GLOBAL]/clawn_set_element"
   %"[GLOBAL]/list_constructor" = load { i64, i64, i64, i64* }* (i64)*, { i64, i64, i64, i64* }* (i64)** @"addr:[GLOBAL]/list_constructor"
   store { i64, i64, i64, i64* }* (i64)* @list_constructor, { i64, i64, i64, i64* }* (i64)** @"addr:[GLOBAL]/list_constructor"
-  %106 = load { i64, i64, i64, i64* }* (i64)*, { i64, i64, i64, i64* }* (i64)** @"addr:[GLOBAL]/list_constructor"
-  %107 = load { i64, i64, i64, i64* }* (i64)*, { i64, i64, i64, i64* }* (i64)** @"addr:[GLOBAL]/list_constructor"
+  %125 = load { i64, i64, i64, i64* }* (i64)*, { i64, i64, i64, i64* }* (i64)** @"addr:[GLOBAL]/list_constructor"
+  %126 = load { i64, i64, i64, i64* }* (i64)*, { i64, i64, i64, i64* }* (i64)** @"addr:[GLOBAL]/list_constructor"
   %"[GLOBAL]/append" = load void ({ i64, i64, i64, i64* }*, i64*)*, void ({ i64, i64, i64, i64* }*, i64*)** @"addr:[GLOBAL]/append"
   store void ({ i64, i64, i64, i64* }*, i64*)* @append, void ({ i64, i64, i64, i64* }*, i64*)** @"addr:[GLOBAL]/append"
-  %108 = load void ({ i64, i64, i64, i64* }*, i64*)*, void ({ i64, i64, i64, i64* }*, i64*)** @"addr:[GLOBAL]/append"
-  %109 = load void ({ i64, i64, i64, i64* }*, i64*)*, void ({ i64, i64, i64, i64* }*, i64*)** @"addr:[GLOBAL]/append"
+  %127 = load void ({ i64, i64, i64, i64* }*, i64*)*, void ({ i64, i64, i64, i64* }*, i64*)** @"addr:[GLOBAL]/append"
+  %128 = load void ({ i64, i64, i64, i64* }*, i64*)*, void ({ i64, i64, i64, i64* }*, i64*)** @"addr:[GLOBAL]/append"
   %"[GLOBAL]/get" = load i64* ({ i64, i64, i64, i64* }*, i64)*, i64* ({ i64, i64, i64, i64* }*, i64)** @"addr:[GLOBAL]/get"
   store i64* ({ i64, i64, i64, i64* }*, i64)* @get, i64* ({ i64, i64, i64, i64* }*, i64)** @"addr:[GLOBAL]/get"
-  %110 = load i64* ({ i64, i64, i64, i64* }*, i64)*, i64* ({ i64, i64, i64, i64* }*, i64)** @"addr:[GLOBAL]/get"
-  %111 = load i64* ({ i64, i64, i64, i64* }*, i64)*, i64* ({ i64, i64, i64, i64* }*, i64)** @"addr:[GLOBAL]/get"
+  %129 = load i64* ({ i64, i64, i64, i64* }*, i64)*, i64* ({ i64, i64, i64, i64* }*, i64)** @"addr:[GLOBAL]/get"
+  %130 = load i64* ({ i64, i64, i64, i64* }*, i64)*, i64* ({ i64, i64, i64, i64* }*, i64)** @"addr:[GLOBAL]/get"
   %"[GLOBAL]/print" = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
   store void ({ i8*, i64 }*)* @print, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
-  %112 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
-  %113 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  %131 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  %132 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
   %"[GLOBAL]/string_constructor" = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:[GLOBAL]/string_constructor"
   store { i8*, i64 }* (i8*, i64)* @string_constructor, { i8*, i64 }* (i8*, i64)** @"addr:[GLOBAL]/string_constructor"
-  %114 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:[GLOBAL]/string_constructor"
-  %115 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:[GLOBAL]/string_constructor"
+  %133 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:[GLOBAL]/string_constructor"
+  %134 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:[GLOBAL]/string_constructor"
   %"[GLOBAL]/input" = load { i8*, i64 }* ()*, { i8*, i64 }* ()** @"addr:[GLOBAL]/input"
   store { i8*, i64 }* ()* @input, { i8*, i64 }* ()** @"addr:[GLOBAL]/input"
-  %116 = load { i8*, i64 }* ()*, { i8*, i64 }* ()** @"addr:[GLOBAL]/input"
-  %117 = load { i8*, i64 }* ()*, { i8*, i64 }* ()** @"addr:[GLOBAL]/input"
+  %135 = load { i8*, i64 }* ()*, { i8*, i64 }* ()** @"addr:[GLOBAL]/input"
+  %136 = load { i8*, i64 }* ()*, { i8*, i64 }* ()** @"addr:[GLOBAL]/input"
   %"[GLOBAL]/get_appended_string" = load { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/get_appended_string"
   store { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)* @get_appended_string, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/get_appended_string"
-  %118 = load { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/get_appended_string"
-  %119 = load { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/get_appended_string"
+  %137 = load { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/get_appended_string"
+  %138 = load { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)*, { i8*, i64 }* ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/get_appended_string"
   %"[GLOBAL]/to_char_ptr" = load i8* ({ i8*, i64 }*)*, i8* ({ i8*, i64 }*)** @"addr:[GLOBAL]/to_char_ptr"
   store i8* ({ i8*, i64 }*)* @to_char_ptr, i8* ({ i8*, i64 }*)** @"addr:[GLOBAL]/to_char_ptr"
-  %120 = load i8* ({ i8*, i64 }*)*, i8* ({ i8*, i64 }*)** @"addr:[GLOBAL]/to_char_ptr"
-  %121 = load i8* ({ i8*, i64 }*)*, i8* ({ i8*, i64 }*)** @"addr:[GLOBAL]/to_char_ptr"
+  %139 = load i8* ({ i8*, i64 }*)*, i8* ({ i8*, i64 }*)** @"addr:[GLOBAL]/to_char_ptr"
+  %140 = load i8* ({ i8*, i64 }*)*, i8* ({ i8*, i64 }*)** @"addr:[GLOBAL]/to_char_ptr"
   %"[GLOBAL]/append_string" = load void ({ i8*, i64 }*, { i8*, i64 }*)*, void ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/append_string"
   store void ({ i8*, i64 }*, { i8*, i64 }*)* @append_string, void ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/append_string"
-  %122 = load void ({ i8*, i64 }*, { i8*, i64 }*)*, void ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/append_string"
-  %123 = load void ({ i8*, i64 }*, { i8*, i64 }*)*, void ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/append_string"
+  %141 = load void ({ i8*, i64 }*, { i8*, i64 }*)*, void ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/append_string"
+  %142 = load void ({ i8*, i64 }*, { i8*, i64 }*)*, void ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/append_string"
   %"[GLOBAL]/int_to_str" = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
   store { i8*, i64 }* (i64)* @int_to_str, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
-  %124 = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
-  %125 = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
+  %143 = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
+  %144 = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
   %"[GLOBAL]/float_to_str" = load { i8*, i64 }* (double)*, { i8*, i64 }* (double)** @"addr:[GLOBAL]/float_to_str"
   store { i8*, i64 }* (double)* @float_to_str, { i8*, i64 }* (double)** @"addr:[GLOBAL]/float_to_str"
-  %126 = load { i8*, i64 }* (double)*, { i8*, i64 }* (double)** @"addr:[GLOBAL]/float_to_str"
-  %127 = load { i8*, i64 }* (double)*, { i8*, i64 }* (double)** @"addr:[GLOBAL]/float_to_str"
+  %145 = load { i8*, i64 }* (double)*, { i8*, i64 }* (double)** @"addr:[GLOBAL]/float_to_str"
+  %146 = load { i8*, i64 }* (double)*, { i8*, i64 }* (double)** @"addr:[GLOBAL]/float_to_str"
   %"[GLOBAL]/to_real_number" = load double (i64)*, double (i64)** @"addr:[GLOBAL]/to_real_number"
   store double (i64)* @to_real_number, double (i64)** @"addr:[GLOBAL]/to_real_number"
-  %128 = load double (i64)*, double (i64)** @"addr:[GLOBAL]/to_real_number"
-  %129 = load double (i64)*, double (i64)** @"addr:[GLOBAL]/to_real_number"
+  %147 = load double (i64)*, double (i64)** @"addr:[GLOBAL]/to_real_number"
+  %148 = load double (i64)*, double (i64)** @"addr:[GLOBAL]/to_real_number"
   %"[GLOBAL]/to_integer" = load i64 (double)*, i64 (double)** @"addr:[GLOBAL]/to_integer"
   store i64 (double)* @to_integer, i64 (double)** @"addr:[GLOBAL]/to_integer"
-  %130 = load i64 (double)*, i64 (double)** @"addr:[GLOBAL]/to_integer"
-  %131 = load i64 (double)*, i64 (double)** @"addr:[GLOBAL]/to_integer"
+  %149 = load i64 (double)*, i64 (double)** @"addr:[GLOBAL]/to_integer"
+  %150 = load i64 (double)*, i64 (double)** @"addr:[GLOBAL]/to_integer"
   %"[GLOBAL]/op_and" = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_and"
   store i1 (i1, i1)* @op_and, i1 (i1, i1)** @"addr:[GLOBAL]/op_and"
-  %132 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_and"
-  %133 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_and"
+  %151 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_and"
+  %152 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_and"
   %"[GLOBAL]/op_or" = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_or"
   store i1 (i1, i1)* @op_or, i1 (i1, i1)** @"addr:[GLOBAL]/op_or"
-  %134 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_or"
-  %135 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_or"
+  %153 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_or"
+  %154 = load i1 (i1, i1)*, i1 (i1, i1)** @"addr:[GLOBAL]/op_or"
   %"[GLOBAL]/op_equal_string" = load i1 ({ i8*, i64 }*, { i8*, i64 }*)*, i1 ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/op_equal_string"
   store i1 ({ i8*, i64 }*, { i8*, i64 }*)* @op_equal_string, i1 ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/op_equal_string"
-  %136 = load i1 ({ i8*, i64 }*, { i8*, i64 }*)*, i1 ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/op_equal_string"
-  %137 = load i1 ({ i8*, i64 }*, { i8*, i64 }*)*, i1 ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/op_equal_string"
+  %155 = load i1 ({ i8*, i64 }*, { i8*, i64 }*)*, i1 ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/op_equal_string"
+  %156 = load i1 ({ i8*, i64 }*, { i8*, i64 }*)*, i1 ({ i8*, i64 }*, { i8*, i64 }*)** @"addr:[GLOBAL]/op_equal_string"
   %"[GLOBAL]/add_int" = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/add_int"
   store i64 (i64, i64)* @add_int, i64 (i64, i64)** @"addr:[GLOBAL]/add_int"
-  %138 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/add_int"
-  %139 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/add_int"
+  %157 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/add_int"
+  %158 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/add_int"
   %"[GLOBAL]/sub_int" = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/sub_int"
   store i64 (i64, i64)* @sub_int, i64 (i64, i64)** @"addr:[GLOBAL]/sub_int"
-  %140 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/sub_int"
-  %141 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/sub_int"
+  %159 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/sub_int"
+  %160 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/sub_int"
   %"[GLOBAL]/mul_int" = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/mul_int"
   store i64 (i64, i64)* @mul_int, i64 (i64, i64)** @"addr:[GLOBAL]/mul_int"
-  %142 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/mul_int"
-  %143 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/mul_int"
+  %161 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/mul_int"
+  %162 = load i64 (i64, i64)*, i64 (i64, i64)** @"addr:[GLOBAL]/mul_int"
   %"[GLOBAL]/op_greater_than_int" = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_int"
   store i1 (i64, i64)* @op_greater_than_int, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_int"
-  %144 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_int"
-  %145 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_int"
+  %163 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_int"
+  %164 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_int"
   %"[GLOBAL]/op_greater_than_or_equal_int" = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_or_equal_int"
   store i1 (i64, i64)* @op_greater_than_or_equal_int, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_or_equal_int"
-  %146 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_or_equal_int"
-  %147 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_or_equal_int"
+  %165 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_or_equal_int"
+  %166 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_greater_than_or_equal_int"
   %"[GLOBAL]/op_less_than_int" = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_int"
   store i1 (i64, i64)* @op_less_than_int, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_int"
-  %148 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_int"
-  %149 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_int"
+  %167 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_int"
+  %168 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_int"
   %"[GLOBAL]/op_less_than_or_equal_int" = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_or_equal_int"
   store i1 (i64, i64)* @op_less_than_or_equal_int, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_or_equal_int"
-  %150 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_or_equal_int"
-  %151 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_or_equal_int"
+  %169 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_or_equal_int"
+  %170 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_less_than_or_equal_int"
   %"[GLOBAL]/op_equal_int" = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_equal_int"
   store i1 (i64, i64)* @op_equal_int, i1 (i64, i64)** @"addr:[GLOBAL]/op_equal_int"
-  %152 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_equal_int"
-  %153 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_equal_int"
+  %171 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_equal_int"
+  %172 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_equal_int"
   %"[GLOBAL]/op_not_equal_int" = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_not_equal_int"
   store i1 (i64, i64)* @op_not_equal_int, i1 (i64, i64)** @"addr:[GLOBAL]/op_not_equal_int"
-  %154 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_not_equal_int"
-  %155 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_not_equal_int"
+  %173 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_not_equal_int"
+  %174 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:[GLOBAL]/op_not_equal_int"
   %"[GLOBAL]/add_double" = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/add_double"
   store double (double, double)* @add_double, double (double, double)** @"addr:[GLOBAL]/add_double"
-  %156 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/add_double"
-  %157 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/add_double"
+  %175 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/add_double"
+  %176 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/add_double"
   %"[GLOBAL]/sub_double" = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/sub_double"
   store double (double, double)* @sub_double, double (double, double)** @"addr:[GLOBAL]/sub_double"
-  %158 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/sub_double"
-  %159 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/sub_double"
+  %177 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/sub_double"
+  %178 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/sub_double"
   %"[GLOBAL]/mul_double" = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/mul_double"
   store double (double, double)* @mul_double, double (double, double)** @"addr:[GLOBAL]/mul_double"
-  %160 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/mul_double"
-  %161 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/mul_double"
+  %179 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/mul_double"
+  %180 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/mul_double"
   %"[GLOBAL]/div_double_double" = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/div_double_double"
   store double (double, double)* @div_double_double, double (double, double)** @"addr:[GLOBAL]/div_double_double"
-  %162 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/div_double_double"
-  %163 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/div_double_double"
+  %181 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/div_double_double"
+  %182 = load double (double, double)*, double (double, double)** @"addr:[GLOBAL]/div_double_double"
   %"[GLOBAL]/div_double_int" = load double (double, i64)*, double (double, i64)** @"addr:[GLOBAL]/div_double_int"
   store double (double, i64)* @div_double_int, double (double, i64)** @"addr:[GLOBAL]/div_double_int"
-  %164 = load double (double, i64)*, double (double, i64)** @"addr:[GLOBAL]/div_double_int"
-  %165 = load double (double, i64)*, double (double, i64)** @"addr:[GLOBAL]/div_double_int"
+  %183 = load double (double, i64)*, double (double, i64)** @"addr:[GLOBAL]/div_double_int"
+  %184 = load double (double, i64)*, double (double, i64)** @"addr:[GLOBAL]/div_double_int"
   %"[GLOBAL]/div_int_double" = load double (i64, double)*, double (i64, double)** @"addr:[GLOBAL]/div_int_double"
   store double (i64, double)* @div_int_double, double (i64, double)** @"addr:[GLOBAL]/div_int_double"
-  %166 = load double (i64, double)*, double (i64, double)** @"addr:[GLOBAL]/div_int_double"
-  %167 = load double (i64, double)*, double (i64, double)** @"addr:[GLOBAL]/div_int_double"
+  %185 = load double (i64, double)*, double (i64, double)** @"addr:[GLOBAL]/div_int_double"
+  %186 = load double (i64, double)*, double (i64, double)** @"addr:[GLOBAL]/div_int_double"
   %"[GLOBAL]/div_int_int" = load double (i64, i64)*, double (i64, i64)** @"addr:[GLOBAL]/div_int_int"
   store double (i64, i64)* @div_int_int, double (i64, i64)** @"addr:[GLOBAL]/div_int_int"
-  %168 = load double (i64, i64)*, double (i64, i64)** @"addr:[GLOBAL]/div_int_int"
-  %169 = load double (i64, i64)*, double (i64, i64)** @"addr:[GLOBAL]/div_int_int"
+  %187 = load double (i64, i64)*, double (i64, i64)** @"addr:[GLOBAL]/div_int_int"
+  %188 = load double (i64, i64)*, double (i64, i64)** @"addr:[GLOBAL]/div_int_int"
   %"[GLOBAL]/op_greater_than_double" = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_double"
   store i1 (double, double)* @op_greater_than_double, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_double"
-  %170 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_double"
-  %171 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_double"
+  %189 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_double"
+  %190 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_double"
   %"[GLOBAL]/op_greater_than_or_equal_double" = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_or_equal_double"
   store i1 (double, double)* @op_greater_than_or_equal_double, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_or_equal_double"
-  %172 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_or_equal_double"
-  %173 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_or_equal_double"
+  %191 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_or_equal_double"
+  %192 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_greater_than_or_equal_double"
   %"[GLOBAL]/op_less_than_double" = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_double"
   store i1 (double, double)* @op_less_than_double, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_double"
-  %174 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_double"
-  %175 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_double"
+  %193 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_double"
+  %194 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_double"
   %"[GLOBAL]/op_less_than_or_equal_double" = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_or_equal_double"
   store i1 (double, double)* @op_less_than_or_equal_double, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_or_equal_double"
-  %176 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_or_equal_double"
-  %177 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_or_equal_double"
+  %195 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_or_equal_double"
+  %196 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_less_than_or_equal_double"
   %"[GLOBAL]/op_equal_double" = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_equal_double"
   store i1 (double, double)* @op_equal_double, i1 (double, double)** @"addr:[GLOBAL]/op_equal_double"
-  %178 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_equal_double"
-  %179 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_equal_double"
+  %197 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_equal_double"
+  %198 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_equal_double"
   %"[GLOBAL]/op_not_equal_double" = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_not_equal_double"
   store i1 (double, double)* @op_not_equal_double, i1 (double, double)** @"addr:[GLOBAL]/op_not_equal_double"
-  %180 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_not_equal_double"
-  %181 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_not_equal_double"
-  %182 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
-  %183 = call { i8*, i64 }* %182(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @0, i32 0, i32 0), i64 13)
+  %199 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_not_equal_double"
+  %200 = load i1 (double, double)*, i1 (double, double)** @"addr:[GLOBAL]/op_not_equal_double"
+  %201 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %202 = call { i8*, i64 }* %201(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @3, i32 0, i32 0), i64 16)
   call void @register_calling_id_to_free(i64 %0)
-  %184 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
-  call void %184({ i8*, i64 }* %183)
+  %203 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %203({ i8*, i64 }* %202)
   call void @register_calling_id_to_free(i64 %0)
-  %result_of_block = alloca {}
-  %185 = load {}, {}* %result_of_block
+  %204 = alloca { i64, i64 }
+  %205 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %204, i32 0, i32 1
+  store i64 0, i64* %205
+  %206 = load i64, i64* %205
+  %tag_of_arg = getelementptr inbounds { i64, i64 }, { i64, i64 }* %204, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg
+  %207 = load i64, i64* %tag_of_arg
+  %actuall_arg = load { i64, i64 }, { i64, i64 }* %204
+  %208 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/f"
+  %209 = call { i64, i64 } %208({ i64, i64 } %actuall_arg)
+  %temp_ptr_for_res = alloca { i64, i64 }
+  store { i64, i64 } %209, { i64, i64 }* %temp_ptr_for_res
+  %210 = load { i64, i64 }, { i64, i64 }* %temp_ptr_for_res
+  %211 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %temp_ptr_for_res, i32 0, i32 1
+  %212 = load i64, i64* %211
+  %213 = alloca { i64, i64 }
+  %casted_for_union_access = bitcast { i64, i64 }* %213 to { i64, double }*
+  %214 = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access, i32 0, i32 1
+  store double 1.000000e-01, double* %214
+  %215 = load double, double* %214
+  %tag_of_arg6 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %213, i32 0, i32 0
+  store i64 2, i64* %tag_of_arg6
+  %216 = load i64, i64* %tag_of_arg6
+  %actuall_arg7 = load { i64, i64 }, { i64, i64 }* %213
+  %217 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/f"
+  %218 = call { i64, i64 } %217({ i64, i64 } %actuall_arg7)
+  %temp_ptr_for_res8 = alloca { i64, i64 }
+  store { i64, i64 } %218, { i64, i64 }* %temp_ptr_for_res8
+  %219 = load { i64, i64 }, { i64, i64 }* %temp_ptr_for_res8
+  %casted_for_union_access9 = bitcast { i64, i64 }* %temp_ptr_for_res8 to { i64, double }*
+  %220 = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access9, i32 0, i32 1
+  %221 = load double, double* %220
+  %222 = alloca { i64, i64 }
+  %casted_for_union_access10 = bitcast { i64, i64 }* %222 to { i64, { i8*, i64 }* }*
+  %223 = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access10, i32 0, i32 1
+  %224 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %225 = call { i8*, i64 }* %224(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @4, i32 0, i32 0), i64 3)
+  call void @register_calling_id_to_free(i64 %0)
+  store { i8*, i64 }* %225, { i8*, i64 }** %223
+  %226 = load { i8*, i64 }*, { i8*, i64 }** %223
+  %tag_of_arg11 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %222, i32 0, i32 0
+  store i64 3, i64* %tag_of_arg11
+  %227 = load i64, i64* %tag_of_arg11
+  %actuall_arg12 = load { i64, i64 }, { i64, i64 }* %222
+  %228 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/f"
+  %229 = call { i64, i64 } %228({ i64, i64 } %actuall_arg12)
+  %temp_ptr_for_res13 = alloca { i64, i64 }
+  store { i64, i64 } %229, { i64, i64 }* %temp_ptr_for_res13
+  %230 = load { i64, i64 }, { i64, i64 }* %temp_ptr_for_res13
+  %casted_for_union_access14 = bitcast { i64, i64 }* %temp_ptr_for_res13 to { i64, { i8*, i64 }* }*
+  %231 = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access14, i32 0, i32 1
+  %232 = load { i8*, i64 }*, { i8*, i64 }** %231
+  %"[GLOBAL]/result" = load i64, i64* @"addr:[GLOBAL]/result"
+  %233 = call i64* @use_heap(i64 128)
+  %234 = bitcast i64* %233 to { i64, i64 }*
+  %casted_for_union_access15 = bitcast { i64, i64 }* %234 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %235 = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access15, i32 0, i32 1
+  %236 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/f"
+  store { i64, i64 } ({ i64, i64 })* %236, { i64, i64 } ({ i64, i64 })** %235
+  %237 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %235
+  %tag_of_arg16 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %234, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg16
+  %238 = load i64, i64* %tag_of_arg16
+  %actuall_arg17 = load { i64, i64 }, { i64, i64 }* %234
+  %239 = call i64* @use_heap(i64 128)
+  %240 = bitcast i64* %239 to { i64, i64 }*
+  %241 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %240, i32 0, i32 1
+  store i64 0, i64* %241
+  %242 = load i64, i64* %241
+  %tag_of_arg18 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %240, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg18
+  %243 = load i64, i64* %tag_of_arg18
+  %actuall_arg19 = load { i64, i64 }, { i64, i64 }* %240
+  %244 = load { i64, i64 } ({ i64, i64 }, { i64, i64 })*, { i64, i64 } ({ i64, i64 }, { i64, i64 })** @"addr:[GLOBAL]/call"
+  %245 = call { i64, i64 } %244({ i64, i64 } %actuall_arg17, { i64, i64 } %actuall_arg19)
+  call void @register_calling_id()
+  %246 = call i64* @use_heap(i64 128)
+  %247 = bitcast i64* %246 to { i64, i64 }*
+  store { i64, i64 } %245, { i64, i64 }* %247
+  %248 = load { i64, i64 }, { i64, i64 }* %247
+  %249 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %247, i32 0, i32 1
+  %250 = load i64, i64* %249
+  store i64 %250, i64* @"addr:[GLOBAL]/result"
+  %251 = load i64, i64* @"addr:[GLOBAL]/result"
+  %252 = load i64, i64* @"addr:[GLOBAL]/result"
+  %"[GLOBAL]/message" = load { i8*, i64 }*, { i8*, i64 }** @"addr:[GLOBAL]/message"
+  %253 = load i64, i64* @"addr:[GLOBAL]/result"
+  %254 = load i1 (i64, i64)*, i1 (i64, i64)** @"addr:op_equal_int"
+  %255 = call i1 %254(i64 %253, i64 0)
+  call void @register_calling_id_to_free(i64 %0)
+  %256 = alloca { i8*, i64 }*
+  br i1 %255, label %then, label %else
+
+then:                                             ; preds = %entry
+  %result_of_block = alloca { i8*, i64 }*
+  %257 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %258 = call { i8*, i64 }* %257(i8* getelementptr inbounds ([21 x i8], [21 x i8]* @5, i32 0, i32 0), i64 20)
+  call void @register_calling_id_to_free(i64 %0)
+  %259 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %259({ i8*, i64 }* %258)
+  call void @register_calling_id_to_free(i64 %0)
+  %260 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %261 = call { i8*, i64 }* %260(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @6, i32 0, i32 0), i64 2)
+  call void @register_calling_id_to_free(i64 %0)
+  store { i8*, i64 }* %261, { i8*, i64 }** %result_of_block
+  %262 = load { i8*, i64 }*, { i8*, i64 }** %result_of_block
+  %263 = load { i8*, i64 }*, { i8*, i64 }** %result_of_block
+  store { i8*, i64 }* %263, { i8*, i64 }** %256
+  %264 = load { i8*, i64 }*, { i8*, i64 }** %256
+  br label %merge
+
+else:                                             ; preds = %entry
+  %result_of_block20 = alloca { i8*, i64 }*
+  %265 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %266 = call { i8*, i64 }* %265(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @7, i32 0, i32 0), i64 21)
+  call void @register_calling_id_to_free(i64 %0)
+  store { i8*, i64 }* %266, { i8*, i64 }** %result_of_block20
+  %267 = load { i8*, i64 }*, { i8*, i64 }** %result_of_block20
+  %268 = load { i8*, i64 }*, { i8*, i64 }** %result_of_block20
+  store { i8*, i64 }* %268, { i8*, i64 }** %256
+  %269 = load { i8*, i64 }*, { i8*, i64 }** %256
+  br label %merge
+
+merge:                                            ; preds = %else, %then
+  %270 = load { i8*, i64 }*, { i8*, i64 }** %256
+  store { i8*, i64 }* %270, { i8*, i64 }** @"addr:[GLOBAL]/message"
+  %271 = load { i8*, i64 }*, { i8*, i64 }** @"addr:[GLOBAL]/message"
+  %272 = load { i8*, i64 }*, { i8*, i64 }** @"addr:[GLOBAL]/message"
+  %273 = load { i8*, i64 }*, { i8*, i64 }** @"addr:[GLOBAL]/message"
+  %274 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %274({ i8*, i64 }* %273)
+  call void @register_calling_id_to_free(i64 %0)
+  %"[GLOBAL]/s" = load { i64 }, { i64 }* @"addr:[GLOBAL]/s"
+  %275 = alloca { i64, i64 }
+  %276 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %275, i32 0, i32 1
+  store i64 10, i64* %276
+  %277 = load i64, i64* %276
+  %tag_of_arg21 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %275, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg21
+  %278 = load i64, i64* %tag_of_arg21
+  %actuall_arg22 = load { i64, i64 }, { i64, i64 }* %275
+  %279 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/constructor@S"
+  %280 = call { i64, i64 } %279({ i64, i64 } %actuall_arg22)
+  %temp_ptr_for_res23 = alloca { i64, i64 }
+  store { i64, i64 } %280, { i64, i64 }* %temp_ptr_for_res23
+  %281 = load { i64, i64 }, { i64, i64 }* %temp_ptr_for_res23
+  %casted_for_union_access24 = bitcast { i64, i64 }* %temp_ptr_for_res23 to { i64, { i64 } }*
+  %282 = getelementptr inbounds { i64, { i64 } }, { i64, { i64 } }* %casted_for_union_access24, i32 0, i32 1
+  %283 = load { i64 }, { i64 }* %282
+  store { i64 } %283, { i64 }* @"addr:[GLOBAL]/s"
+  %284 = load { i64 }, { i64 }* @"addr:[GLOBAL]/s"
+  %285 = load { i64 }, { i64 }* @"addr:[GLOBAL]/s"
+  %"[GLOBAL]/s2" = load { double }, { double }* @"addr:[GLOBAL]/s2"
+  %286 = alloca { i64, i64 }
+  %casted_for_union_access25 = bitcast { i64, i64 }* %286 to { i64, double }*
+  %287 = getelementptr inbounds { i64, double }, { i64, double }* %casted_for_union_access25, i32 0, i32 1
+  store double 1.000000e-01, double* %287
+  %288 = load double, double* %287
+  %tag_of_arg26 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %286, i32 0, i32 0
+  store i64 2, i64* %tag_of_arg26
+  %289 = load i64, i64* %tag_of_arg26
+  %actuall_arg27 = load { i64, i64 }, { i64, i64 }* %286
+  %290 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/constructor@S"
+  %291 = call { i64, i64 } %290({ i64, i64 } %actuall_arg27)
+  %temp_ptr_for_res28 = alloca { i64, i64 }
+  store { i64, i64 } %291, { i64, i64 }* %temp_ptr_for_res28
+  %292 = load { i64, i64 }, { i64, i64 }* %temp_ptr_for_res28
+  %casted_for_union_access29 = bitcast { i64, i64 }* %temp_ptr_for_res28 to { i64, { double } }*
+  %293 = getelementptr inbounds { i64, { double } }, { i64, { double } }* %casted_for_union_access29, i32 0, i32 1
+  %294 = load { double }, { double }* %293
+  store { double } %294, { double }* @"addr:[GLOBAL]/s2"
+  %295 = load { double }, { double }* @"addr:[GLOBAL]/s2"
+  %296 = load { double }, { double }* @"addr:[GLOBAL]/s2"
+  %result_of_block30 = alloca {}
+  %297 = load {}, {}* %result_of_block30
+  %"[GLOBAL]/u" = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %298 = alloca { i64, i64 }
+  %299 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %298, i32 0, i32 1
+  store i64 0, i64* %299
+  %300 = load i64, i64* %299
+  %tag_of_arg31 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %298, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg31
+  %301 = load i64, i64* %tag_of_arg31
+  %actuall_arg32 = load { i64, i64 }, { i64, i64 }* %298
+  %302 = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/U#A"
+  %303 = call { i64, i128 } %302({ i64, i64 } %actuall_arg32)
+  %temp_ptr_for_res33 = alloca { i64, i128 }
+  store { i64, i128 } %303, { i64, i128 }* %temp_ptr_for_res33
+  %304 = load { i64, i128 }, { i64, i128 }* %temp_ptr_for_res33
+  %casted_for_union_access34 = bitcast { i64, i128 }* %temp_ptr_for_res33 to { i64, { i64, i64 } }*
+  %305 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access34, i32 0, i32 1
+  %306 = load { i64, i64 }, { i64, i64 }* %305
+  store { i64, i64 } %306, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %307 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %308 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %309 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %310 = alloca { i64, i64 }
+  %casted_for_union_access35 = bitcast { i64, i64 }* %310 to { i64, { i8*, i64 }* }*
+  %311 = getelementptr inbounds { i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* %casted_for_union_access35, i32 0, i32 1
+  %312 = load { i8*, i64 }* (i8*, i64)*, { i8*, i64 }* (i8*, i64)** @"addr:string_constructor"
+  %313 = call { i8*, i64 }* %312(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @8, i32 0, i32 0), i64 3)
+  call void @register_calling_id_to_free(i64 %0)
+  store { i8*, i64 }* %313, { i8*, i64 }** %311
+  %314 = load { i8*, i64 }*, { i8*, i64 }** %311
+  %tag_of_arg36 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %310, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg36
+  %315 = load i64, i64* %tag_of_arg36
+  %actuall_arg37 = load { i64, i64 }, { i64, i64 }* %310
+  %316 = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/U#B"
+  %317 = call { i64, i128 } %316({ i64, i64 } %actuall_arg37)
+  %temp_ptr_for_res38 = alloca { i64, i128 }
+  store { i64, i128 } %317, { i64, i128 }* %temp_ptr_for_res38
+  %318 = load { i64, i128 }, { i64, i128 }* %temp_ptr_for_res38
+  %casted_for_union_access39 = bitcast { i64, i128 }* %temp_ptr_for_res38 to { i64, { i64, i64 } }*
+  %319 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access39, i32 0, i32 1
+  %320 = load { i64, i64 }, { i64, i64 }* %319
+  store { i64, i64 } %320, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %321 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %322 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %323 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %324 = load i64, i64* getelementptr inbounds ({ i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u", i32 0, i32 0)
+  %aaa = icmp eq i64 %324, 1
+  br i1 %aaa, label %on_A, label %merge1
+
+on_A:                                             ; preds = %merge
+  %325 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %"load_ptr_of_elm_'A'" = load i64, i64* getelementptr inbounds ({ i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u", i32 0, i32 1)
+  %326 = load { i8*, i64 }* (i64)*, { i8*, i64 }* (i64)** @"addr:[GLOBAL]/int_to_str"
+  %327 = call { i8*, i64 }* %326(i64 %"load_ptr_of_elm_'A'")
+  call void @register_calling_id_to_free(i64 %0)
+  %328 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %328({ i8*, i64 }* %327)
+  call void @register_calling_id_to_free(i64 %0)
+  br label %last_merge
+
+merge1:                                           ; preds = %merge
+  %329 = icmp eq i64 %324, 2
+  br i1 %329, label %on_B, label %merge2
+
+on_B:                                             ; preds = %merge1
+  %330 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/u"
+  %"load_ptr_of_elm_'B'" = load { i8*, i64 }*, { i8*, i64 }** getelementptr inbounds ({ i64, { i8*, i64 }* }, { i64, { i8*, i64 }* }* bitcast ({ i64, i64 }* @"addr:[GLOBAL]/u" to { i64, { i8*, i64 }* }*), i32 0, i32 1)
+  %331 = load void ({ i8*, i64 }*)*, void ({ i8*, i64 }*)** @"addr:[GLOBAL]/print"
+  call void %331({ i8*, i64 }* %"load_ptr_of_elm_'B'")
+  call void @register_calling_id_to_free(i64 %0)
+  br label %last_merge
+
+merge2:                                           ; preds = %merge1
+  br label %last_merge
+
+last_merge:                                       ; preds = %merge2, %on_B, %on_A
+  %"[GLOBAL]/various_function" = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %332 = call i64* @use_heap(i64 128)
+  %333 = bitcast i64* %332 to { i64, i64 }*
+  %casted_for_union_access40 = bitcast { i64, i64 }* %333 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %334 = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access40, i32 0, i32 1
+  %335 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hello"
+  store { i64, i64 } ({ i64, i64 })* %335, { i64, i64 } ({ i64, i64 })** %334
+  %336 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %334
+  %tag_of_arg41 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %333, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg41
+  %337 = load i64, i64* %tag_of_arg41
+  %actuall_arg42 = load { i64, i64 }, { i64, i64 }* %333
+  %"[GLOBAL]/Various#0" = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/Various#0"
+  %338 = call { i64, i128 } %"[GLOBAL]/Various#0"({ i64, i64 } %actuall_arg42)
+  call void @register_calling_id()
+  %339 = call i64* @use_heap(i64 192)
+  %340 = bitcast i64* %339 to { i64, i128 }*
+  store { i64, i128 } %338, { i64, i128 }* %340
+  %341 = load { i64, i128 }, { i64, i128 }* %340
+  %casted_for_union_access43 = bitcast { i64, i128 }* %340 to { i64, { i64, i64 } }*
+  %342 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access43, i32 0, i32 1
+  %343 = load { i64, i64 }, { i64, i64 }* %342
+  store { i64, i64 } %343, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %344 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %345 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %346 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %347 = call i64* @use_heap(i64 128)
+  %348 = bitcast i64* %347 to { i64, i64 }*
+  %casted_for_union_access44 = bitcast { i64, i64 }* %348 to { i64, { i64, i64 } ({ i64, i64 })* }*
+  %349 = getelementptr inbounds { i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* %casted_for_union_access44, i32 0, i32 1
+  %350 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** @"addr:[GLOBAL]/repeat_hey"
+  store { i64, i64 } ({ i64, i64 })* %350, { i64, i64 } ({ i64, i64 })** %349
+  %351 = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** %349
+  %tag_of_arg45 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %348, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg45
+  %352 = load i64, i64* %tag_of_arg45
+  %actuall_arg46 = load { i64, i64 }, { i64, i64 }* %348
+  %"[GLOBAL]/Various#1" = load { i64, i128 } ({ i64, i64 })*, { i64, i128 } ({ i64, i64 })** @"addr:[GLOBAL]/Various#1"
+  %353 = call { i64, i128 } %"[GLOBAL]/Various#1"({ i64, i64 } %actuall_arg46)
+  call void @register_calling_id()
+  %354 = call i64* @use_heap(i64 192)
+  %355 = bitcast i64* %354 to { i64, i128 }*
+  store { i64, i128 } %353, { i64, i128 }* %355
+  %356 = load { i64, i128 }, { i64, i128 }* %355
+  %casted_for_union_access47 = bitcast { i64, i128 }* %355 to { i64, { i64, i64 } }*
+  %357 = getelementptr inbounds { i64, { i64, i64 } }, { i64, { i64, i64 } }* %casted_for_union_access47, i32 0, i32 1
+  %358 = load { i64, i64 }, { i64, i64 }* %357
+  store { i64, i64 } %358, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %359 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %360 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  %result_of_block48 = alloca i64
+  %"[GLOBAL]/281" = load i64, i64* @"addr:[GLOBAL]/281"
+  store i64 5, i64* @"addr:[GLOBAL]/281"
+  %361 = load i64, i64* @"addr:[GLOBAL]/281"
+  %362 = load i64, i64* @"addr:[GLOBAL]/281"
+  %"[GLOBAL]/279" = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/279"
+  %363 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/various_function"
+  store { i64, i64 } %363, { i64, i64 }* @"addr:[GLOBAL]/279"
+  %364 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/279"
+  %365 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/279"
+  %366 = load i64, i64* getelementptr inbounds ({ i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/279", i32 0, i32 0)
+  %367 = alloca i64
+  %aaa49 = icmp eq i64 %366, 1
+  br i1 %aaa49, label %on_0, label %merge3
+
+on_0:                                             ; preds = %last_merge
+  %368 = alloca { i64, i64 }
+  %369 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %368, i32 0, i32 1
+  %370 = load i64, i64* @"addr:[GLOBAL]/281"
+  store i64 %370, i64* %369
+  %371 = load i64, i64* %369
+  %tag_of_arg50 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %368, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg50
+  %372 = load i64, i64* %tag_of_arg50
+  %actuall_arg51 = load { i64, i64 }, { i64, i64 }* %368
+  %373 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/279"
+  %"load_ptr_of_elm_'0'" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** getelementptr inbounds ({ i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* bitcast ({ i64, i64 }* @"addr:[GLOBAL]/279" to { i64, { i64, i64 } ({ i64, i64 })* }*), i32 0, i32 1)
+  %374 = call { i64, i64 } %"load_ptr_of_elm_'0'"({ i64, i64 } %actuall_arg51)
+  %temp_ptr_for_res52 = alloca { i64, i64 }
+  store { i64, i64 } %374, { i64, i64 }* %temp_ptr_for_res52
+  %375 = load { i64, i64 }, { i64, i64 }* %temp_ptr_for_res52
+  %376 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %temp_ptr_for_res52, i32 0, i32 1
+  %377 = load i64, i64* %376
+  store i64 %377, i64* %367
+  %378 = load i64, i64* %367
+  br label %last_merge5
+
+merge3:                                           ; preds = %last_merge
+  %379 = icmp eq i64 %366, 2
+  br i1 %379, label %on_1, label %merge4
+
+on_1:                                             ; preds = %merge3
+  %380 = alloca { i64, i64 }
+  %381 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %380, i32 0, i32 1
+  %382 = load i64, i64* @"addr:[GLOBAL]/281"
+  store i64 %382, i64* %381
+  %383 = load i64, i64* %381
+  %tag_of_arg53 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %380, i32 0, i32 0
+  store i64 1, i64* %tag_of_arg53
+  %384 = load i64, i64* %tag_of_arg53
+  %actuall_arg54 = load { i64, i64 }, { i64, i64 }* %380
+  %385 = load { i64, i64 }, { i64, i64 }* @"addr:[GLOBAL]/279"
+  %"load_ptr_of_elm_'1'" = load { i64, i64 } ({ i64, i64 })*, { i64, i64 } ({ i64, i64 })** getelementptr inbounds ({ i64, { i64, i64 } ({ i64, i64 })* }, { i64, { i64, i64 } ({ i64, i64 })* }* bitcast ({ i64, i64 }* @"addr:[GLOBAL]/279" to { i64, { i64, i64 } ({ i64, i64 })* }*), i32 0, i32 1)
+  %386 = call { i64, i64 } %"load_ptr_of_elm_'1'"({ i64, i64 } %actuall_arg54)
+  %temp_ptr_for_res55 = alloca { i64, i64 }
+  store { i64, i64 } %386, { i64, i64 }* %temp_ptr_for_res55
+  %387 = load { i64, i64 }, { i64, i64 }* %temp_ptr_for_res55
+  %388 = getelementptr inbounds { i64, i64 }, { i64, i64 }* %temp_ptr_for_res55, i32 0, i32 1
+  %389 = load i64, i64* %388
+  store i64 %389, i64* %367
+  %390 = load i64, i64* %367
+  br label %last_merge5
+
+merge4:                                           ; preds = %merge3
+  br label %last_merge5
+
+last_merge5:                                      ; preds = %merge4, %on_1, %on_0
+  %391 = load i64, i64* %367
+  store i64 %391, i64* %result_of_block48
+  %392 = load i64, i64* %result_of_block48
+  %393 = load i64, i64* %result_of_block48
+  %result_of_block56 = alloca {}
+  %394 = load {}, {}* %result_of_block56
   call void @free_heaps_associated_calling_id(i64 %0)
   ret i64 0
 }
-
-declare i64* @use_heap(i64)
-
-declare void @register_calling_id()
-
-declare void @register_calling_id_to_free(i64)
 
 declare i64* @malloc(i64)
 
