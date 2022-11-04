@@ -10,7 +10,7 @@ set(LIB_VERSION_STRING "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_PATCH_VE
 
 project(Clawn)
 
-find_package(bison )
+find_package(BISON)
 
 find_package(FLEX)
 
