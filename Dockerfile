@@ -5,10 +5,10 @@
 # docker$ cp -R /src /root/ && cd /root/src
 # docker$ mkdir build && cd build
 # docker$ cmake .. && make
+# docker$ pip3 install -r ../tools/requirements.txt
+# docker$ ./clawn ../sample/hello_world.clawn
 
 FROM debian:bullseye
-
-ARG BISON_VER=3.8.2
 
 RUN apt-get update && \
     apt-get install -y \
@@ -23,5 +23,4 @@ RUN apt-get update && \
       bison \
       flex \
       zlib1g-dev \
-      python3-pip \
-      wget
+      python3-pip
