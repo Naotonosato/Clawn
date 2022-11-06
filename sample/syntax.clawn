@@ -1,4 +1,10 @@
-print("Clawn can print.")
+print("Welcome to Clawn.")
+
+print("================================================")
+
+a = "A"
+list = [a,"B","C"]
+print("list[0] is "+list[0])
 
 function f(x)
 {
@@ -8,6 +14,8 @@ function f(x)
 f(0)
 f(0.1)
 f("ABC")
+
+print("================================================")
 
 function call(functor,x)
 {
@@ -46,11 +54,11 @@ u = U#B("U#B")
 
 match u
 {
-    A=>print(int_to_str(u.A))
-    B=>print(u.B)
+    A=>print("variable `u` contains " + int_to_str(u.A))
+    B=>print("variable `u` contains " + u.B)
 }
 
-
+print("================================================")
 
 function repeat_hello(x)
 {
@@ -74,6 +82,8 @@ function repeat_hey(x)
 various_function = various repeat_hello
 various_function = various repeat_hey
 various_function..(5)
+
+print("================================================")
 
 structure Location
 {

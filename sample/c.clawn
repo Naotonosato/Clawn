@@ -1,4 +1,4 @@
-import "/Users/ueharanaoto/Desktop/Clawn/sample/c.c"
+import "path/to/sample/c.c"
 
 pos = get_position()
 print(float_to_str(pos.x))
