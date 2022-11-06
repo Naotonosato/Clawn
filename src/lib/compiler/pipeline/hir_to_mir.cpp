@@ -598,12 +598,16 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
                 auto tag_name = pattern.first;
                 auto& hir_on_matched = pattern.second.get();
                 if (! target_union_type
-                        .get_element_type(target_union_type.get_index(tag_name))->get_solved()
+                        .get_element_type(target_union_type.get_index(tag_name))
                         ->is_type<requirement::UnsolvedType>())
                 {
                     patterns.push_back(pattern);
                 }
             }
+        }
+        else
+        {
+            patterns = patterns_not_fixed;
         }
 
         std::vector<std::shared_ptr<mir::BasicBlock>> matching_blocks;

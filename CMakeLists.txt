@@ -37,9 +37,9 @@ string(REPLACE "\n" " " LLVM_OPTIONS ${LLVM_OPTIONS})
 string(REPLACE "-fno-exceptions" " " LLVM_OPTIONS ${LLVM_OPTIONS})
 string(REPLACE "-std=c++14" " " LLVM_OPTIONS ${LLVM_OPTIONS})
 message(${LLVM_OPTIONS})
-set(CMAKE_CXX_FLAGS "-std=c++17 -Wno-unused-command-line-argument  -Wno-unused-lambda-capture  -Wno-unused-private-field --debug -O2  ${LLVM_OPTIONS}")
+set(CMAKE_CXX_FLAGS "-std=c++17 -Wno-unused-command-line-argument  -Wno-unused-lambda-capture  -Wno-unused-private-field --debug -O3  ${LLVM_OPTIONS}")
 
-set(ld_flags "--debug -O2 -Wno-unused-lambda-capture  -Wno-unused-private-field -Wno-unused-command-line-argument ${LLVM_LIBS_DIR}/liblldCOFF.a  ${LLVM_LIBS_DIR}/liblldCommon.a  ${LLVM_LIBS_DIR}/liblldCore.a  ${LLVM_LIBS_DIR}/liblldDriver.a  ${LLVM_LIBS_DIR}/liblldELF.a  ${LLVM_LIBS_DIR}/liblldMachO.a  ${LLVM_LIBS_DIR}/liblldMinGW.a  ${LLVM_LIBS_DIR}/liblldReaderWriter.a  ${LLVM_LIBS_DIR}/liblldWasm.a  ${LLVM_LIBS_DIR}/liblldYAML.a ${LLVM_OPTIONS}")
+set(ld_flags "--debug -O3 -Wno-unused-lambda-capture  -Wno-unused-private-field -Wno-unused-command-line-argument ${LLVM_LIBS_DIR}/liblldCOFF.a  ${LLVM_LIBS_DIR}/liblldCommon.a  ${LLVM_LIBS_DIR}/liblldCore.a  ${LLVM_LIBS_DIR}/liblldDriver.a  ${LLVM_LIBS_DIR}/liblldELF.a  ${LLVM_LIBS_DIR}/liblldMachO.a  ${LLVM_LIBS_DIR}/liblldMinGW.a  ${LLVM_LIBS_DIR}/liblldReaderWriter.a  ${LLVM_LIBS_DIR}/liblldWasm.a  ${LLVM_LIBS_DIR}/liblldYAML.a ${LLVM_OPTIONS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${ld_flags}")
 
 

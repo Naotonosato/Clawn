@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libAst.a CMakeFiles/Ast.dir/builder.cpp.o CMakeFiles/Ast.dir/ast.cpp.o CMakeFiles/Ast.dir/visitor.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libAst.a

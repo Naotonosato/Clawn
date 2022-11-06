@@ -778,10 +778,10 @@ void pipeline::mir_to_llvm_ir(mir::Context &mir_context,
     {
         converter.visit(*function);
     }
-    std::error_code error;
-    llvm::raw_fd_ostream stream("llvmir", error);
+    //std::error_code error;
+    //llvm::raw_fd_ostream stream("llvmir", error);
     // llvm::sys::fs::OpenFlags::F_None);
-    llvm_module.print(stream, nullptr);
+    //llvm_module.print(stream, nullptr);
     llvm::verifyModule(llvm_module, &llvm::outs());
 }
 }  // namespace clawn::compiler
