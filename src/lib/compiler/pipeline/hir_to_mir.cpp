@@ -587,7 +587,24 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
 
         auto previous_block = builder.get_current_block();
         auto current_function = builder.get_current_block()->get_owner();
-        auto patterns = hir.get_patterns();
+        auto patterns_not_fixed = hir.get_patterns();
+        std::vector<std::pair<std::string, std::reference_wrapper<const clawn::hir::HIR>>> patterns;
+
+        if(is_various_match)
+        {
+            for (size_t i = 0; i < patterns_not_fixed.size(); i += 1)
+            {
+                auto pattern = patterns_not_fixed.at(i);
+                auto tag_name = pattern.first;
+                auto& hir_on_matched = pattern.second.get();
+                if (! target_union_type
+                        .get_element_type(target_union_type.get_index(tag_name))->get_solved()
+                        ->is_type<requirement::UnsolvedType>())
+                {
+                    patterns.push_back(pattern);
+                }
+            }
+        }
 
         std::vector<std::shared_ptr<mir::BasicBlock>> matching_blocks;
         std::vector<std::shared_ptr<mir::BasicBlock>>
@@ -633,7 +650,7 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
         auto match_tag_index = mir::MIR::create<mir::Integer, mir::Value>(
             context, scope, target_union_type.get_index(tag_name));
         auto comparison = builder.create_compare_primitive(
-            scope, tag_info, match_tag_index, "aaa");
+            scope, tag_info, match_tag_index, "tag_cmp");
         builder.create_conditional_jump(scope, matching_blocks.at(0),
                                         merge_blocks.at(0), comparison);
 

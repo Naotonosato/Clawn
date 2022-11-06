@@ -5,6 +5,7 @@ src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/algorith
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/algorithm/union_find/union_find.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/ast/ast.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/ast/builder.hpp
+src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/compiler/constants.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/compiler/error.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/compiler/module/module.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: ../src/include/compiler/parser/driver.hpp
@@ -156,6 +157,8 @@ src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: /usr/local/opt/llvm/inc
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: /usr/local/opt/llvm/include/llvm/Support/TypeName.h
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: /usr/local/opt/llvm/include/llvm/Support/raw_ostream.h
 src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: /usr/local/opt/llvm/include/llvm/Support/type_traits.h
+src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: location.hh
+src/lib/compiler/CMakeFiles/Compiler.dir/compiler.cpp.o: parser.hpp
 
 src/lib/compiler/CMakeFiles/Compiler.dir/error.cpp.o: ../src/include/compiler/error.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/error.cpp.o: ../src/include/hierarchy/hierarchy.hpp
@@ -190,9 +193,12 @@ src/lib/compiler/CMakeFiles/Compiler.dir/module/module.cpp.o: parser.hpp
 
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/algorithm/union_find/union_find.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/ast/ast.hpp
+src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/ast/builder.hpp
+src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/compiler/constants.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/compiler/parser/driver.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/compiler/parser/lexer.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/compiler/parser/prelexer.hpp
+src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/hierarchy/hierarchical_collector.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/hierarchy/hierarchy.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/location/location.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/requirement/requirement.hpp
@@ -204,6 +210,8 @@ src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/uti
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/include/utils/variant_wrapper.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: ../src/lib/compiler/parser/driver.cpp
 src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: /usr/local/opt/flex/include/FlexLexer.h
+src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: location.hh
+src/lib/compiler/CMakeFiles/Compiler.dir/parser/driver.cpp.o: parser.hpp
 
 src/lib/compiler/CMakeFiles/Compiler.dir/pipeline/ast_to_hir.cpp.o: ../src/include/algorithm/tree.hpp
 src/lib/compiler/CMakeFiles/Compiler.dir/pipeline/ast_to_hir.cpp.o: ../src/include/algorithm/union_find/union_find.hpp
