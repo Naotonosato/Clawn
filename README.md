@@ -7,10 +7,6 @@ Clawnは人間にとっての扱いやすさを第一に設計されたプログ
 
 ## 使い方
 
-### 動作環境
-
-Clawnは現在Mac OS上でのみ動作が確認されています。Mac OS以外のOSをご利用の方は今後Clawnをインストール済みのDocker Imageを配布する予定ですので少々お待ちください。
-
 ### インストール方法
 
 Dockerをインストールの上、[Dockerfile](https://github.com/Naotonosato/Clawn/blob/main/Dockerfile)からイメージを作成し、作成したイメージ上で本リポジトリをCloneし、Clawnディレクトリに移動したのち
