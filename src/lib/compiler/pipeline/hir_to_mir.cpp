@@ -474,6 +474,12 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
                              .get_reference_to()
                              ->as<requirement::FunctionType>()
                              .get_return_type();
+        if (!list->is_type<mir::Load>())
+        {
+            auto temporary_allocation = builder.create_allocate(scope,list->get_type());
+            builder.create_store(scope,temporary_allocation,list);
+            list = builder.create_load(scope,temporary_allocation);
+        }
         auto list_pointer = builder.create_cast(
             scope, list->as<mir::Load>().get_address(), list_type);
 
@@ -853,6 +859,12 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
                            ->as<requirement::StructureType>()
                            .get_name() == "String";
         };
+        auto is_list = [](std::shared_ptr<clawn::mir::Value> mir) {
+            return mir->get_type()->is_type<requirement::StructureType>()
+            && mir->get_type()->as<requirement::StructureType>().get_name() == builtins::STRUCTURE_LIST_NAME;
+        };
+
+        bool load_needed = false;
 
         if (kind == hir::OperatorKind::Addition)
         {
@@ -867,6 +879,37 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
             if (is_string(left))
             {
                 builtin_function_name_to_call = "get_appended_string";
+            }
+            if (is_list(left))
+            {
+                builtin_function_name_to_call = "get_appended_list";
+                if (!left->is_type<mir::Load>())
+                {
+                    auto temporary_allocation = builder.create_allocate(scope,left->get_type());
+                    builder.create_store(scope,temporary_allocation,left);
+                    left = builder.create_load(scope,temporary_allocation);
+                }
+                auto original_left_type = left->get_type();
+                left = left->as<mir::Load>().get_address();
+                auto list_type = variable_addresses.at("list_constructor")
+                             ->get_type()
+                             ->as<requirement::ReferenceType>()
+                             .get_reference_to()
+                             ->as<requirement::FunctionType>()
+                             .get_return_type();
+                left = builder.create_cast(scope,left,list_type);
+                auto temporary_allocation_right = builder.create_allocate(scope,right->get_type());
+                builder.create_store(scope,temporary_allocation_right,right);
+                right = builder.create_cast(scope,temporary_allocation_right,type_environment.get_integer_type()->get_pointer_to());
+                auto builtin_function = builder.create_load(
+                    scope,
+                    variable_addresses.at(builtin_function_name_to_call.value()));
+                
+                auto calling = builder.create_load(scope,builder.create_call(scope, builtin_function, {left,right}));
+                auto allocation_to_cast = builder.create_allocate(scope, calling->get_type());
+                builder.create_store(scope,allocation_to_cast,calling);
+                return builder.create_load(scope,builder.create_cast(scope,allocation_to_cast,original_left_type->get_pointer_to()));
+                //return builder.create_cast(scope,builder.create_load(scope, calling),original_left_type);
             }
         }
         if (kind == hir::OperatorKind::Subtraction)
@@ -1004,7 +1047,8 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
         auto builtin_function = builder.create_load(
             scope,
             variable_addresses.at(builtin_function_name_to_call.value()));
-        return builder.create_call(scope, builtin_function, {left, right});
+        
+        return builder.create_call(scope, builtin_function, {left,right});
     }
 
     std::shared_ptr<mir::Value> visit(const hir::SetResult& hir) const override

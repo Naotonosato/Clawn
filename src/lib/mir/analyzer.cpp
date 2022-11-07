@@ -76,7 +76,7 @@ class LifeTimeAnalyzer : public mir::ValueVisitor<LifeTimeAnalyzer>
                                  ->get_type()
                                  ->as<requirement::FunctionType>()
                                  .get_name();
-        if (function_name.find("[GLOBAL]") == std::string::npos)
+        if (function_name.find("[GLOBAL]") == std::string::npos && function_name != "append" && function_name != "get_appended_list")
         {
             return;
         }

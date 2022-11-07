@@ -208,7 +208,7 @@ class CompileOption get_expanded(const std::string& filename)
 void run_commands(CompileOption option, int argc, char** argv)
 {
     std::string emitted_object_file = "tmp/compiled.o";
-    system("clang -c -Wno-return-type builtins.cpp -o tmp/builtins.o;");
+    system("clang -c -O3 -Wno-return-type builtins.cpp -o tmp/builtins.o;");
     std::vector<std::string> link_arguments =
         {};  //{emitted_object_file, "-arch",
              //"x86_64","-demangle","-lto_library","/usr/local/Cellar/llvm/9.0.0_1/lib/libLTO.dylib","-no_deduplicate",

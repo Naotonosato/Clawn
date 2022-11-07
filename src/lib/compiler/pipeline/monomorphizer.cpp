@@ -88,6 +88,22 @@ std::vector<std::shared_ptr<requirement::Type>> replace_arguments_types(
     // if(candidates.size() <= 1){return {};}
     requirement::TypeSet result_type_candidates_no_duplicates;
 
+    if(candidates.size() > 0 && candidates[0].size() == 0) //if no argument function
+    {
+        auto got_result_type = type_environment.get_return_type(
+            function.get_type(),
+            {});
+        if(got_result_type.has_value())
+        {
+            type_solver->bind(
+                type.get_return_type(),
+                got_result_type.value(),
+                function.get_location()
+            );
+        }
+        return {};
+    }
+
     for (auto& candidate : candidates)
     {
         if (type.get_argument_names().size() != candidate.size())
@@ -191,6 +207,32 @@ std::unique_ptr<hir::HIR> create_root_function(
     size_t argument_index = 0;
 
     std::vector<std::unique_ptr<hir::HIR>> root_function_body;
+
+    if(argument_pattern.size() > 0 && argument_pattern[0].size() == 0) //if no argument function
+    {
+        auto function_type_to_call =
+            specialized_functions.at({});
+        auto function_to_call = hir::HIR::create<hir::Variable>(
+            function_type_to_call, function_type_to_call->get_name(),
+            function.get_location());
+        auto return_type =
+            type_environment
+                .get_return_type(function.get_type(), {})
+                .value();
+        auto returning = hir::HIR::create<hir::Return>(
+            return_type, function.get_location(),
+            hir::HIR::create<hir::FunctionCall>(
+                return_type, function.get_location(),
+                std::move(function_to_call), std::vector<std::unique_ptr<hir::HIR>>()
+            )
+        );
+        root_function_body.push_back(std::move(returning));
+        auto root_function = hir::HIR::create<hir::Function>(
+        function.get_type(), location, function.get_name(),
+        hir::HIR::create<hir::Block>(function_type.get_return_type(), location,
+                                     std::move(root_function_body)));
+        return root_function;
+    }
 
     for (auto& passed_argument_types : argument_pattern)
     {
@@ -620,6 +662,36 @@ void type_element(const hir::AccessList& accessing,
         utils::Default(), [](const auto&) {});
 }
 
+void type_element(const hir::BinaryExpression& addition,
+                  requirement::TypeEnvironment& type_environment)
+{
+    utils::Match{addition.get_targets().first.get().get_type()->get_variant()}(
+        utils::Type<requirement::StructureType>(),
+        [&addition,
+         &type_environment](const requirement::StructureType& list_type) {
+            auto type_solver = type_environment.get_solver();
+            if (list_type.get_name() == builtins::STRUCTURE_LIST_NAME && addition.get_kind() == hir::OperatorKind::Addition)
+            {
+                auto registered_element_type = type_environment.get_element_type(addition.get_targets().first.get().get_type());
+                if(registered_element_type.has_value())
+                {
+                    type_solver->bind(
+                        registered_element_type.value(),
+                        addition.get_targets().second.get().get_type(),
+                        addition.get_location()
+                    );
+                }
+                auto element_type = list_type.get_element_type("pointer");
+                type_solver->bind(
+                    element_type->as<requirement::ReferenceType>().get_reference_to(),
+                    addition.get_targets().second.get().get_type(),
+                    addition.get_location()
+                );
+            }
+        },
+        utils::Default(), [](const auto&) {});
+}
+
 namespace pipeline
 {
 std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
@@ -681,6 +753,10 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
             utils::Type<hir::AccessList>(),
             [&child, &type_environment](const hir::AccessList& accessing) {
                 type_element(accessing, *type_environment);
+            },
+            utils::Type<hir::BinaryExpression>(),
+            [&child, &type_environment](const hir::BinaryExpression& addition) {
+                type_element(addition, *type_environment);
             },
             utils::Default(), [](const auto&) {});
     };

@@ -3,8 +3,8 @@ print("Welcome to Clawn.")
 print("================================================")
 
 a = "A"
-list = [a,"B","C"]
-print("list[0] is "+list[0])
+list = [a,"B"] + "C"
+print("list[2] is "+list[2])
 
 function f(x)
 {
@@ -27,8 +27,8 @@ result = call(f,0)
 
 message = if result == 0
           {
-              print("Result was verified.")
               => "OK"
+              print("Result was verified.")
           } else
           {
               =>"Something went wrong."
