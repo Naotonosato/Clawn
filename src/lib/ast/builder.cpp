@@ -1,5 +1,6 @@
 #include <variant>
 #include <type_traits>
+#include <algorithm>
 #include "include/ast/ast.hpp"
 #include "include/ast/visitor.hpp"
 #include "include/hierarchy/hierarchical_collector.hpp"
@@ -512,8 +513,8 @@ std::unique_ptr<AST> Builder::create_generic_class_definition(
 
 std::unique_ptr<AST> Builder::create_C_type_declaration(
     const std::string& name,
-    const std::vector<std::pair<const std::string,
-                                std::vector<const std::string>>>& member_types)
+    const std::vector<std::pair<std::string,
+                                std::vector<std::string>>>& member_types)
 {
     return AST::create<CTypeDeclaration>(create_current_debug_info(), name,
                                          member_types);
@@ -521,8 +522,8 @@ std::unique_ptr<AST> Builder::create_C_type_declaration(
 
 std::unique_ptr<AST> Builder::create_C_function_declaration(
     const std::string& name,
-    const std::vector<std::vector<const std::string>>& argument_types,
-    const std::vector<const std::string>& return_type)
+    const std::vector<std::vector<std::string>>& argument_types,
+    const std::vector<std::string>& return_type)
 {
     auto declaration = AST::create<CFunctionDeclaration>(
         create_current_debug_info(), name, argument_types, return_type);

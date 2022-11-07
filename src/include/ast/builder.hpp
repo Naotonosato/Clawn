@@ -149,13 +149,13 @@ class Builder
     std::unique_ptr<AST> create_C_type_declaration(
         const std::string& name,
         const std::vector<
-            std::pair<const std::string, std::vector<const std::string>>>&
+            std::pair<std::string, std::vector<std::string>>>&
             member_types);
 
     std::unique_ptr<AST> create_C_function_declaration(
         const std::string& name,
-        const std::vector<std::vector<const std::string>>& argument_types,
-        const std::vector<const std::string>& return_type);
+        const std::vector<std::vector<std::string>>& argument_types,
+        const std::vector<std::string>& return_type);
 
     std::unique_ptr<AST> create_block(
         std::vector<std::unique_ptr<AST>>&& expressions);

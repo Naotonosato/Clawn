@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 add_custom_target(build_clawn)
 
-set(CMAKE_CXX_COMPILER "g++" CACHE string "g++ compiler" FORCE)
+set(CMAKE_CXX_COMPILER "g++" CACHE STRING "g++ compiler" FORCE)
 
 set(LIB_MAJOR_VERSION "0")
 set(LIB_MINOR_VERSION "1")
@@ -10,24 +10,24 @@ set(LIB_VERSION_STRING "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_PATCH_VE
 
 project(Clawn)
 
-find_package(BISON)
+find_package(BISON REQUIRED)
 
-find_package(FLEX)
+find_package(FLEX REQUIRED)
 
-find_package(LLVM 9)
+find_package(LLVM 9 REQUIRED)
 set(FLEX_INCLUDE_DIRS /usr/local/opt/flex/include)
 set(FLEX_LIBRARIES /usr/local/opt/flex/lib)
 set(BISON_INCLUDE_DIRS usr/local/opt/bison/include)
 
-bison_target(parser ./src/lib/compiler/parser/parser.yy ${CMAKE_CURRENT_BINARY_DIR}/parser.cpp COMPILE_FLAGS --debug)
-flex_target(prelexer ./src/lib/compiler/parser/prelexer.ll ${CMAKE_CURRENT_BINARY_DIR}/prelexer.cpp COMPILE_FLAGS "--debug -Ppre")
-flex_target(lexer ./src/lib/compiler/parser/lexer.ll ${CMAKE_CURRENT_BINARY_DIR}/lexer.cpp COMPILE_FLAGS --debug)
+bison_target(parser ${CMAKE_SOURCE_DIR}/src/lib/compiler/parser/parser.yy ${CMAKE_CURRENT_BINARY_DIR}/parser.cpp COMPILE_FLAGS --debug)
+flex_target(prelexer ${CMAKE_SOURCE_DIR}/src/lib/compiler/parser/prelexer.ll ${CMAKE_CURRENT_BINARY_DIR}/prelexer.cpp COMPILE_FLAGS "--debug -Ppre")
+flex_target(lexer ${CMAKE_SOURCE_DIR}/src/lib/compiler/parser/lexer.ll ${CMAKE_CURRENT_BINARY_DIR}/lexer.cpp COMPILE_FLAGS --debug)
 
 ADD_FLEX_BISON_DEPENDENCY(lexer parser)
 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/ ${LLVM_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR} ${LLVM_INCLUDE_DIRS} ${FLEX_INCLUDE_DIRS})
-set(CLAWN_LIB_DIR "${PROJECT_SOURCE_DIR}/src/lib")
+set(CLAWN_LIB_DIR "${CMAKE_SOURCE_DIR}/src/lib")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -69,7 +69,7 @@ add_library(Parser STATIC
 	)
 
 add_executable(clawn ${CLAWN_LIB_DIR}/main.cpp)
-target_link_libraries(clawn Parser Location Ast HIR MIR Compiler Hierarchy Utils Requirements Resource ${llvm_libs})
+target_link_libraries(clawn Compiler Parser Location Ast Requirements HIR MIR Hierarchy Utils Resource LLVM ${llvm_libs})
 
 add_dependencies(build_clawn clawn)
 
