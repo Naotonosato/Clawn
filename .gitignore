@@ -1,7 +1,7 @@
 tmp/
-build/
 .vscode/
 dev_utils/
+build/
 *.code-workspace
 *.swp
 *.tmp
