@@ -35,8 +35,7 @@ void pipeline::create_binary(const std::string& filename,
     llvm::InitializeAllAsmParsers();
     llvm::InitializeAllAsmPrinters();
 
-    auto TargetTriple = "x86_64-apple-macosx10.15.0"; // for Intel Mac
-    //auto TargetTriple = "x86_64-unknown-linux-gnu"; // for Linux x86_64
+    auto TargetTriple = llvm::sys::getDefaultTargetTriple();
     llvm_module->setTargetTriple(TargetTriple);
 
     std::string Error;

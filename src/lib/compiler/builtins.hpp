@@ -49,6 +49,8 @@ extern "C" void clawn_set_element(void* array, i64_t size, i64_t element_size,
 
 extern "C" _List* list_constructor(i64_t element_size);
 
+extern "C" _List* get_appended_list(_List* list, void* new_element);
+
 extern "C" void append(_List* list, void* new_element);
 
 extern "C" void* get(_List* list, i64_t index);

@@ -26,6 +26,7 @@ extern "C" i64_t get_unique_number()
 extern "C" i64_t* use_heap(i64_t size)
 {
     auto heap_address = malloc(size);
+    //printf("MALLOC\n");
     last_heaps.push_back(heap_address);
     return (i64_t*)heap_address;
 }
@@ -71,6 +72,7 @@ extern "C" void free_heaps(i64_t id)
         }
         for (auto& heap : heaps[id])
         {
+            //printf("FREE\n");
             free(heap);
         }
     }
@@ -157,6 +159,22 @@ extern "C" void append(_List* list, void* new_element)
     }
     clawn_memcpy(list->pointer, list->size, list->element_size, new_element);
     list->size += 1;
+}
+
+extern "C" _List* get_appended_list(_List* list, void* new_element)
+{
+    auto new_list = list_constructor(list->element_size);
+    new_list->allocated_size = list->allocated_size;
+    new_list->size = list->size;
+    new_list->pointer = nullptr;
+    new_list->pointer = clawn_realloc(new_list->pointer, new_list->element_size,
+                                      new_list->allocated_size);
+    for (size_t i = 0; i < new_list->size; i++)
+    {
+        clawn_memcpy(new_list->pointer, i, new_list->element_size, get(list,i));
+    }
+    append(new_list,new_element);
+    return new_list;
 }
 
 extern "C" void* get(_List* list, i64_t index)

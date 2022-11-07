@@ -182,8 +182,8 @@ class LLVMTypeGenerator
     }
     llvm::Type *visit(const requirement::ListType &original) const
     {
+        throw std::runtime_error("not implemented or obsoluted.");
         return original.get_element_type()->get_pointer_to()->accept(*this);
-        // throw std::runtime_error("not implemented or obsoluted.");
     }
 
     llvm::Type *visit(const requirement::UnionType &original) const
@@ -778,10 +778,10 @@ void pipeline::mir_to_llvm_ir(mir::Context &mir_context,
     {
         converter.visit(*function);
     }
-    std::error_code error;
-    llvm::raw_fd_ostream stream("llvmir", error);
-    // llvm::sys::fs::OpenFlags::F_None);
-    llvm_module.print(stream, nullptr);
+    //std::error_code error;
+    //llvm::raw_fd_ostream stream("llvmir", error);
+        ////llvm::sys::fs::OpenFlags::F_None);
+    //llvm_module.print(stream, nullptr);
     llvm::verifyModule(llvm_module, &llvm::outs());
 }
 }  // namespace clawn::compiler
