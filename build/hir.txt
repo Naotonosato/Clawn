@@ -1,0 +1,798 @@
+~ROOT~Block:{
+}:[GLOBAL]/Various#0<(unsolved)->union @result_of_function_[GLOBAL]/Various#0{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#1<(unsolved)->union @result_of_function_[GLOBAL]/Various#1{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#2<(unsolved)->union @result_of_function_[GLOBAL]/Various#2{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#3<(unsolved)->union @result_of_function_[GLOBAL]/Various#3{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#4<(unsolved)->union @result_of_function_[GLOBAL]/Various#4{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#5<(unsolved)->union @result_of_function_[GLOBAL]/Various#5{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#6<(unsolved)->union @result_of_function_[GLOBAL]/Various#6{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#7<(unsolved)->union @result_of_function_[GLOBAL]/Various#7{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#8<(unsolved)->union @result_of_function_[GLOBAL]/Various#8{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#9<(unsolved)->union @result_of_function_[GLOBAL]/Various#9{:Integer}>
+
+[GLOBAL]/f:@[GLOBAL]/f<()->union @result_of_function_[GLOBAL]/f{:Integer}> = Block:{
+}:[GLOBAL]/f<()->union @result_of_function_[GLOBAL]/f{:Integer}>
+
+Block:{
+}:unsolved
+
+Block:{
+}:unsolved
+
+[GLOBAL]/get_unique_number:@get_unique_number<()->CType7> = function:get_unique_numberget_unique_number<()->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/use_heap:@use_heap<(CType7)->reference<CType7>> = function:use_heapuse_heap<(CType7)->reference<CType7>>{
+Block:{
+}:reference<CType7>
+
+}
+[GLOBAL]/register_calling_id:@register_calling_id<()->Void> = function:register_calling_idregister_calling_id<()->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/register_calling_id_to_free:@register_calling_id_to_free<(CType7)->Void> = function:register_calling_id_to_freeregister_calling_id_to_free<(CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/free_heaps_associated_calling_id:@free_heaps_associated_calling_id<(CType7)->Void> = function:free_heaps_associated_calling_idfree_heaps_associated_calling_id<(CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/free_heaps:@free_heaps<(CType7)->Void> = function:free_heapsfree_heaps<(CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/malloc:@malloc<(CType12)->reference<CType4>> = function:mallocmalloc<(CType12)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/memcpy:@memcpy<(reference<CType4>, reference<CType4>, CType12)->reference<CType4>> = function:memcpymemcpy<(reference<CType4>, reference<CType4>, CType12)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/exit:@exit<(CType4)->Void> = function:exitexit<(CType4)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/printf:@printf<(reference<CType1>)->CType4> = function:printfprintf<(reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/snprintf:@snprintf<(reference<CType1>, CType12, reference<CType1>)->CType4> = function:snprintfsnprintf<(reference<CType1>, CType12, reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/realloc:@realloc<(reference<CType4>, CType12)->reference<CType4>> = function:reallocrealloc<(reference<CType4>, CType12)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/puts:@puts<(reference<CType1>)->CType4> = function:putsputs<(reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/strcat:@strcat<(reference<CType1>, reference<CType1>)->reference<CType1>> = function:strcatstrcat<(reference<CType1>, reference<CType1>)->reference<CType1>>{
+Block:{
+}:reference<CType1>
+
+}
+[GLOBAL]/strcmp:@strcmp<(reference<CType1>, reference<CType1>)->CType4> = function:strcmpstrcmp<(reference<CType1>, reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/clawn_realloc:@clawn_realloc<(reference<CType4>, CType7, CType7)->reference<CType4>> = function:clawn_reallocclawn_realloc<(reference<CType4>, CType7, CType7)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/clawn_memcpy:@clawn_memcpy<(reference<CType4>, CType7, CType7, reference<CType4>)->Void> = function:clawn_memcpyclawn_memcpy<(reference<CType4>, CType7, CType7, reference<CType4>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/clawn_index:@clawn_index<(reference<CType4>, CType7, CType7, CType7)->reference<CType4>> = function:clawn_indexclawn_index<(reference<CType4>, CType7, CType7, CType7)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/clawn_set_element:@clawn_set_element<(reference<CType4>, CType7, CType7, reference<CType4>, CType7)->Void> = function:clawn_set_elementclawn_set_element<(reference<CType4>, CType7, CType7, reference<CType4>, CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/list_constructor:@list_constructor<(CType7)->reference<_List>> = function:list_constructorlist_constructor<(CType7)->reference<_List>>{
+Block:{
+}:reference<_List>
+
+}
+[GLOBAL]/append:@append<(reference<_List>, reference<CType4>)->Void> = function:appendappend<(reference<_List>, reference<CType4>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/get:@get<(reference<_List>, CType7)->reference<CType4>> = function:getget<(reference<_List>, CType7)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/print:@print<(reference<String>)->Void> = function:printprint<(reference<String>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/string_constructor:@string_constructor<(reference<CType1>, CType7)->reference<String>> = function:string_constructorstring_constructor<(reference<CType1>, CType7)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/input:@input<()->reference<String>> = function:inputinput<()->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/get_appended_string:@get_appended_string<(reference<String>, reference<String>)->reference<String>> = function:get_appended_stringget_appended_string<(reference<String>, reference<String>)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/to_char_ptr:@to_char_ptr<(reference<String>)->reference<CType1>> = function:to_char_ptrto_char_ptr<(reference<String>)->reference<CType1>>{
+Block:{
+}:reference<CType1>
+
+}
+[GLOBAL]/append_string:@append_string<(reference<String>, reference<String>)->Void> = function:append_stringappend_string<(reference<String>, reference<String>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/int_to_str:@int_to_str<(CType7)->reference<String>> = function:int_to_strint_to_str<(CType7)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/float_to_str:@float_to_str<(CType2)->reference<String>> = function:float_to_strfloat_to_str<(CType2)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/to_real_number:@to_real_number<(CType7)->CType2> = function:to_real_numberto_real_number<(CType7)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/to_integer:@to_integer<(CType2)->CType7> = function:to_integerto_integer<(CType2)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/op_and:@op_and<(CType0, CType0)->CType0> = function:op_andop_and<(CType0, CType0)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_or:@op_or<(CType0, CType0)->CType0> = function:op_orop_or<(CType0, CType0)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_equal_string:@op_equal_string<(reference<String>, reference<String>)->CType0> = function:op_equal_stringop_equal_string<(reference<String>, reference<String>)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/add_int:@add_int<(CType7, CType7)->CType7> = function:add_intadd_int<(CType7, CType7)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/sub_int:@sub_int<(CType7, CType7)->CType7> = function:sub_intsub_int<(CType7, CType7)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/mul_int:@mul_int<(CType7, CType7)->CType7> = function:mul_intmul_int<(CType7, CType7)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/op_greater_than_int:@op_greater_than_int<(CType7, CType7)->CType0> = function:op_greater_than_intop_greater_than_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_greater_than_or_equal_int:@op_greater_than_or_equal_int<(CType7, CType7)->CType0> = function:op_greater_than_or_equal_intop_greater_than_or_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_int:@op_less_than_int<(CType7, CType7)->CType0> = function:op_less_than_intop_less_than_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_or_equal_int:@op_less_than_or_equal_int<(CType7, CType7)->CType0> = function:op_less_than_or_equal_intop_less_than_or_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_equal_int:@op_equal_int<(CType7, CType7)->CType0> = function:op_equal_intop_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_not_equal_int:@op_not_equal_int<(CType7, CType7)->CType0> = function:op_not_equal_intop_not_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/add_double:@add_double<(CType2, CType2)->CType2> = function:add_doubleadd_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/sub_double:@sub_double<(CType2, CType2)->CType2> = function:sub_doublesub_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/mul_double:@mul_double<(CType2, CType2)->CType2> = function:mul_doublemul_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_double_double:@div_double_double<(CType2, CType2)->CType2> = function:div_double_doublediv_double_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_double_int:@div_double_int<(CType2, CType7)->CType2> = function:div_double_intdiv_double_int<(CType2, CType7)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_int_double:@div_int_double<(CType7, CType2)->CType2> = function:div_int_doublediv_int_double<(CType7, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_int_int:@div_int_int<(CType7, CType7)->CType2> = function:div_int_intdiv_int_int<(CType7, CType7)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/op_greater_than_double:@op_greater_than_double<(CType2, CType2)->CType0> = function:op_greater_than_doubleop_greater_than_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_greater_than_or_equal_double:@op_greater_than_or_equal_double<(CType2, CType2)->CType0> = function:op_greater_than_or_equal_doubleop_greater_than_or_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_double:@op_less_than_double<(CType2, CType2)->CType0> = function:op_less_than_doubleop_less_than_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_or_equal_double:@op_less_than_or_equal_double<(CType2, CType2)->CType0> = function:op_less_than_or_equal_doubleop_less_than_or_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_equal_double:@op_equal_double<(CType2, CType2)->CType0> = function:op_equal_doubleop_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_not_equal_double:@op_not_equal_double<(CType2, CType2)->CType0> = function:op_not_equal_doubleop_not_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+function:[GLOBAL]/f[GLOBAL]/f<()->union @result_of_function_[GLOBAL]/f{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/f{:Integer}
+
+}
+[GLOBAL]/got:@type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>} = [GLOBAL]/f:@[GLOBAL]/f<()->union @result_of_function_[GLOBAL]/f{:Integer}>(
+
+):type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}
+[GLOBAL]/print:@print<(reference<String>)->Void>(
+    [GLOBAL]/got:@type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}[0]
+):Void
+Block:{
+  function:[GLOBAL]/Various#0[GLOBAL]/Various#0<(unsolved)->union @result_of_function_[GLOBAL]/Various#0{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#0{:Integer}
+
+}
+  function:[GLOBAL]/Various#1[GLOBAL]/Various#1<(unsolved)->union @result_of_function_[GLOBAL]/Various#1{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#1{:Integer}
+
+}
+  function:[GLOBAL]/Various#2[GLOBAL]/Various#2<(unsolved)->union @result_of_function_[GLOBAL]/Various#2{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#2{:Integer}
+
+}
+  function:[GLOBAL]/Various#3[GLOBAL]/Various#3<(unsolved)->union @result_of_function_[GLOBAL]/Various#3{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#3{:Integer}
+
+}
+  function:[GLOBAL]/Various#4[GLOBAL]/Various#4<(unsolved)->union @result_of_function_[GLOBAL]/Various#4{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#4{:Integer}
+
+}
+  function:[GLOBAL]/Various#5[GLOBAL]/Various#5<(unsolved)->union @result_of_function_[GLOBAL]/Various#5{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#5{:Integer}
+
+}
+  function:[GLOBAL]/Various#6[GLOBAL]/Various#6<(unsolved)->union @result_of_function_[GLOBAL]/Various#6{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#6{:Integer}
+
+}
+  function:[GLOBAL]/Various#7[GLOBAL]/Various#7<(unsolved)->union @result_of_function_[GLOBAL]/Various#7{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#7{:Integer}
+
+}
+  function:[GLOBAL]/Various#8[GLOBAL]/Various#8<(unsolved)->union @result_of_function_[GLOBAL]/Various#8{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#8{:Integer}
+
+}
+  function:[GLOBAL]/Various#9[GLOBAL]/Various#9<(unsolved)->union @result_of_function_[GLOBAL]/Various#9{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#9{:Integer}
+
+}
+}:unsolved
+
+function:[GLOBAL]/f_2029[GLOBAL]/f_2029<()->type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}>{
+Block:{
+  [GLOBAL]/f/l:@type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>} = type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}["1", "2", "3"]
+  return [GLOBAL]/f/l:@type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}
+}:type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}
+
+}
+
+Stored value type does not match pointer operand type!
+  store {} %185, { i64, i64, i64, { i8*, i64 }** }* @"addr:[GLOBAL]/got"[1;32mCompilation succeeded[0m
+Error: list index out of range
+
+ { i64, i64, i64, { i8*, i64 }** }~ROOT~Block:{
+}:[GLOBAL]/Various#0<(unsolved)->union @result_of_function_[GLOBAL]/Various#0{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#1<(unsolved)->union @result_of_function_[GLOBAL]/Various#1{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#2<(unsolved)->union @result_of_function_[GLOBAL]/Various#2{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#3<(unsolved)->union @result_of_function_[GLOBAL]/Various#3{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#4<(unsolved)->union @result_of_function_[GLOBAL]/Various#4{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#5<(unsolved)->union @result_of_function_[GLOBAL]/Various#5{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#6<(unsolved)->union @result_of_function_[GLOBAL]/Various#6{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#7<(unsolved)->union @result_of_function_[GLOBAL]/Various#7{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#8<(unsolved)->union @result_of_function_[GLOBAL]/Various#8{:Integer}>
+
+Block:{
+}:[GLOBAL]/Various#9<(unsolved)->union @result_of_function_[GLOBAL]/Various#9{:Integer}>
+
+[GLOBAL]/f:@[GLOBAL]/f<()->type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}> = Block:{
+}:[GLOBAL]/f<()->type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}>
+
+Block:{
+}:unsolved
+
+Block:{
+}:unsolved
+
+[GLOBAL]/get_unique_number:@get_unique_number<()->CType7> = function:get_unique_numberget_unique_number<()->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/use_heap:@use_heap<(CType7)->reference<CType7>> = function:use_heapuse_heap<(CType7)->reference<CType7>>{
+Block:{
+}:reference<CType7>
+
+}
+[GLOBAL]/register_calling_id:@register_calling_id<()->Void> = function:register_calling_idregister_calling_id<()->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/register_calling_id_to_free:@register_calling_id_to_free<(CType7)->Void> = function:register_calling_id_to_freeregister_calling_id_to_free<(CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/free_heaps_associated_calling_id:@free_heaps_associated_calling_id<(CType7)->Void> = function:free_heaps_associated_calling_idfree_heaps_associated_calling_id<(CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/free_heaps:@free_heaps<(CType7)->Void> = function:free_heapsfree_heaps<(CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/malloc:@malloc<(CType12)->reference<CType4>> = function:mallocmalloc<(CType12)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/memcpy:@memcpy<(reference<CType4>, reference<CType4>, CType12)->reference<CType4>> = function:memcpymemcpy<(reference<CType4>, reference<CType4>, CType12)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/exit:@exit<(CType4)->Void> = function:exitexit<(CType4)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/printf:@printf<(reference<CType1>)->CType4> = function:printfprintf<(reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/snprintf:@snprintf<(reference<CType1>, CType12, reference<CType1>)->CType4> = function:snprintfsnprintf<(reference<CType1>, CType12, reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/realloc:@realloc<(reference<CType4>, CType12)->reference<CType4>> = function:reallocrealloc<(reference<CType4>, CType12)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/puts:@puts<(reference<CType1>)->CType4> = function:putsputs<(reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/strcat:@strcat<(reference<CType1>, reference<CType1>)->reference<CType1>> = function:strcatstrcat<(reference<CType1>, reference<CType1>)->reference<CType1>>{
+Block:{
+}:reference<CType1>
+
+}
+[GLOBAL]/strcmp:@strcmp<(reference<CType1>, reference<CType1>)->CType4> = function:strcmpstrcmp<(reference<CType1>, reference<CType1>)->CType4>{
+Block:{
+}:CType4
+
+}
+[GLOBAL]/clawn_realloc:@clawn_realloc<(reference<CType4>, CType7, CType7)->reference<CType4>> = function:clawn_reallocclawn_realloc<(reference<CType4>, CType7, CType7)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/clawn_memcpy:@clawn_memcpy<(reference<CType4>, CType7, CType7, reference<CType4>)->Void> = function:clawn_memcpyclawn_memcpy<(reference<CType4>, CType7, CType7, reference<CType4>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/clawn_index:@clawn_index<(reference<CType4>, CType7, CType7, CType7)->reference<CType4>> = function:clawn_indexclawn_index<(reference<CType4>, CType7, CType7, CType7)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/clawn_set_element:@clawn_set_element<(reference<CType4>, CType7, CType7, reference<CType4>, CType7)->Void> = function:clawn_set_elementclawn_set_element<(reference<CType4>, CType7, CType7, reference<CType4>, CType7)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/list_constructor:@list_constructor<(CType7)->reference<_List>> = function:list_constructorlist_constructor<(CType7)->reference<_List>>{
+Block:{
+}:reference<_List>
+
+}
+[GLOBAL]/append:@append<(reference<_List>, reference<CType4>)->Void> = function:appendappend<(reference<_List>, reference<CType4>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/get:@get<(reference<_List>, CType7)->reference<CType4>> = function:getget<(reference<_List>, CType7)->reference<CType4>>{
+Block:{
+}:reference<CType4>
+
+}
+[GLOBAL]/print:@print<(reference<String>)->Void> = function:printprint<(reference<String>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/string_constructor:@string_constructor<(reference<CType1>, CType7)->reference<String>> = function:string_constructorstring_constructor<(reference<CType1>, CType7)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/input:@input<()->reference<String>> = function:inputinput<()->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/get_appended_string:@get_appended_string<(reference<String>, reference<String>)->reference<String>> = function:get_appended_stringget_appended_string<(reference<String>, reference<String>)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/to_char_ptr:@to_char_ptr<(reference<String>)->reference<CType1>> = function:to_char_ptrto_char_ptr<(reference<String>)->reference<CType1>>{
+Block:{
+}:reference<CType1>
+
+}
+[GLOBAL]/append_string:@append_string<(reference<String>, reference<String>)->Void> = function:append_stringappend_string<(reference<String>, reference<String>)->Void>{
+Block:{
+}:Void
+
+}
+[GLOBAL]/int_to_str:@int_to_str<(CType7)->reference<String>> = function:int_to_strint_to_str<(CType7)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/float_to_str:@float_to_str<(CType2)->reference<String>> = function:float_to_strfloat_to_str<(CType2)->reference<String>>{
+Block:{
+}:reference<String>
+
+}
+[GLOBAL]/to_real_number:@to_real_number<(CType7)->CType2> = function:to_real_numberto_real_number<(CType7)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/to_integer:@to_integer<(CType2)->CType7> = function:to_integerto_integer<(CType2)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/op_and:@op_and<(CType0, CType0)->CType0> = function:op_andop_and<(CType0, CType0)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_or:@op_or<(CType0, CType0)->CType0> = function:op_orop_or<(CType0, CType0)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_equal_string:@op_equal_string<(reference<String>, reference<String>)->CType0> = function:op_equal_stringop_equal_string<(reference<String>, reference<String>)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/add_int:@add_int<(CType7, CType7)->CType7> = function:add_intadd_int<(CType7, CType7)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/sub_int:@sub_int<(CType7, CType7)->CType7> = function:sub_intsub_int<(CType7, CType7)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/mul_int:@mul_int<(CType7, CType7)->CType7> = function:mul_intmul_int<(CType7, CType7)->CType7>{
+Block:{
+}:CType7
+
+}
+[GLOBAL]/op_greater_than_int:@op_greater_than_int<(CType7, CType7)->CType0> = function:op_greater_than_intop_greater_than_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_greater_than_or_equal_int:@op_greater_than_or_equal_int<(CType7, CType7)->CType0> = function:op_greater_than_or_equal_intop_greater_than_or_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_int:@op_less_than_int<(CType7, CType7)->CType0> = function:op_less_than_intop_less_than_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_or_equal_int:@op_less_than_or_equal_int<(CType7, CType7)->CType0> = function:op_less_than_or_equal_intop_less_than_or_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_equal_int:@op_equal_int<(CType7, CType7)->CType0> = function:op_equal_intop_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_not_equal_int:@op_not_equal_int<(CType7, CType7)->CType0> = function:op_not_equal_intop_not_equal_int<(CType7, CType7)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/add_double:@add_double<(CType2, CType2)->CType2> = function:add_doubleadd_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/sub_double:@sub_double<(CType2, CType2)->CType2> = function:sub_doublesub_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/mul_double:@mul_double<(CType2, CType2)->CType2> = function:mul_doublemul_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_double_double:@div_double_double<(CType2, CType2)->CType2> = function:div_double_doublediv_double_double<(CType2, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_double_int:@div_double_int<(CType2, CType7)->CType2> = function:div_double_intdiv_double_int<(CType2, CType7)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_int_double:@div_int_double<(CType7, CType2)->CType2> = function:div_int_doublediv_int_double<(CType7, CType2)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/div_int_int:@div_int_int<(CType7, CType7)->CType2> = function:div_int_intdiv_int_int<(CType7, CType7)->CType2>{
+Block:{
+}:CType2
+
+}
+[GLOBAL]/op_greater_than_double:@op_greater_than_double<(CType2, CType2)->CType0> = function:op_greater_than_doubleop_greater_than_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_greater_than_or_equal_double:@op_greater_than_or_equal_double<(CType2, CType2)->CType0> = function:op_greater_than_or_equal_doubleop_greater_than_or_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_double:@op_less_than_double<(CType2, CType2)->CType0> = function:op_less_than_doubleop_less_than_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_less_than_or_equal_double:@op_less_than_or_equal_double<(CType2, CType2)->CType0> = function:op_less_than_or_equal_doubleop_less_than_or_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_equal_double:@op_equal_double<(CType2, CType2)->CType0> = function:op_equal_doubleop_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+[GLOBAL]/op_not_equal_double:@op_not_equal_double<(CType2, CType2)->CType0> = function:op_not_equal_doubleop_not_equal_double<(CType2, CType2)->CType0>{
+Block:{
+}:CType0
+
+}
+function:[GLOBAL]/f[GLOBAL]/f<()->type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}>{
+Block:{
+  return [GLOBAL]/f_2022:@[GLOBAL]/f_2022<()->type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}>(
+
+):type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}
+}:type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}
+
+}
+[GLOBAL]/print:@print<(reference<String>)->Void>(
+    [GLOBAL]/f:@[GLOBAL]/f<()->type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}>(
+
+):type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}[0]
+):Void
+Block:{
+  function:[GLOBAL]/Various#0[GLOBAL]/Various#0<(unsolved)->union @result_of_function_[GLOBAL]/Various#0{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#0{:Integer}
+
+}
+  function:[GLOBAL]/Various#1[GLOBAL]/Various#1<(unsolved)->union @result_of_function_[GLOBAL]/Various#1{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#1{:Integer}
+
+}
+  function:[GLOBAL]/Various#2[GLOBAL]/Various#2<(unsolved)->union @result_of_function_[GLOBAL]/Various#2{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#2{:Integer}
+
+}
+  function:[GLOBAL]/Various#3[GLOBAL]/Various#3<(unsolved)->union @result_of_function_[GLOBAL]/Various#3{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#3{:Integer}
+
+}
+  function:[GLOBAL]/Various#4[GLOBAL]/Various#4<(unsolved)->union @result_of_function_[GLOBAL]/Various#4{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#4{:Integer}
+
+}
+  function:[GLOBAL]/Various#5[GLOBAL]/Various#5<(unsolved)->union @result_of_function_[GLOBAL]/Various#5{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#5{:Integer}
+
+}
+  function:[GLOBAL]/Various#6[GLOBAL]/Various#6<(unsolved)->union @result_of_function_[GLOBAL]/Various#6{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#6{:Integer}
+
+}
+  function:[GLOBAL]/Various#7[GLOBAL]/Various#7<(unsolved)->union @result_of_function_[GLOBAL]/Various#7{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#7{:Integer}
+
+}
+  function:[GLOBAL]/Various#8[GLOBAL]/Various#8<(unsolved)->union @result_of_function_[GLOBAL]/Various#8{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#8{:Integer}
+
+}
+  function:[GLOBAL]/Various#9[GLOBAL]/Various#9<(unsolved)->union @result_of_function_[GLOBAL]/Various#9{:Integer}>{
+Block:{
+}:union @result_of_function_[GLOBAL]/Various#9{:Integer}
+
+}
+}:unsolved
+
+function:[GLOBAL]/f_2022[GLOBAL]/f_2022<()->type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}>{
+Block:{
+  [GLOBAL]/f/l:@type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>} = type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}["1", "2", "3"]
+  return [GLOBAL]/f/l:@type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}
+}:type [GLOBAL]/List{size:Integer, allocated_size:Integer, element_size:Integer, pointer:reference<Reference>}
+
+}
+

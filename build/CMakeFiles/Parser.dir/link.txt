@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libParser.a CMakeFiles/Parser.dir/parser.cpp.o CMakeFiles/Parser.dir/prelexer.cpp.o CMakeFiles/Parser.dir/lexer.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libParser.a

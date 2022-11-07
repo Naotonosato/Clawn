@@ -1,0 +1,1193 @@
+@Ctype __mbstate_t
+    @__NOT_SUPPORTED__1 : __C_UNKNOWN__SIZE_128
+    @_mbstateL : __C_LONGLONG__SIZE_8
+@Ctype __darwin_pthread_handler_rec
+    @__routine : __PTR__ __C_UNKNOWN__SIZE_1
+    @__arg : __PTR__ __C_INT__SIZE_8
+    @__NOT_SUPPORTED__2 : __C_UNKNOWN__SIZE_8
+@Ctype _opaque_pthread_attr_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__3 : __C_UNKNOWN__SIZE_56
+@Ctype _opaque_pthread_cond_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__4 : __C_UNKNOWN__SIZE_40
+@Ctype _opaque_pthread_condattr_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__5 : __C_UNKNOWN__SIZE_8
+@Ctype _opaque_pthread_mutex_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__6 : __C_UNKNOWN__SIZE_56
+@Ctype _opaque_pthread_mutexattr_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__7 : __C_UNKNOWN__SIZE_8
+@Ctype _opaque_pthread_once_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__8 : __C_UNKNOWN__SIZE_8
+@Ctype _opaque_pthread_rwlock_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__9 : __C_UNKNOWN__SIZE_192
+@Ctype _opaque_pthread_rwlockattr_t
+    @__sig : __C_LONG__SIZE_8
+    @__NOT_SUPPORTED__10 : __C_UNKNOWN__SIZE_16
+@Ctype _opaque_pthread_t
+    @__sig : __C_LONG__SIZE_8
+    @__cleanup_stack : __PTR__ __darwin_pthread_handler_rec
+    @__NOT_SUPPORTED__11 : __C_UNKNOWN__SIZE_8176
+@Ctype __sbuf
+    @_base : __PTR__ __C_UCHAR__SIZE_1
+    @_size : __C_INT__SIZE_4
+@Ctype __sFILE
+    @_p : __PTR__ __C_UCHAR__SIZE_1
+    @_r : __C_INT__SIZE_4
+    @_w : __C_INT__SIZE_4
+    @_flags : __C_SHORT__SIZE_2
+    @_file : __C_SHORT__SIZE_2
+    @_bf : __sbuf
+    @_lbfsize : __C_INT__SIZE_4
+    @_cookie : __PTR__ __C_INT__SIZE_8
+    @_close : __PTR__ __C_UNKNOWN__SIZE_1
+    @_read : __PTR__ __C_UNKNOWN__SIZE_1
+    @_seek : __PTR__ __C_UNKNOWN__SIZE_1
+    @_write : __PTR__ __C_UNKNOWN__SIZE_1
+    @_ub : __sbuf
+    @_extra : __PTR__ __PTR__ __C_UNKNOWN__SIZE_1
+    @_ur : __C_INT__SIZE_4
+    @__NOT_SUPPORTED__12 : __C_UNKNOWN__SIZE_3
+    @__NOT_SUPPORTED__13 : __C_UNKNOWN__SIZE_1
+    @_lb : __sbuf
+    @_blksize : __C_INT__SIZE_4
+    @_offset : __C_LONGLONG__SIZE_8
+@Ctype __float2
+    @__sinval : __C_FLOAT__SIZE_4
+    @__cosval : __C_FLOAT__SIZE_4
+@Ctype __double2
+    @__sinval : __C_DOUBLE__SIZE_8
+    @__cosval : __C_DOUBLE__SIZE_8
+@Ctype exception
+    @type : __C_INT__SIZE_4
+    @name : __PTR__ __C_CHAR__SIZE_1
+    @arg1 : __C_DOUBLE__SIZE_8
+    @arg2 : __C_DOUBLE__SIZE_8
+    @retval : __C_DOUBLE__SIZE_8
+@Cfunction renameat
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction renamex_np
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_UINT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction renameatx_np
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1,__C_UINT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction clearerr
+    arguments: __PTR__ __sFILE
+    return: __C_VOID__
+@Cfunction fclose
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction feof
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction ferror
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction fflush
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction fgetc
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction fgetpos
+    arguments: __PTR__ __sFILE,__PTR__ __C_LONGLONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction fgets
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4,__PTR__ __sFILE
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction fopen
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __sFILE
+@Cfunction fprintf
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction fputc
+    arguments: __C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction fputs
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction fread
+    arguments: __PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8,__C_ULONG__SIZE_8,__PTR__ __sFILE
+    return: __C_ULONG__SIZE_8
+@Cfunction freopen
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__PTR__ __sFILE
+    return: __PTR__ __sFILE
+@Cfunction fscanf
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction fseek
+    arguments: __PTR__ __sFILE,__C_LONG__SIZE_8,__C_INT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction fsetpos
+    arguments: __PTR__ __sFILE,__PTR__ __C_LONGLONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction ftell
+    arguments: __PTR__ __sFILE
+    return: __C_LONG__SIZE_8
+@Cfunction fwrite
+    arguments: __PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8,__C_ULONG__SIZE_8,__PTR__ __sFILE
+    return: __C_ULONG__SIZE_8
+@Cfunction getc
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction getchar
+    arguments: 
+    return: __C_INT__SIZE_4
+@Cfunction gets
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction perror
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_VOID__
+@Cfunction printf
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction putc
+    arguments: __C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction putchar
+    arguments: __C_INT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction puts
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction remove
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction rename
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction rewind
+    arguments: __PTR__ __sFILE
+    return: __C_VOID__
+@Cfunction scanf
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction setbuf
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1
+    return: __C_VOID__
+@Cfunction setvbuf
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction sprintf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction sscanf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction tmpfile
+    arguments: 
+    return: __PTR__ __sFILE
+@Cfunction tmpnam
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction ungetc
+    arguments: __C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction vfprintf
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction vprintf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction vsprintf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction ctermid
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction fdopen
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __sFILE
+@Cfunction fileno
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction pclose
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction popen
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __sFILE
+@Cfunction __srget
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction __svfscanf
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction __swbuf
+    arguments: __C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction __sputc
+    arguments: __C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction flockfile
+    arguments: __PTR__ __sFILE
+    return: __C_VOID__
+@Cfunction ftrylockfile
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction funlockfile
+    arguments: __PTR__ __sFILE
+    return: __C_VOID__
+@Cfunction getc_unlocked
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction getchar_unlocked
+    arguments: 
+    return: __C_INT__SIZE_4
+@Cfunction putc_unlocked
+    arguments: __C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction putchar_unlocked
+    arguments: __C_INT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction getw
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction putw
+    arguments: __C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction tempnam
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction fseeko
+    arguments: __PTR__ __sFILE,__C_LONGLONG__SIZE_8,__C_INT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction ftello
+    arguments: __PTR__ __sFILE
+    return: __C_LONGLONG__SIZE_8
+@Cfunction snprintf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction vfscanf
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction vscanf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction vsnprintf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction vsscanf
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction dprintf
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction vdprintf
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction getdelim
+    arguments: __PTR__ __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_ULONG__SIZE_8,__C_INT__SIZE_4,__PTR__ __sFILE
+    return: __C_LONG__SIZE_8
+@Cfunction getline
+    arguments: __PTR__ __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_ULONG__SIZE_8,__PTR__ __sFILE
+    return: __C_LONG__SIZE_8
+@Cfunction fmemopen
+    arguments: __PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __sFILE
+@Cfunction open_memstream
+    arguments: __PTR__ __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_ULONG__SIZE_8
+    return: __PTR__ __sFILE
+@Cfunction asprintf
+    arguments: __PTR__ __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction ctermid_r
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction fgetln
+    arguments: __PTR__ __sFILE,__PTR__ __C_ULONG__SIZE_8
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction fmtcheck
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction fpurge
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction setbuffer
+    arguments: __PTR__ __sFILE,__PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4
+    return: __C_VOID__
+@Cfunction setlinebuf
+    arguments: __PTR__ __sFILE
+    return: __C_INT__SIZE_4
+@Cfunction vasprintf
+    arguments: __PTR__ __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction zopen
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4
+    return: __PTR__ __sFILE
+@Cfunction funopen
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_UNKNOWN__SIZE_1,__PTR__ __C_UNKNOWN__SIZE_1,__PTR__ __C_UNKNOWN__SIZE_1,__PTR__ __C_UNKNOWN__SIZE_1
+    return: __PTR__ __sFILE
+@Cfunction __sprintf_chk
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4,__C_ULONG__SIZE_8,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction __snprintf_chk
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8,__C_INT__SIZE_4,__C_ULONG__SIZE_8,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction __vsprintf_chk
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4,__C_ULONG__SIZE_8,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction __vsnprintf_chk
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8,__C_INT__SIZE_4,__C_ULONG__SIZE_8,__PTR__ __C_CHAR__SIZE_1,__C_UNKNOWN__SIZE_24
+    return: __C_INT__SIZE_4
+@Cfunction memchr
+    arguments: __PTR__ __C_INT__SIZE_8,__C_INT__SIZE_4,__C_ULONG__SIZE_8
+    return: __PTR__ __C_INT__SIZE_8
+@Cfunction memcmp
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction memcpy
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __PTR__ __C_INT__SIZE_8
+@Cfunction memmove
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __PTR__ __C_INT__SIZE_8
+@Cfunction memset
+    arguments: __PTR__ __C_INT__SIZE_8,__C_INT__SIZE_4,__C_ULONG__SIZE_8
+    return: __PTR__ __C_INT__SIZE_8
+@Cfunction strcat
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strchr
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strcmp
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction strcoll
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction strcpy
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strcspn
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_ULONG__SIZE_8
+@Cfunction strerror
+    arguments: __C_INT__SIZE_4
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strlen
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_ULONG__SIZE_8
+@Cfunction strncat
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strncmp
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction strncpy
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strpbrk
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strrchr
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strspn
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_ULONG__SIZE_8
+@Cfunction strstr
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strtok
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strxfrm
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __C_ULONG__SIZE_8
+@Cfunction strtok_r
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__PTR__ __PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strerror_r
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction strdup
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction memccpy
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_INT__SIZE_4,__C_ULONG__SIZE_8
+    return: __PTR__ __C_INT__SIZE_8
+@Cfunction stpcpy
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction stpncpy
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strndup
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strnlen
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __C_ULONG__SIZE_8
+@Cfunction strsignal
+    arguments: __C_INT__SIZE_4
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction memset_s
+    arguments: __PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8,__C_INT__SIZE_4,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction memmem
+    arguments: __PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __PTR__ __C_INT__SIZE_8
+@Cfunction memset_pattern4
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_VOID__
+@Cfunction memset_pattern8
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_VOID__
+@Cfunction memset_pattern16
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_VOID__
+@Cfunction strcasestr
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strnstr
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction strlcat
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __C_ULONG__SIZE_8
+@Cfunction strlcpy
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __C_ULONG__SIZE_8
+@Cfunction strmode
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1
+    return: __C_VOID__
+@Cfunction strsep
+    arguments: __PTR__ __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction swab
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_LONG__SIZE_8
+    return: __C_VOID__
+@Cfunction timingsafe_bcmp
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction bcmp
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction bcopy
+    arguments: __PTR__ __C_INT__SIZE_8,__PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_VOID__
+@Cfunction bzero
+    arguments: __PTR__ __C_INT__SIZE_8,__C_ULONG__SIZE_8
+    return: __C_VOID__
+@Cfunction index
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction rindex
+    arguments: __PTR__ __C_CHAR__SIZE_1,__C_INT__SIZE_4
+    return: __PTR__ __C_CHAR__SIZE_1
+@Cfunction ffs
+    arguments: __C_INT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction strcasecmp
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction strncasecmp
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1,__C_ULONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction ffsl
+    arguments: __C_LONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction ffsll
+    arguments: __C_LONGLONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction fls
+    arguments: __C_INT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction flsl
+    arguments: __C_LONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction flsll
+    arguments: __C_LONGLONG__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction __math_errhandling
+    arguments: 
+    return: __C_INT__SIZE_4
+@Cfunction __fpclassifyf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction __fpclassifyd
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction __fpclassifyl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isfinitef
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isfinited
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isfinitel
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isinff
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isinfd
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isinfl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isnanf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isnand
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isnanl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isnormalf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isnormald
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction __inline_isnormall
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_INT__SIZE_4
+@Cfunction __inline_signbitf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction __inline_signbitd
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction __inline_signbitl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_INT__SIZE_4
+@Cfunction acosf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction acos
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction acosl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction asinf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction asin
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction asinl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction atanf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction atan
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction atanl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction atan2f
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction atan2
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction atan2l
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction cosf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction cos
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction cosl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction sinf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction sin
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction sinl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction tanf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction tan
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction tanl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction acoshf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction acosh
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction acoshl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction asinhf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction asinh
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction asinhl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction atanhf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction atanh
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction atanhl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction coshf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction cosh
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction coshl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction sinhf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction sinh
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction sinhl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction tanhf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction tanh
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction tanhl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction expf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction exp
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction expl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction exp2f
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction exp2
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction exp2l
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction expm1f
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction expm1
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction expm1l
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction logf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction log
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction logl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction log10f
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction log10
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction log10l
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction log2f
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction log2
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction log2l
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction log1pf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction log1p
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction log1pl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction logbf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction logb
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction logbl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction modff
+    arguments: __C_FLOAT__SIZE_4,__PTR__ __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction modf
+    arguments: __C_DOUBLE__SIZE_8,__PTR__ __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction modfl
+    arguments: __C_LONGDOUBLE__SIZE_16,__PTR__ __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction ldexpf
+    arguments: __C_FLOAT__SIZE_4,__C_INT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction ldexp
+    arguments: __C_DOUBLE__SIZE_8,__C_INT__SIZE_4
+    return: __C_DOUBLE__SIZE_8
+@Cfunction ldexpl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_INT__SIZE_4
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction frexpf
+    arguments: __C_FLOAT__SIZE_4,__PTR__ __C_INT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction frexp
+    arguments: __C_DOUBLE__SIZE_8,__PTR__ __C_INT__SIZE_4
+    return: __C_DOUBLE__SIZE_8
+@Cfunction frexpl
+    arguments: __C_LONGDOUBLE__SIZE_16,__PTR__ __C_INT__SIZE_4
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction ilogbf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_INT__SIZE_4
+@Cfunction ilogb
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction ilogbl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_INT__SIZE_4
+@Cfunction scalbnf
+    arguments: __C_FLOAT__SIZE_4,__C_INT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction scalbn
+    arguments: __C_DOUBLE__SIZE_8,__C_INT__SIZE_4
+    return: __C_DOUBLE__SIZE_8
+@Cfunction scalbnl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_INT__SIZE_4
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction scalblnf
+    arguments: __C_FLOAT__SIZE_4,__C_LONG__SIZE_8
+    return: __C_FLOAT__SIZE_4
+@Cfunction scalbln
+    arguments: __C_DOUBLE__SIZE_8,__C_LONG__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction scalblnl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONG__SIZE_8
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction fabsf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction fabs
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction fabsl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction cbrtf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction cbrt
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction cbrtl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction hypotf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction hypot
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction hypotl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction powf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction pow
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction powl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction sqrtf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction sqrt
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction sqrtl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction erff
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction erf
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction erfl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction erfcf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction erfc
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction erfcl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction lgammaf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction lgamma
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction lgammal
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction tgammaf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction tgamma
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction tgammal
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction ceilf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction ceil
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction ceill
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction floorf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction floor
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction floorl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction nearbyintf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction nearbyint
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction nearbyintl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction rintf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction rint
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction rintl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction lrintf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_LONG__SIZE_8
+@Cfunction lrint
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_LONG__SIZE_8
+@Cfunction lrintl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONG__SIZE_8
+@Cfunction roundf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction round
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction roundl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction lroundf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_LONG__SIZE_8
+@Cfunction lround
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_LONG__SIZE_8
+@Cfunction lroundl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONG__SIZE_8
+@Cfunction llrintf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_LONGLONG__SIZE_8
+@Cfunction llrint
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_LONGLONG__SIZE_8
+@Cfunction llrintl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGLONG__SIZE_8
+@Cfunction llroundf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_LONGLONG__SIZE_8
+@Cfunction llround
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_LONGLONG__SIZE_8
+@Cfunction llroundl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGLONG__SIZE_8
+@Cfunction truncf
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction trunc
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction truncl
+    arguments: __C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction fmodf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction fmod
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction fmodl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction remainderf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction remainder
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction remainderl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction remquof
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4,__PTR__ __C_INT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction remquo
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8,__PTR__ __C_INT__SIZE_4
+    return: __C_DOUBLE__SIZE_8
+@Cfunction remquol
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16,__PTR__ __C_INT__SIZE_4
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction copysignf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction copysign
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction copysignl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction nanf
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_FLOAT__SIZE_4
+@Cfunction nan
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_DOUBLE__SIZE_8
+@Cfunction nanl
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction nextafterf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction nextafter
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction nextafterl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction nexttoward
+    arguments: __C_DOUBLE__SIZE_8,__C_LONGDOUBLE__SIZE_16
+    return: __C_DOUBLE__SIZE_8
+@Cfunction nexttowardf
+    arguments: __C_FLOAT__SIZE_4,__C_LONGDOUBLE__SIZE_16
+    return: __C_FLOAT__SIZE_4
+@Cfunction nexttowardl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction fdimf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction fdim
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction fdiml
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction fmaxf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction fmax
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction fmaxl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction fminf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction fmin
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction fminl
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction fmaf
+    arguments: __C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4,__C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction fma
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction fmal
+    arguments: __C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16,__C_LONGDOUBLE__SIZE_16
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction __inff
+    arguments: 
+    return: __C_FLOAT__SIZE_4
+@Cfunction __inf
+    arguments: 
+    return: __C_DOUBLE__SIZE_8
+@Cfunction __infl
+    arguments: 
+    return: __C_LONGDOUBLE__SIZE_16
+@Cfunction __nan
+    arguments: 
+    return: __C_FLOAT__SIZE_4
+@Cfunction __exp10f
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction __exp10
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction __sincosf
+    arguments: __C_FLOAT__SIZE_4,__PTR__ __C_FLOAT__SIZE_4,__PTR__ __C_FLOAT__SIZE_4
+    return: __C_VOID__
+@Cfunction __sincos
+    arguments: __C_DOUBLE__SIZE_8,__PTR__ __C_DOUBLE__SIZE_8,__PTR__ __C_DOUBLE__SIZE_8
+    return: __C_VOID__
+@Cfunction __cospif
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction __cospi
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction __sinpif
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction __sinpi
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction __tanpif
+    arguments: __C_FLOAT__SIZE_4
+    return: __C_FLOAT__SIZE_4
+@Cfunction __tanpi
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction __sincospif
+    arguments: __C_FLOAT__SIZE_4,__PTR__ __C_FLOAT__SIZE_4,__PTR__ __C_FLOAT__SIZE_4
+    return: __C_VOID__
+@Cfunction __sincospi
+    arguments: __C_DOUBLE__SIZE_8,__PTR__ __C_DOUBLE__SIZE_8,__PTR__ __C_DOUBLE__SIZE_8
+    return: __C_VOID__
+@Cfunction __sincosf_stret
+    arguments: __C_FLOAT__SIZE_4
+    return: __float2
+@Cfunction __sincos_stret
+    arguments: __C_DOUBLE__SIZE_8
+    return: __double2
+@Cfunction __sincospif_stret
+    arguments: __C_FLOAT__SIZE_4
+    return: __float2
+@Cfunction __sincospi_stret
+    arguments: __C_DOUBLE__SIZE_8
+    return: __double2
+@Cfunction j0
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction j1
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction jn
+    arguments: __C_INT__SIZE_4,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction y0
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction y1
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction yn
+    arguments: __C_INT__SIZE_4,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction scalb
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction rinttol
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_LONG__SIZE_8
+@Cfunction roundtol
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_LONG__SIZE_8
+@Cfunction drem
+    arguments: __C_DOUBLE__SIZE_8,__C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction finite
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_INT__SIZE_4
+@Cfunction gamma
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction significand
+    arguments: __C_DOUBLE__SIZE_8
+    return: __C_DOUBLE__SIZE_8
+@Cfunction read_shader
+    arguments: __C_INT__SIZE_4,__PTR__ __C_CHAR__SIZE_1
+    return: __C_VOID__
+@Cfunction make_shader
+    arguments: __PTR__ __C_CHAR__SIZE_1,__PTR__ __C_CHAR__SIZE_1
+    return: __C_INT__SIZE_4
+@Cfunction create_window
+    arguments: __PTR__ __C_CHAR__SIZE_1
+    return: __PTR__ __C_INT__SIZE_4
+@Cfunction draw
+    arguments: __PTR__ __C_INT__SIZE_4
+    return: __C_INT__SIZE_4

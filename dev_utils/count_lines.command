@@ -1,0 +1,1 @@
+wc -l src/**/*.[ch]pp src/**/*.[yl]*;

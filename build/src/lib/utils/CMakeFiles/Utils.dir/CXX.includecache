@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/include/utils/unique_number.hpp
+
+/Users/ueharanaoto/Desktop/Clawn/src/lib/utils/unique_number.cpp
+include/utils/unique_number.hpp
+/Users/ueharanaoto/Desktop/Clawn/src/lib/utils/include/utils/unique_number.hpp
+

@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libHierarchy.a CMakeFiles/Hierarchy.dir/mangler.cpp.o CMakeFiles/Hierarchy.dir/hierarchy.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libHierarchy.a
