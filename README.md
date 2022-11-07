@@ -13,17 +13,11 @@ Clawnは現在Mac OS上でのみ動作が確認されています。Mac OS以外
 
 ### インストール方法
 
-Mac OSでコンパイル済みのClawnを利用するには、Clawnのソースコードを本リポジトリからダウンロードし、展開した後、Clawn/buildディレクトリに移動し、
-
-`./clawn 実行したいプログラムファイル名`を実行すると、プログラムが実行されます。
-
-ご自身でソースコードからビルドしたい方やLinuxをご利用の方は、Clang,Python3,libclang（Pythonのライブラリ）, bison3.8.2, flex2.6.4, cmake3.19.4, llvm9.0をインストールした上で
+Dockerをインストールの上、[Dockerfile](https://github.com/Naotonosato/Clawn/blob/main/Dockerfile)からイメージを作成し、作成したイメージ上で本リポジトリをCloneし、Clawnディレクトリに移動したのち
+`mkdir build`等でビルド用ディレクトリを作成し、
 `cmake ..`
-
 `make`
-
-を実行してください。これらのコマンドの実行が完了すると、Clawn/build下にclawnという実行可能ファイルが生成され、Clawnを利用できるようになります。
-
+を実行すると実行可能ファイルが生成されます。
 
 
 ## 文法
