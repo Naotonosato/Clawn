@@ -69,7 +69,7 @@ add_library(Parser STATIC
 	)
 
 add_executable(clawn ${CLAWN_LIB_DIR}/main.cpp)
-target_link_libraries(clawn Compiler Parser Location Ast Requirements HIR MIR Hierarchy Utils Resource LLVM ${llvm_libs})
+target_link_libraries(clawn Compiler Parser Location Ast Requirements HIR MIR Hierarchy Utils Resource ${llvm_libs})
 
 add_dependencies(build_clawn clawn)
 
