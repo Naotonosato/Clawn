@@ -75,7 +75,6 @@ Output:
 Block expression
 End of Block expression
 Result is 0
-Result is 0
 ```
 
 A block consisting of one or more expressions in curly braces returns the value of `expr` as the value of the block if there is a statement `=> expr` in the middle of the block. This is useful to organize the processing at a good granularity and to make the program easier to understand. If `=>` does not appear in the block, the block will not return a value.
