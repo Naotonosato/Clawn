@@ -1,105 +1,111 @@
 # Clawn
-Clawnは人間にとっての扱いやすさを第一に設計されたプログラミング言語です。
+Clawn is a programming language developed with the goal of making it easy to write high-quality, safe programs.
 
 ![demo](https://user-images.githubusercontent.com/33174108/199721317-3729b791-fa9b-49a6-af59-a36d5cf9e8a0.gif)
 
-平易な文法と高度な型システム、優れたC FFIに静的メモリ管理機構を備えており、安全で高品質なプログラムを簡単に書けるようになっています。
+Currently, Clawn has the following features
++ Simple syntax
++ Statically typing
++ Higher rank polymorphism
++ Automatic memory management (WIP)
 
-## インストール方法
+I value a gentle learning curve, and Clawn is designed to be easy to learn. For example, Clawn's function definitions have no type annotations and are defined as polymorphic functions, which is a goal for reducing the amount of knowledge you have to be aware of from the beginning in introductory programs such as defining and calling simple functions, omitting type definitions and entry points (int main(), etc.).
+There are various other features as described below.
 
+## Installation
+
+
+At first,download [Dockerfile](https://github.com/Naotonosato/Clawn/blob/main/Dockerfile) and execute the following commands.
+```shell
+docker image build -t clawn-playground-image:0.1 .
+docker run --name clawn-playground -it clawn-playground-image:0.1 /bin/bash
+```
+and
 ```
 git clone https://github.com/Naotonosato/Clawn
 cd Clawn
 mkdir build
 cd build
 cmake ..
-make -j8
-pip3 install libclang
+make
+```
+Then, you can try clawn.
+```shell
 ./clawn ../sample/hello_world.clawn 
 ```
 
-Dockerをインストールの上、[Dockerfile](https://github.com/Naotonosato/Clawn/blob/main/Dockerfile)からイメージを作成し、作成したイメージ上で本リポジトリをCloneし、Clawnディレクトリに移動したのち
-`mkdir build`等でビルド用ディレクトリを作成し、
-`cmake ..`
-`make`
-を実行すると実行可能ファイルが生成されます。
 
+## Syntax
 
-## 文法
+Clawn has simple syntax similar to natural language, and is designed with the utmost importance placed on understandability.
 
-Clawnは自然言語に近い直感的な文法を採用しており、わかりやすさを最重要視して設計されています。
-
-+ 変数定義、代入
++ Variable definitions/assignments.
 
 ```c++
 a = 10
 a = 100
 ```
 
-Clawnでは入力ファイルのグローバルスコープがエントリーポイントに設定されるため、int main()等の宣言は不要で、すぐにプログラムを書き始められます。
+Clawn sets the global scope of the input file to the entry point, so there is no need to declare int main(), etc., and you can start writing your program immediately.
 
-+ 関数呼び出し
++ Function calls.
 
 ```c++
-print("Hello, World!")
+print("Hello, World!”)
 ```
 
-出力:
-
+Output:
 ```
 Hello, World!
-```
-
-
-
-+ block式
+``` 
++ block expression
 
 ```c++
 result = {
-	print("Block expression")
+	print("Block expression”)
 	=>0
-	print("End of Block expression")
+	print("End of Block expression”)
 }
 print("Result is " + int_to_str(result))
 ```
 
-出力:
-
+Output:
 ```
 Block expression
 End of Block expression
 Result is 0
+Result is 0
 ```
 
-中括弧の中に一つ以上の式を書く事で構成されるブロックは、途中に`=> expr`という記述があると`expr`の値をブロックの値として返します。これは処理を程よい粒度でまとめ、プログラムをわかりやすくするのに役立ちます。ブロック中に`=>`が現れなかった場合、ブロックは値を返しません。
+A block consisting of one or more expressions in curly braces returns the value of `expr` as the value of the block if there is a statement `=> expr` in the middle of the block. This is useful to organize the processing at a good granularity and to make the program easier to understand. If `=>` does not appear in the block, the block will not return a value.
 
-+ if式
++ if expression
 
 ```c++
 x = 100
 message = if x == 100
 {
-	print("x is 100.")
-	=>"OK."
+	print("x is 100.”)
+	=>”OK.”
 } else
 {
-	=>"Something went wrong."
+	=>"Something went wrong.”
 }
 print(message)
-```
+````
 
-出力:
+Output:
 
 ```shell
 x is 100.
 OK.
 ```
 
-Clawnにおけるifは文ではなく式で、block同様に値を返します。
+In Clawn, if is an expression, not a statement, and returns a value, as does block.
 
 
 
-+ repeat式
++ repeat expression
 
 ```python
 result = repeat count:count<5
@@ -110,36 +116,35 @@ result = repeat count:count<5
 print(int_to_str(result))
 ```
 
-出力:
-
+Output:
 ```
 count: 0
 count: 1
 count: 2
 count: 3
+count: 3
 count: 4
-4
 ```
 
-repeat式は、repeat `カウンター用変数名`:`条件`とすることで`条件`が満たされている間カウンター用変数をインクリメントし、続く式を繰り返し実行するというもので、if,block同様に値を返します。
+A repeat expression is one that increments the counter variable while the `condition` is satisfied by setting `repeat `name of the counter variable`:`condition`, and repeats the following expression, returning a value in the same way as if and block.
 
-+ 参照
++ See also.
 
 ```c++
-value = "value"
+value = “value”
 reference = refer value
+print(access reference)
 print(access reference)
 ```
 
-出力:
-
+Output:
 ```
 value
 ```
 
-`refer`で参照を得て、`access`で参照先の値を取得できます。
+You can use ``refer`` to get a reference and ``access`` to get the value of the reference.
 
-+ 関数
++ function
 
 ```c++
 function f(x)
@@ -148,13 +153,12 @@ function f(x)
 }
 
 f(0)
-print(f("abc"))
+print(f("abc”))
 a = f
 print(float_to_str(a(0.1)))
 ```
 
-出力:
-
+Output:
 ```
 abc
 0.100000
@@ -162,9 +166,9 @@ abc
 
 
 
-関数はfunction `関数名` (`引数1`,`引数2`...)の形で多相関数として定義されます。型注釈は不要ですが渡される引数の型を制限するために後述の`要件`を引数に対して指定することもできます。また、Clawnにおける関数は第一級オブジェクトなので変数に代入したり、関数に引数として渡したりもできます。
+The function is defined as a polymorphic function in the form function `function name` (`argument1`,`argument2`...) The function is defined as a polymorphic function in the form ``(`argument1`,`argument2`...)''. A `requirement` described below may be specified for the argument to restrict the type of the argument passed, although a type annotation is not required. Also, functions in Clawn are first-class objects and can be assigned to variables or passed as arguments to functions.
 
-+ 構造体
++ struct
 
 ```c++
 structure S
@@ -177,27 +181,26 @@ instance = S{x:10.0,y:0.0}
 print(float_to_str(instance.x))
 ```
 
-出力:
-
+Output:
 ```
 10.000000
 ```
 
-構造体は
+The structure is
 
-structure `構造体名`
+structure `structure name`.
 
 {
 
-`メンバー名`...
+``member name``…
 
 }
 
-の形で定義され、`構造体名`{`メンバー名`:`expr`...}の形でインスタンス化できます。
+and can be instantiated in the form `structure name` {`member name`:`expr`...} and can be instantiated in the form ``structure name`{`member name`:`expr`…}.
 
-関数同様に後述の`要件`をメンバーに対して適応できます。
+Like functions, the `requirements` described below can be applied to members.
 
-+ 直和型
++ direct sum type
 
 ```c++
 union U
@@ -207,7 +210,7 @@ union U
 }
 
 u = U#A(0)
-u = U#B("abc")
+u = U#B(“abc”)
 
 str = match u
 {
@@ -219,31 +222,31 @@ str = match u
     }
 }
 print(str)
-```
+````
 
-出力:
+output:
 
 ```
 abc
 ```
 
-直和型は 
+The direct sum type is 
 
-Union `名前`
+Union `name
 
 {
 
-`タグ`...
+`tag`…
 
 }
 
-の形で定義され、`直和型名`#`タグ名`(`expr`)の形でインスタンスを作成できます。
+and can be instantiated with the form `type_name`#`tag_name`(`expr`).
 
-また、match式によって保持している値によって処理を切り替えることも可能です。
+It is also possible to switch processing depending on the value held by the match expression.
 
-+ 要件
++ Requirement.
 
-```
+```` hasWidth
 requirement HasWidth
 {
 	has: width: RealNumber
@@ -255,69 +258,69 @@ function f(x:HasWidth)
 }
 
 f(0)
-```
+````
 
-出力:
+Output:
 
-```powershell
-Error: requirement 'HasWidth(has member named 'width': RealNumber)' is set at line 7 but not satisfied with type 'Integer'
-```
+````powershell
+Error: requirement 'HasWidth(has member named 'width': RealNumber)' is set at line 7 but not satisfied with type ‘Integer’.
+````
 
-要件は関数の引数、構造体のメンバ、直和型のタグに指定でき、
+The requirement can be a function argument, a structure member, or a tag of a direct sum type, and is set to
 
-+ 型名
-+ 要件句
-+ 要件名
++ type name
++ requirement clause
++ requirement clause
 
-のいずれかです。要件句は
+The requirement clause is a function argument, a member of a structure, or a tag of a direct sum type. Requirement clauses are
 
-+ 値型であることを要求する `value`
-+ 要件`X`を満たす値型であることを要求する`value:X`
-+ 参照型であることを要求する`reference`
-+ 要件`X`を満たす型への参照型であることを要求する`reference:X`
-+ `name`というメンバーを持つことを要求する`has: name`
-+ 要件`X`を満たすメンバー`name`を持つことを要求する`has:name:X`
++ `value`, which requires the type to be a value type
++ value:X`, which requires it to be a value type satisfying requirement `X`, or
++ `reference`, which requires it to be a reference type
++ `reference:X` requiring it to be a reference type to a type satisfying requirement `X`.
++ `has: name`, which requires it to have a member named `name`.
++ `has:name:X`, which requires the type to have a member `name` that satisfies requirement `X`.
 
-によって構成されており、今後引数`arg1,arg2...`で呼び出し可能であることを要求する`callable_with`や返り値の型が要件`X`を満たすことを要求する`returns:X`などを実装する予定です。
+and that it can be called from now on with the arguments `arg1,arg2... In the future, we plan to implement `callable_with`, which requires that the function be callable with `arg1,arg2...` arguments, and `returns:X`, which requires that the return type satisfy the requirement `X`.
 
-また、要件名は　
+Also, the requirement name should be　
 
-requirement `要件名`
+requirement `requirement_name`.
 
 {
 
-`要件`...
+`requirement`…
 
 }
 
-とすることで定義できます。
 
-この機能によって意図に反するプログラムが実行されてしまうことを防げます。
+This feature prevents unintended program execution.
 
 ## C FFI
 
-ClawnではC言語の関数を容易に呼び出せます。
+Clawn can easily call C functions.
 
 ```python
-import "source.c"
+import “source.c”
 
 c_function()
 ```
 
-このように、import `"C言語のプログラムのファイルの場所"`とするだけで、そのCプログラム中の関数を呼び出せます。
+Thus, you can call a function in a C program by simply importing `path/to/source.c`.
 
-## メモリ管理
+## Memory Management(WIP)
 
-Clawnはプログラム中の値の依存関係を静的に検証し、適切なタイミングでメモリの確保と解放を行うコードを自動的に挿入するメモリ管理機構を持っているため、プログラマがメモリについて意識する必要はありません。
+Clawn has a memory management mechanism that statically verifies the dependencies of values in the program and automatically inserts code to allocate and release memory at appropriate times, so programmers do not need to be aware of memory.
 
-ただし、この機能は実験的で今後さらなる安定化及び最適化がなされる予定です。
+However, this feature is experimental and will be further stabilized and optimized in the future.
 
-## ロードマップ
-+ コンパイル速度の改善
-+ エラーメッセージの改善
-+ メモリ管理機構の改善
-+ 最適化の強化
-+ iOS,Android,Windows,Linux,Web出力への対応
-+ 標準ライブラリの整備
-+ ビルドシステムの開発
-+ パッケージマネージャーの開発
+## Roadmap
++ Improved compile speed
++ Improved error messages
++ Improved memory management mechanism
++ Enhanced optimization
++ Support for iOS, Android, Windows, Linux, Web output
++ Development of standard libraries
++ Build system development
++ Development of package manager
+
