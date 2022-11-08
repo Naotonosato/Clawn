@@ -24,4 +24,5 @@ RUN apt-get update && \
       flex \
       zlib1g-dev \
       python3-pip \
-      git
+      git && \
+    pip3 install libclang

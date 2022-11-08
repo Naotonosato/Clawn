@@ -433,8 +433,8 @@ class ConverterImpl : public ast::Visitor<std::unique_ptr<hir::HIR>>
         body.push_back(std::move(assignment));
         auto body_type = body[0]->get_type();
         return hir::HIR::create<hir::Loop>(
-            body[0]->get_type(), location, std::move(condition),
-            hir::HIR::create<hir::Block>(body[0]->get_type(),
+            body_type, location, std::move(condition),
+            hir::HIR::create<hir::Block>(body_type,
                                          node.get_location(), std::move(body)));
     }
 

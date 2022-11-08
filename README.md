@@ -7,6 +7,17 @@ Clawnは人間にとっての扱いやすさを第一に設計されたプログ
 
 ## インストール方法
 
+```
+git clone https://github.com/Naotonosato/Clawn
+cd Clawn
+mkdir build
+cd build
+cmake ..
+make -j8
+pip3 install libclang
+./clawn ../sample/hello_world.clawn 
+```
+
 Dockerをインストールの上、[Dockerfile](https://github.com/Naotonosato/Clawn/blob/main/Dockerfile)からイメージを作成し、作成したイメージ上で本リポジトリをCloneし、Clawnディレクトリに移動したのち
 `mkdir build`等でビルド用ディレクトリを作成し、
 `cmake ..`
