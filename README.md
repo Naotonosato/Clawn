@@ -316,12 +316,15 @@ Clawn has a memory management mechanism that statically verifies the dependencie
 However, this feature is experimental and will be further stabilized and optimized in the future.
 
 ## Roadmap
-+ Improved compile speed
-+ Improved error messages
-+ Improved memory management mechanism
+Clawn is still a work in progress, but will be actively developed after 2023 (after the author's college entrance exam).
++ Module system
++ Support for OOP
++ Add pure function
++ Improve compile speed
++ Improve error messages
++ Improve memory management mechanism
 + Enhanced optimization
 + Support for iOS, Android, Windows, Linux, Web output
-+ Development of standard libraries
-+ Build system development
-+ Development of package manager
-
++ Standard libraries
++ Build system
++ Package manager
