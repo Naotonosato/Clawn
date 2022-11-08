@@ -134,7 +134,6 @@ A repeat expression is one that increments the counter variable while the `condi
 value = “value”
 reference = refer value
 print(access reference)
-print(access reference)
 ```
 
 Output:
