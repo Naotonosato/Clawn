@@ -23,4 +23,5 @@ RUN apt-get update && \
       bison \
       flex \
       zlib1g-dev \
-      python3-pip
+      python3-pip \
+      git
