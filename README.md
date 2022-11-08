@@ -9,7 +9,7 @@ Currently, Clawn has the following features
 + Higher rank polymorphism
 + Automatic memory management (WIP)
 
-I value a gentle learning curve, and Clawn is designed to be easy to learn. For example, Clawn's function definitions have no type annotations and are defined as polymorphic functions, which is a goal for reducing the amount of knowledge you have to be aware of from the beginning in introductory programs such as defining and calling simple functions, omitting type definitions and entry points (int main(), etc.).
+I value a gentle learning curve, and Clawn is designed to be easy to learn. For example, Clawn's function definitions have no type annotations and are defined as polymorphic functions, with the goal for reducing the amount of knowledge you have to be aware of from the beginning in introductory programs such as defining and calling simple functions, omitting type definitions and entry points (int main(), etc.).
 There are various other features as described below.
 
 ## Installation
