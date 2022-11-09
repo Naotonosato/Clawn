@@ -8,6 +8,7 @@ Currently, Clawn has the following features
 + Statically typing
 + Higher rank polymorphism
 + Safe "any"
++ elegant C FFI
 + Automatic memory management (WIP)
 
 I value a gentle learning curve, and Clawn is designed to be easy to learn. For example, Clawn's function definitions have no type annotations and are defined as polymorphic functions, with the goal of reducing the amount of knowledge you have to be aware of from the beginning like declaring types and entry points (int main(), etc.) in introductory programs like defining and calling simple functions.
