@@ -10,7 +10,7 @@ Currently, Clawn has the following features
 + Safe "any"
 + Automatic memory management (WIP)
 
-I value a gentle learning curve, and Clawn is designed to be easy to learn. For example, Clawn's function definitions have no type annotations and are defined as polymorphic functions, with the goal for reducing the amount of knowledge you have to be aware of from the beginning in introductory programs such as defining and calling simple functions, omitting type definitions and entry points (int main(), etc.).
+I value a gentle learning curve, and Clawn is designed to be easy to learn. For example, Clawn's function definitions have no type annotations and are defined as polymorphic functions, with the goal for reducing the amount of knowledge you have to be aware of from the beginning like declaring types and entry points (int main(), etc.) in introductory programs like defining and calling simple functions.
 There are various other features as described below.
 
 ## Installation
@@ -231,7 +231,7 @@ abc
 
 The direct sum type is 
 
-Union `name
+Union `name`
 
 {
 
