@@ -329,7 +329,7 @@ Clawn is still a work in progress, but will be actively developed after 2023 (af
 + Package manager
 
 ## Theoretical Aspects(Japanese)
-https://github.com/Naotonosato/Clawn/blob/main/docs/design.md
+https://github.com/Naotonosato/Clawn/blob/main/docs/design.md (Japanese)
 
 ## Projects using Clawn
 + https://github.com/taisukef/Geo3x3/
