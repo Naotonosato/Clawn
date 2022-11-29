@@ -101,3 +101,16 @@ has_x = various Location{x:10.0, y:10.0}
 has_x = various Position{x:100.0, y:0.0}
 
 print(float_to_str(has_x..x))
+
+function ff(x)
+{
+    return if(x == 0)
+    {
+        => 0.0
+    } else
+    {
+        => ff(x)
+    }
+}
+
+ff(0)
