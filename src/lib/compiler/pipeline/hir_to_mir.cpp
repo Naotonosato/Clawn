@@ -96,10 +96,7 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
         }
         auto address = refer_to->as_mutable<mir::Load>().get_address();
         return address;
-        // auto allcoation_for_refered_address =
-        // builder.create_allocate(scope,address->get_type(),"allcoation_for_refered_address");
-        // builder.create_store(scope,allcoation_for_refered_address,address);
-        // return builder.create_load(scope,allcoation_for_refered_address);
+        
     }
     std::shared_ptr<mir::Value> visit(
         const hir::Dereference& hir) const override
@@ -1117,6 +1114,7 @@ class HIRToMIR : public hir::Visitor<std::shared_ptr<mir::Value>>
 
 void connect_blocks(std::shared_ptr<mir::Context> context)
 {
+    // insert jump instruction to the blocks
     for (auto& function : context->get_functions())
     {
         auto& blocks = function->get_body();

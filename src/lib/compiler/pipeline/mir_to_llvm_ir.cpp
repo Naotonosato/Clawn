@@ -157,7 +157,7 @@ class LLVMTypeGenerator
         {
             return ir_builder.getIntNTy(size_in_bits);
         }
-        throw std::runtime_error("not implemented or obsoluted.");
+        throw std::runtime_error("Unknown C Primitive Type. Maybe it's not implemented or obsoluted.");
     }
     llvm::Type *visit(const requirement::BooleanType &original) const
     {
@@ -182,7 +182,7 @@ class LLVMTypeGenerator
     }
     llvm::Type *visit(const requirement::ListType &original) const
     {
-        throw std::runtime_error("not implemented or obsoluted.");
+        throw std::runtime_error("ListType is not implemented or obsoluted.");
         return original.get_element_type()->get_pointer_to()->accept(*this);
     }
 
@@ -292,6 +292,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
     mutable std::unordered_map<mir::MIRID, std::vector<llvm::Value *>>
         calling_ids_to_free;
     mutable llvm::Value *current_function_session_id;
+    mutable std::unordered_map<mir::MIRID,llvm::FunctionType*> function_types;//this is neeeded because llvm duplicated typed pointer.
 
     public:
     ValueToLLVMIR(const ValueToLLVMIR &) = default;
@@ -310,7 +311,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
     {
     }
 
-    llvm::Value *get_builtin_use_heap() const
+    llvm::Function *get_builtin_use_heap() const
     {
         auto use_heap_function = llvm_module.getFunction("use_heap");
         if (!use_heap_function)
@@ -326,7 +327,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
         return use_heap_function;
     }
 
-    llvm::Value *get_builtin_get_unique_number() const
+    llvm::Function *get_builtin_get_unique_number() const
     {
         auto function = llvm_module.getFunction("get_unique_number");
         if (!function)
@@ -340,7 +341,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
         return function;
     }
 
-    llvm::Value *get_builtin_register_calling_id() const
+    llvm::Function *get_builtin_register_calling_id() const
     {
         auto function = llvm_module.getFunction("register_calling_id");
         if (!function)
@@ -355,7 +356,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
         return function;
     }
 
-    llvm::Value *get_builtin_register_calling_id_to_free() const
+    llvm::Function *get_builtin_register_calling_id_to_free() const
     {
         auto function = llvm_module.getFunction("register_calling_id_to_free");
         if (!function)
@@ -371,7 +372,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
         return function;
     }
 
-    llvm::Value *get_builtin_free_heaps_associated_calling_id() const
+    llvm::Function *get_builtin_free_heaps_associated_calling_id() const
     {
         auto function =
             llvm_module.getFunction("free_heaps_associated_calling_id");
@@ -453,23 +454,30 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
                         true));
                 auto use_heap_function = get_builtin_use_heap();
                 return ir_builder.CreateBitCast(
-                    ir_builder.CreateCall(use_heap_function, {size}),
-                    type_to_allocate->getPointerTo());
+                    ir_builder.CreateCall(
+                        llvm::dyn_cast<llvm::Function>(use_heap_function)->getFunctionType(),
+                        use_heap_function, {size}),
+                        type_to_allocate->getPointerTo()
+                    );
             }
             return ir_builder.CreateAlloca(type_to_allocate, 0, mir.get_name());
         }
     }
     llvm::Value *visit(const mir::Load &mir) const
     {
-        return ir_builder.CreateLoad(mir.get_address()->accept(*this),
-                                     mir.get_name());
+        auto value = mir.get_address()->accept(*this);
+        return ir_builder.CreateLoad(
+                                    mir.get_type()->accept(type_generator),
+                                    value,
+                                    mir.get_name()
+                                    );
     }
     llvm::Value *visit(const mir::Store &mir) const
     {
         auto value = mir.get_value()->accept(*this);
         auto address = mir.get_address()->accept(*this);
         ir_builder.CreateStore(value, address);
-        return ir_builder.CreateLoad(address);
+        return ir_builder.CreateLoad(address->getType(),address);
     }
 
     llvm::Value *visit(const mir::Cast &mir) const
@@ -497,6 +505,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
             auto t = mir.get_from()->accept(*this)->getType();
             return ir_builder.CreateStructGEP(
                 // llvm::dyn_cast<llvm::StructType>(mir.get_from()->get_type()->accept(type_generator)),
+                t,
                 mir.get_from()->accept(*this), mir.get_index(), mir.get_name());
         }
         if (from->is_type<requirement::UnionType>())
@@ -504,12 +513,11 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
             auto &union_type = from->as<requirement::UnionType>();
             auto accessed_type = union_type.get_element_type(mir.get_index());
 
-            llvm::Type *type_to_cast =
-                llvm::StructType::get(
+            auto pointer_type_to_cast = llvm::StructType::get(
                     context,
                     {union_type.get_tag_info_type()->accept(type_generator),
-                     accessed_type->accept(type_generator)})
-                    ->getPointerTo();
+                     accessed_type->accept(type_generator)});
+            llvm::Type *type_to_cast = pointer_type_to_cast->getPointerTo();
             auto casted = ir_builder.CreateBitCast(
                 mir.get_from()->accept(*this), type_to_cast,
                 "casted_for_union_access");
@@ -520,16 +528,21 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
                     : 0;  // if index is more or equal to 1, it's 1 because type
                           // is casted to {tag,accessed},if index is 0, actuall
                           // 0 is needed
-
-            return ir_builder.CreateStructGEP(casted, actuall_idnex,
+            //std::cout << to_string(casted->getType()) << std::endl;
+            
+            auto element = ir_builder.CreateStructGEP(pointer_type_to_cast,casted, actuall_idnex,
                                               mir.get_name());
+            return element;
         }
         throw std::runtime_error("invalid access." + from->to_string());
     }
     llvm::Value *visit(const mir::FunctionCall &mir) const
     {
+
+        auto function = mir.get_function()->accept(*this);
         auto calling = ir_builder.CreateCall(
-            mir.get_function()->accept(*this),
+            function_types.at(mir.get_function()->get_id()),
+            function,
             utils::get_transformed(mir.get_arguments(),
                                    [this](const auto &argument) {
                                        return argument->accept(*this);
@@ -545,13 +558,19 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
             {  // ignore if function is written in C. Dirty but will be fixed.
                 std::vector<llvm::Value *> arguments = {
                     current_function_session_id};
-                ir_builder.CreateCall(get_builtin_register_calling_id_to_free(),
-                                      arguments);
+                ir_builder.CreateCall(
+                    get_builtin_register_calling_id_to_free()->getFunctionType(),
+                    get_builtin_register_calling_id_to_free(),
+                    arguments
+                );
             }
         }
         else
         {
-            ir_builder.CreateCall(get_builtin_register_calling_id(), {});
+            ir_builder.CreateCall(
+                get_builtin_register_calling_id()->getFunctionType(),
+                get_builtin_register_calling_id(), {}
+                );
         }
 
         return calling;
@@ -616,6 +635,8 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
         auto llvm_function = llvm::Function::Create(
             llvm_function_type, llvm::Function::ExternalLinkage,
             function.get_name(), &llvm_module);
+
+        function_types.insert(std::make_pair(function.get_id(),llvm_function_type));
         generated.insert(std::make_pair(
             function.get_id(),
             llvm_function));  // suppress recursion from Argument(argument mir
@@ -640,7 +661,10 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
         {
             ir_builder.SetInsertPoint(llvm_blocks.at(0));
             session_id =
-                ir_builder.CreateCall(get_builtin_get_unique_number());
+                ir_builder.CreateCall(
+                    get_builtin_get_unique_number()->getFunctionType(),
+                    get_builtin_get_unique_number()
+                );
             current_function_session_id = session_id;
         }
 
@@ -657,6 +681,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
                 if (mir->is_type<mir::Return>())
                 {
                     ir_builder.CreateCall(
+                        get_builtin_free_heaps_associated_calling_id()->getFunctionType(),
                         get_builtin_free_heaps_associated_calling_id(),
                         argument_for_free);
                     mir_converter(*mir);
@@ -668,6 +693,7 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
                     if (i == blocks.size() - 1)
                     {
                         ir_builder.CreateCall(
+                            get_builtin_free_heaps_associated_calling_id()->getFunctionType(),
                             get_builtin_free_heaps_associated_calling_id(),
                             argument_for_free);
                         ir_builder.CreateRet(got);
@@ -699,6 +725,20 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
     llvm::Value *operator()(const T &mir) const
     {
         auto id = mir.get_id();
+        if (mir.get_type()->template is_type<requirement::FunctionType>())
+        {
+            auto& unboxed = mir.get_type()->template as<requirement::FunctionType>();
+            auto function_type = llvm::FunctionType::get(
+                   unboxed.get_return_type()->accept(type_generator),
+                   utils::get_transformed(unboxed.get_argument_types(),
+                                          [this](const auto &type) {
+                                              return type->accept(type_generator);
+                                          }),
+                   false);
+            function_types.insert(std::make_pair(
+                id,function_type
+            ));
+        }
         if (generated.count(id))
         {
             return generated.at(id);
@@ -770,7 +810,7 @@ void pipeline::mir_to_llvm_ir(mir::Context &mir_context,
     //     &llvm_module);
     // auto block = llvm::BasicBlock::Create(llvm_context, "entry", function);
     // ir_builder.SetInsertPoint(block);
-
+    //llvm_context.setOpaquePointers(false);
     LLVMTypeGenerator type_generator(llvm_module, llvm_context, ir_builder);
     auto converter =
         MirToLLVMIR(llvm_context, llvm_module, ir_builder, type_generator);
@@ -778,10 +818,10 @@ void pipeline::mir_to_llvm_ir(mir::Context &mir_context,
     {
         converter.visit(*function);
     }
-    //std::error_code error;
-    //llvm::raw_fd_ostream stream("llvmir", error);
-        ////llvm::sys::fs::OpenFlags::F_None);
-    //llvm_module.print(stream, nullptr);
+    std::error_code error;
+    llvm::raw_fd_ostream stream("llvmir", error);
+        //llvm::sys::fs::OpenFlags::F_None);
+    llvm_module.print(stream, nullptr);
     llvm::verifyModule(llvm_module, &llvm::outs());
 }
 }  // namespace clawn::compiler

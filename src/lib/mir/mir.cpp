@@ -31,8 +31,8 @@ std::shared_ptr<requirement::Type> RealNumber::get_type() const
 }
 std::shared_ptr<requirement::Type> StringPointer::get_type() const
 {
-    throw std::runtime_error("not implemented or obsoluted.");
-    // return context->get_type_environment().get_string_type();
+    //throw std::runtime_error("not implemented or obsoluted.");
+    return context->get_type_environment().get_integer_type()->get_pointer_to();
 }
 
 std::shared_ptr<requirement::Type> ComparePrimitive::get_type() const

@@ -144,7 +144,7 @@ class CompileOption get_expanded(const std::string& filename)
     char buf[1000];
     system("mkdir tmp");
     readlink("/proc/self/exe", buf, 1000);
-    system("python3 cridge.py builtins.hpp");
+    //system("python3 cridge.py builtins.hpp");
     std::string expanded_filename =
         abs("tmp/" + get_filename(filename) + ".clawn");
     options.set_filename(expanded_filename);
@@ -208,7 +208,7 @@ class CompileOption get_expanded(const std::string& filename)
 void run_commands(CompileOption option, int argc, char** argv)
 {
     std::string emitted_object_file = "tmp/compiled.o";
-    system("clang -c -O3 -Wno-return-type builtins.cpp -o tmp/builtins.o;");
+    system("g++ -c -std=c++17 -O3 -Wno-return-type builtins.cpp -o tmp/builtins.o;");
     std::vector<std::string> link_arguments =
         {};  //{emitted_object_file, "-arch",
              //"x86_64","-demangle","-lto_library","/usr/local/Cellar/llvm/9.0.0_1/lib/libLTO.dylib","-no_deduplicate",
@@ -233,7 +233,7 @@ void run_commands(CompileOption option, int argc, char** argv)
         }
     }
     // link(link_arguments);
-    system(("clang++ -lstdc++ " + args + " " + emitted_object_file + " " +
+    system(("g++ -lstdc++ " + args + " " + emitted_object_file + " " +
             links + " tmp/builtins.o -o " +
             extract_file_name(option.get_filename()) + ".out")
                .c_str());
@@ -251,11 +251,24 @@ int compile(int argc, char** argv)
         auto clawn_module = std::make_shared<compiler::Module>(
             compile_option.get_filename().c_str(),
             compile_option.imported_line);
+        
         auto& ast_root = *clawn_module->generate_ast();
+
         auto hir = pipeline::ast_to_hir(ast_root, clawn_module);
+
+        std::cout << "\e[1;32m"
+                     "got hir"
+                     "\e[0m"
+                  << std::endl;
+
         auto specialized_functions =
             pipeline::monomorphizer(*hir, clawn_module->get_type_environment());
         hir->as_mutable<hir::Root>().insert(std::move(specialized_functions));
+
+        std::cout << "\e[1;32m"
+                     "specialized hir"
+                     "\e[0m"
+                  << std::endl;
 
         auto error = pipeline::verify_hir(*hir, clawn_module);
         if (error.has_value())
@@ -268,6 +281,11 @@ int compile(int argc, char** argv)
             clawn_module->get_type_environment());
         clawn::compiler::pipeline::hir_to_mir(*hir, mir_context);
 
+        std::cout << "\e[1;32m"
+                     "got mir"
+                     "\e[0m"
+                  << std::endl;
+
         auto llvm_context =
             std::shared_ptr<llvm::LLVMContext>(new llvm::LLVMContext);
         std::shared_ptr<llvm::Module> llvm_module(
@@ -277,6 +295,13 @@ int compile(int argc, char** argv)
 
         pipeline::mir_to_llvm_ir(*mir_context, *llvm_context, *llvm_module,
                                  *llvm_ir_builder);
+
+        std::cout << "\e[1;32m"
+                     "got llvm ir"
+                     "\e[0m"
+                  << std::endl;
+
+
         pipeline::create_binary("tmp/compiled.o", llvm_module.get());
 
         std::cout << "\e[1;32m"

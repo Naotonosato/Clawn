@@ -8,7 +8,7 @@
 #include "include/compiler/pipeline.hpp"
 #include <llvm/IR/Value.h>
 #include <llvm/IR/IRBuilder.h>
-#include <llvm/Support/TargetRegistry.h>
+#include <llvm/MC/TargetRegistry.h>
 #include <llvm/Support/FileSystem.h>
 #include <llvm/Support/Host.h>
 #include <llvm/Support/CodeGen.h>
@@ -68,7 +68,7 @@ void pipeline::create_binary(const std::string& filename,
     }
 
     llvm::legacy::PassManager pass;
-    auto FileType = llvm::TargetMachine::CGFT_ObjectFile;
+    auto FileType = llvm::CGFT_ObjectFile;
 
     if (TheTargetMachine->addPassesToEmitFile(pass, dest, nullptr, FileType))
     {
