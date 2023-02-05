@@ -16,6 +16,7 @@ There are various other features as described below.
 
 ## Installation
 
+⚠️Now, the docekerfile doesn't work because latest Clawn uses LLVM 15 but it's written for LLVM 9. please clone old version of Clawn.
 
 At first,download [Dockerfile](https://github.com/Naotonosato/Clawn/blob/main/Dockerfile) and execute the following commands.
 ```shell
@@ -333,4 +334,3 @@ https://github.com/Naotonosato/Clawn/blob/main/docs/design.md (Japanese)
 
 ## Projects using Clawn
 + https://github.com/taisukef/Geo3x3/
-z

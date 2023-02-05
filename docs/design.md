@@ -100,7 +100,7 @@ string
 ```
 
 このように多相関数が引数に渡されても正しく処理できます。現時点ではこの実装は実行時のオーバーヘッドを生みますが、より具体的な関数呼び出しに置き換える最適化が実装可能なのは明らかなので、将来的に改善される予定です。
-また、現時点ではClawnでは[再帰関数が定義できません](https://github.com/Naotonosato/Clawn/issues/2)が、おそらく型システムの深い部分に由来するものではなく、コード生成の実装に由来するもので、比較的少ない変更で修正できるものと考えています。
+また、現時点ではClawnでは[再帰関数が定義できません](https://github.com/Naotonosato/Clawn/issues/2)が、おそらく型システムの深い部分に由来するものではなく、clawn::requirement::*Typeクラスのコピー処理に由来するものであり、比較的少ない変更で修正できるものと考えています。
 
 ## メモリ管理
 Clawnではメモリ管理は自動で行われ、プログラマがメモリ管理について意識する必要がないようになっています。
@@ -119,7 +119,11 @@ Clawnではメモリ管理は自動で行われ、プログラマがメモリ管
 
 というステップにより自動メモリ管理を実現しています。しかし現時点ではメモリリークが必要以上に発生する他、このアルゴリズムが本当に安全なのかどうかも未証明で、実験段階にある機能です。
 
-(これらのステップは https://github.com/Naotonosato/Clawn/blob/main/src/lib/mir/analyzer.cppやhttps://github.com/Naotonosato/Clawn/blob/main/src/lib/compiler/pipeline/mir_to_llvm_ir.cpp 、　https://github.com/Naotonosato/Clawn/blob/main/src/lib/compiler/builtins.cpp　で実装されています。)
+(これらのステップは
+https://github.com/Naotonosato/Clawn/blob/main/src/lib/mir/analyzer.cpp
+https://github.com/Naotonosato/Clawn/blob/main/src/lib/compiler/pipeline/mir_to_llvm_ir.cpp
+https://github.com/Naotonosato/Clawn/blob/main/src/lib/compiler/builtins.cpp
+で実装されています。)
 
 ## C FFI
 
