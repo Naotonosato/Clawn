@@ -1,1 +1,15 @@
-print("abc")
+function f(x)
+{
+   return x
+}
+
+print(f("STR"))
+
+structure S
+{
+    x
+}
+
+s = S{x:10}
+s2 = S{x:"0.1"}
+print(s2.x)

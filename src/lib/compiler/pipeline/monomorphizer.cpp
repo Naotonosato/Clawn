@@ -407,7 +407,8 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
         //    hir::Cloner(type_environment, cloned_type_map).visit(function);
         //{
         auto cloned_function_body = function.get_body().accept(
-            hir::Cloner(type_environment, cloned_type_map));
+            hir::Cloner(type_environment, cloned_type_map)
+        );
 
         std::string suffix = "_" + std::to_string(utils::get_unique_number());
 

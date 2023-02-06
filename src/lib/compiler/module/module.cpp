@@ -47,10 +47,6 @@ void Module::add_requirement(
     requirements.push_back(std::make_tuple(requirement, type, location));
 }
 
-const std::vector<Module::TypeRequirement>& Module::get_requirements() const
-{
-    return requirements;
-}
 
 bool Module::verify_requirements() const
 {

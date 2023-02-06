@@ -186,7 +186,7 @@ class LLVMTypeGenerator
         return original.get_element_type()->get_pointer_to()->accept(*this);
     }
 
-    llvm::Type *visit(const requirement::UnionType &original) const
+    llvm::StructType *visit(const requirement::UnionType &original) const
     {
         std::vector<uint64_t> tag_type_sizes;
         auto tags = original.get_solved_tags();
@@ -229,7 +229,7 @@ class LLVMTypeGenerator
         // << "->" << to_string(llvm_union_type) << std::endl;
         return llvm_union_type;
     }
-    llvm::Type *visit(const requirement::StructureType &original) const
+    llvm::StructType *visit(const requirement::StructureType &original) const
     {
         std::vector<llvm::Type *> field;
         for (auto &type : original.get_member_types())
@@ -249,7 +249,7 @@ class LLVMTypeGenerator
                                               return type->accept(*this);
                                           }),
                    false)
-            ->getPointerTo();
+            ->getPointerTo(); //Functions are treated as values in higher programs but they're actually pointer.
     }
 
     llvm::Type *visit(const requirement::UnsolvedType &original) const
@@ -502,10 +502,10 @@ class ValueToLLVMIR : public mir::ValueVisitor<ValueToLLVMIR>
                         .get_reference_to();
         if (from->is_type<requirement::StructureType>())
         {
-            auto t = mir.get_from()->accept(*this)->getType();
+            auto structure_type = type_generator.visit(from->as<requirement::StructureType>());
             return ir_builder.CreateStructGEP(
                 // llvm::dyn_cast<llvm::StructType>(mir.get_from()->get_type()->accept(type_generator)),
-                t,
+                structure_type,
                 mir.get_from()->accept(*this), mir.get_index(), mir.get_name());
         }
         if (from->is_type<requirement::UnionType>())

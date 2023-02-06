@@ -46,7 +46,6 @@ class Module
     void add_requirement(std::shared_ptr<requirement::Requirement>,
                          std::shared_ptr<requirement::Type>,
                          std::shared_ptr<clawn::location::Location>);
-    const std::vector<TypeRequirement>& get_requirements() const;
     bool verify_requirements() const;
     const std::string& get_name() const;
     const std::shared_ptr<ast::AST> generate_ast() const;
