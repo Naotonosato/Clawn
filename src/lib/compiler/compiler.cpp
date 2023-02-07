@@ -270,6 +270,10 @@ int compile(int argc, char** argv)
                      "\e[0m"
                   << std::endl;
 
+        std::ofstream hir_file("hir.txt");
+        std::string hir_txt = hir->to_string();
+        hir_file << hir_txt << std::endl;
+
         auto error = pipeline::verify_hir(*hir, clawn_module);
         if (error.has_value())
         {

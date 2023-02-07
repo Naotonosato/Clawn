@@ -159,7 +159,15 @@ class TypeCloner : public utils::VisitorWrapper<TypeCloner, Type>
 
 const std::string& TypeBase::get_name() const { return name; }
 
+std::string TypeBase::to_string(bool debug) const {
+    return name + (debug ? "@" + std::to_string(get_id()) : "");
+}
+
 const TypeID TypeBase::get_id() const { return id; }
+
+std::string CType::to_string(bool debug) const {
+    return get_name() + (debug ? "@" + std::to_string(get_id()) : "");   
+}
 
 const CType::TypeInfo& CType::get_info() const { return info; }
 
@@ -174,9 +182,17 @@ const std::shared_ptr<Type> ReferenceType::get_reference_to_without_solving()
     return reference_to;
 }
 
+std::string ReferenceType::to_string(bool debug) const {
+    return "reference<" + reference_to->to_string(debug) + ">" + (debug ? "@" + std::to_string(get_id()) : "");
+}
+
 const std::shared_ptr<Type> ListType::get_element_type() const
 {
     return element_type;
+}
+
+std::string ListType::to_string(bool debug) const {
+    return "List<" + element_type->to_string(debug) + ">" + (debug ? "@" + std::to_string(get_id()) : "");
 }
 
 UnionType::UnionType(const std::string& name,
@@ -192,6 +208,24 @@ UnionType::UnionType(const std::string& name,
     auto tag_info_type = Type::create<IntegerType>(solver);
     tags.insert(std::make_pair("", tag_info_type));
     //}
+}
+
+std::string UnionType::to_string(bool debug) const {
+    std::string tags_string;
+            for (auto& tag : get_solved_tags())
+            {
+                auto tag_name = tag.first;
+                auto tag_type_name = tag.second->get_name();  //to_string(debug);
+                tags_string += tag_name + ":" + tag_type_name + ", ";
+            }
+            if (!tags_string.empty())
+            {
+                tags_string = tags_string.substr(0, tags_string.size() - 2);
+            }
+            
+            std::string is_by_compiler;
+            if(_is_by_compiler()){is_by_compiler = "(by compiler)";}
+            return "union " + is_by_compiler + get_name() + "{" + tags_string + "}" + (debug ? "@" + std::to_string(get_id()) : "");
 }
 
 const std::map<std::string, std::shared_ptr<Type>>& UnionType::get_tags() const
@@ -214,6 +248,20 @@ const std::map<std::string, std::shared_ptr<Type>> UnionType::get_solved_tags()
 }
 
 bool UnionType::_is_by_compiler() const { return _by_compiler; }
+
+std::pair<bool,std::optional<std::shared_ptr<Type>>> UnionType::_can_be_treated_as(const Type& type) const
+{
+    if(!_is_by_compiler()) {return std::make_pair(false,std::nullopt);}
+    for (auto& tag:get_solved_tags())
+    {
+        if(!tag.second->is_same_as(type))
+        {
+            if (tag.first == ""){continue;}
+            return std::make_pair(false,tag.second);
+        }
+    }
+    return std::make_pair(true,std::nullopt);
+}
 
 unsigned int UnionType::get_index(const std::string& member_name) const
 {
@@ -248,6 +296,24 @@ unsigned int UnionType::get_tag_info_index() const { return 0; }
 std::shared_ptr<Type> UnionType::get_tag_info_type() const
 {
     return tags.at("");
+}
+
+std::string StructureType::to_string(bool debug) const {
+    std::string members_types_string;
+            for (auto& member_type : get_member_types())
+            {
+                auto member_name = member_type.first;
+                members_types_string += member_name + ":" +
+                                        member_type.second->to_string(debug) +
+                                        ", ";
+            }
+            if (!members_types_string.empty())
+            {
+                members_types_string = members_types_string.substr(
+                    0, members_types_string.size() - 2);
+            }
+            return "type " + get_name() + "{" + members_types_string +
+                   "}" + (debug ? "@" + std::to_string(get_id()) : "");
 }
 
 const StructureType::MemberTypes&
@@ -335,6 +401,26 @@ std::shared_ptr<Type> StructureType::get_element_type_without_solving(
     }
     throw std::runtime_error("There's no such member: '" + member_name +
                              "' in " + get_name());
+}
+
+std::string FunctionType::to_string(bool debug) const
+{
+    
+            std::string arguments_types_string;
+            for (auto& argument_type : get_argument_types())
+            {
+                arguments_types_string +=
+                    argument_type->to_string(debug) + ", ";
+            }
+            if (!arguments_types_string.empty())
+            {
+                arguments_types_string = arguments_types_string.substr(
+                    0, arguments_types_string.size() - 2);
+            }
+            std::string return_type_string =
+                get_return_type()->to_string(debug);
+            return get_name() + "<(" + arguments_types_string + ")->" +
+                   return_type_string + ">" + (debug ? "@" + std::to_string(get_id()) : "");
 }
 
 const std::vector<std::shared_ptr<Type>>&
@@ -651,81 +737,8 @@ bool Type::is_same_as(const std::vector<std::shared_ptr<Type>>& x,
 }
 std::string Type::to_string(bool debug) const
 {
-    auto debug_info = [debug](const auto& type) {
-        return debug ? "@" + std::to_string(type.get_id()) : "";
-    };
     // std::cout << get_id() << std::endl;
-    return utils::Match{this->get_variant()}(
-        utils::Type<ListType>(),
-        [debug, debug_info](const ListType& self) {
-            return "array<" + self.get_element_type()->to_string(debug) + ">" +
-                   debug_info(self);
-        },
-        utils::Type<FunctionType>(),
-        [this, debug, debug_info](const FunctionType& self) {
-            std::string arguments_types_string;
-            for (auto& argument_type : self.get_argument_types())
-            {
-                arguments_types_string +=
-                    argument_type->to_string(debug) + ", ";
-            }
-            if (!arguments_types_string.empty())
-            {
-                arguments_types_string = arguments_types_string.substr(
-                    0, arguments_types_string.size() - 2);
-            }
-            std::string return_type_string =
-                self.get_return_type()->to_string(debug);
-            return self.get_name() + "<(" + arguments_types_string + ")->" +
-                   return_type_string + ">" + debug_info(self);
-        },
-        utils::Type<StructureType>(),
-        [this, debug, debug_info](const StructureType& self) {
-            std::string members_types_string;
-            for (auto& member_type : self.get_member_types())
-            {
-                auto member_name = member_type.first;
-                members_types_string += member_name + ":" +
-                                        member_type.second->to_string(debug) +
-                                        ", ";
-            }
-            if (!members_types_string.empty())
-            {
-                members_types_string = members_types_string.substr(
-                    0, members_types_string.size() - 2);
-            }
-            return "type " + self.get_name() + "{" + members_types_string +
-                   "}" + debug_info(self);
-        },
-        utils::Type<ReferenceType>(),
-        [this, debug, debug_info](const ReferenceType& self) {
-            return "reference<" + self.get_reference_to()->get_name() + ">" +
-                   debug_info(self);
-        },
-        utils::Type<UnionType>(),
-        [this, debug, debug_info](const UnionType& self) {
-            std::string tags_string;
-            for (auto& tag : self.get_solved_tags())
-            {
-                auto tag_name = tag.first;
-                auto tag_type_name = tag.second->to_string(debug);
-                tags_string += tag_name + ":" + tag_type_name + ", ";
-            }
-            if (!tags_string.empty())
-            {
-                tags_string = tags_string.substr(0, tags_string.size() - 2);
-            }
-            return "union " + self.get_name() + "{" + tags_string + "}" +
-                   debug_info(self);
-        },
-        utils::Default(),
-        [this, debug, debug_info](const variant_type& self) {
-            return get_name() +
-                   (debug ? "@" + std::to_string(std::visit(
-                                      [](const auto& v) { return v.get_id(); },
-                                      self))
-                          : "");
-        });
+    return std::visit([debug](const auto& type){return type.to_string(debug);},get_variant());
 }
 
 std::shared_ptr<Type> Type::get_solved() const

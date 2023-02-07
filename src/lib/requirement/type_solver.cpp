@@ -33,11 +33,26 @@ TypeBinding::verify() const
     }
     if (!to()->is_same_as(*to_solved, true))
     {
-        return std::make_pair(to(), to_solved);
+         if(
+            !(to()->is_type<requirement::UnionType>() && to()->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
+            &&
+            !(to_solved->is_type<requirement::UnionType>() && to_solved->as<requirement::UnionType>()._can_be_treated_as(*to()).first)
+        )
+        {
+            return std::make_pair(to(), to_solved);
+        }
     }
     if (!from()->is_same_as(*to_solved, true))
     {
-        return std::make_pair(from(), to_solved);
+        if(
+            !(from()->is_type<requirement::UnionType>() && from()->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
+            ||
+            !(from_solved->is_type<requirement::UnionType>() && from_solved->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
+        )
+        {
+
+            return std::make_pair(from(), to_solved);
+        }
     }
     return std::nullopt;
 }
@@ -52,6 +67,7 @@ void TypeSolver::bind(std::shared_ptr<Type> type,
                       const std::shared_ptr<location::Location> location,
                       bool complete_union_type)
 {
+    //if either type is not unsolved type, put it into top of the tree so that we can get solved type by access top of the tree.
     type_tree.unite(type, depend_on);
     auto root = type_tree.get_root(type);
     bool root_swapped = false;

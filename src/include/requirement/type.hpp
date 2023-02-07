@@ -39,6 +39,7 @@ class TypeBase
 
     public:
     const std::string& get_name() const;
+    std::string to_string(bool debug=false) const   ;
     const TypeID get_id() const;
 };
 
@@ -108,6 +109,7 @@ class CType : public TypeBase
 
     public:
     const TypeInfo& get_info() const;
+    std::string to_string(bool debug=false) const;
 };
 
 class BooleanType : public TypeBase
@@ -140,6 +142,7 @@ class ReferenceType : public TypeBase
     }
 
     public:
+    std::string to_string(bool debug=false) const;
     const std::shared_ptr<Type> get_reference_to() const;
     const std::shared_ptr<Type> get_reference_to_without_solving() const;
 };
@@ -156,6 +159,7 @@ class ListType : public TypeBase
     }
 
     public:
+    std::string to_string(bool debug=false) const;
     const std::shared_ptr<Type> get_element_type() const;
 };
 
@@ -171,6 +175,7 @@ class UnionType : public TypeBase
               std::shared_ptr<TypeSolver> solver, bool _by_compiler = false);
 
     public:
+    std::string to_string(bool debug=false) const;
     const std::map<std::string, std::shared_ptr<Type>>& get_tags() const;
 
     const std::map<std::string, std::shared_ptr<Type>> get_solved_tags() const;
@@ -180,6 +185,7 @@ class UnionType : public TypeBase
     std::shared_ptr<Type> get_tag_info_type() const;
     std::shared_ptr<Type> get_element_type(unsigned int index) const;
     bool _is_by_compiler() const;  // this is not good idea
+    std::pair<bool,std::optional<std::shared_ptr<Type>>> _can_be_treated_as(const Type& type) const;
 };
 
 class StructureType : public TypeBase
@@ -198,6 +204,7 @@ class StructureType : public TypeBase
     }
 
     public:
+    std::string to_string(bool debug=false) const;
     const MemberTypes& get_member_types_without_solving() const;
     const MemberTypes get_member_types() const;
     unsigned int get_index(const std::string& member_name) const;
@@ -242,6 +249,8 @@ class FunctionType : public TypeBase
     }
 
     public:
+    std::string to_string(bool debug=false) const;
+
     const std::vector<std::shared_ptr<Type>>&
     get_argument_types_without_solving() const;
 

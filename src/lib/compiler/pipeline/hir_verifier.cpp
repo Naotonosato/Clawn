@@ -209,6 +209,7 @@ class HIRVerifierImpl : public hir::Visitor<std::optional<Error>>
                 }
                 continue;
             }
+            
             return Error::invalid_argument_type(
                 location, argument_type->to_string(),
                 passed_argument_type->to_string(), i + 1);
@@ -461,6 +462,7 @@ std::optional<Error> HIRVerifier::visit(const hir::HIR& hir_root) const
         auto verification_result = binding.verify();
         if (verification_result.has_value())
         {
+            std::cout << "binding verification raised err." << std::endl;
             auto location = binding.get_location();
             return Error::types_not_compatible(
                 location, verification_result.value().first->to_string(),
