@@ -185,7 +185,7 @@ class UnionType : public TypeBase
     std::shared_ptr<Type> get_tag_info_type() const;
     std::shared_ptr<Type> get_element_type(unsigned int index) const;
     bool _is_by_compiler() const;  // this is not good idea
-    std::pair<bool,std::optional<std::shared_ptr<Type>>> _can_be_treated_as(const Type& type) const;
+    std::pair<bool,std::optional<std::shared_ptr<Type>>> _can_be_treated_as(const Type& type) const; //maybe this will be duplicated because verifier ignores union type(by compiler).
 };
 
 class StructureType : public TypeBase
@@ -443,6 +443,7 @@ class SearchableByTypeVector
         {
             if (Type::is_same_as(pair.first, key, false))
             {
+                std::cout << pair.first[0]->to_string() << " is " << key[0]->to_string() << std::endl;
                 return true;
             }
         }
@@ -477,6 +478,11 @@ class SearchableByTypeVector
     auto insert(std::pair<std::vector<std::shared_ptr<Type>>, ValueType> pair)
     {
         return data.insert(pair);
+    }
+
+    const std::map<std::vector<std::shared_ptr<Type>>, ValueType>& get_body() const
+    {
+        return data;
     }
 };
 

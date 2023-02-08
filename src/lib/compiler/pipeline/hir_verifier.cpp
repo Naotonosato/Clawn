@@ -462,7 +462,6 @@ std::optional<Error> HIRVerifier::visit(const hir::HIR& hir_root) const
         auto verification_result = binding.verify();
         if (verification_result.has_value())
         {
-            std::cout << "binding verification raised err." << std::endl;
             auto location = binding.get_location();
             return Error::types_not_compatible(
                 location, verification_result.value().first->to_string(),

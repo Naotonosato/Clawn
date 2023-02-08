@@ -1,8 +1,12 @@
 function f(x)
 {
-    a = x 
-    return a = "str"
+    return if (x == 0)
+    {
+        =>0
+    } else
+    {
+        => f(10)
+    }
 }
 
-print(f("100"))
-f(0)
+print(int_to_str(f(10)))

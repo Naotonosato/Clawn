@@ -715,7 +715,7 @@ bool Type::is_same_as(const Type& other, bool allow_unsolved_type,
             {
                 return true;
             }
-            return self_variant.index() == other.get_variant().index();
+            return (self_variant.index() == other.get_variant().index());
         });
 }
 bool Type::is_same_as(const std::vector<std::shared_ptr<Type>>& x,
@@ -846,6 +846,13 @@ void TypeEnvironment::register_instanciation(
     std::shared_ptr<requirement::Type> function_type,
     std::vector<std::shared_ptr<requirement::Type>>& arguments_types)
 {
+    //std::cout << function_type->get_name() << " with arg " << arguments_types[0]->to_string() << std::endl;
+    if (arguments_types[0]->is_type<UnionType>() && arguments_types[0]->as<UnionType>()._is_by_compiler())
+    {
+        std::cout << arguments_types[0]->to_string() << " was ignored" << std::endl;
+        return;
+    }
+    std::cout << function_type->get_name() << " is instanciated with arg: " << arguments_types[0]->to_string() << std::endl;
     instantiations[function_type].push_back(arguments_types);
 }
 

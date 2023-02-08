@@ -36,7 +36,7 @@ execute_process(COMMAND llvm-config --cxxflags --ldflags  --system-libs --libs a
 string(REPLACE "\n" " " LLVM_OPTIONS ${LLVM_OPTIONS})
 string(REPLACE "-fno-exceptions" " " LLVM_OPTIONS ${LLVM_OPTIONS})
 string(REPLACE "-std=c++14" " " LLVM_OPTIONS ${LLVM_OPTIONS})
-message(${LLVM_OPTIONS})
+#message(${LLVM_OPTIONS})
 set(CMAKE_CXX_FLAGS "-std=c++17 -Wno-unused-command-line-argument  -Wno-unused-lambda-capture  -Wno-unused-private-field -O0  ${LLVM_OPTIONS}")
 
 set(ld_flags "-O0 -Wno-unused-lambda-capture  -Wno-unused-private-field -Wno-unused-command-line-argument")
@@ -50,7 +50,7 @@ llvm_map_components_to_libnames(llvm_libs support core irreader)
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${ld_flags}")
 file(GLOB CPP_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
-#add_subdirectory(${PROJECT_SOURCE_DIR}/test)
+add_subdirectory(${PROJECT_SOURCE_DIR}/test)
  
 
 add_subdirectory(${CLAWN_LIB_DIR}/location)

@@ -197,7 +197,8 @@ std::unique_ptr<hir::HIR> create_root_function(
     requirement::TypeEnvironment& type_environment,
     const requirement::SearchableByTypeVector<
         std::shared_ptr<requirement::Type>>&
-        specialized_functions)  ////This function is complex and shold be split.
+        specialized_functions)  
+    //This function is complex and should be split.
 {
     auto location = function.get_location();
     auto argument_types = function_type.get_argument_types();
@@ -297,8 +298,12 @@ std::unique_ptr<hir::HIR> create_root_function(
             unboxed_arguments.push_back(std::move(unboxed));
         }
 
+        std::cout << "ating" << std::endl;
+        std::cout << specialized_functions.get_body().begin()->first[0]->get_solved()->to_string() << passed_argument_types[0]->to_string() << std::endl;
+
         auto function_type_to_call =
             specialized_functions.at(passed_argument_types);
+        std::cout << "ated" << std::endl;
         auto function_to_call = hir::HIR::create<hir::Variable>(
             function_type_to_call, function_type_to_call->get_name(),
             function.get_location());
@@ -380,6 +385,7 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
     auto& function_type = function.get_type()->as<requirement::FunctionType>();
     auto argument_types_patterns =
         type_environment.get_instantiations(function.get_type());
+    std::cout << function.get_name() << " has " << argument_types_patterns.size() << " pattern" << std::endl;
     size_t pattern_index = 0;
 
     /*size_t last_argument_types_patterns_number = 0;
@@ -396,9 +402,11 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
 
     for (auto& argument_types : argument_types_patterns)
     {
+        std::cout << function.get_name() << " pattern: " << argument_types[0]->to_string() << std::endl;
         if (specializing_patterns.count(function.get_id()) &&
             specializing_patterns[function.get_id()].contains(argument_types))
         {
+            std::cout << function.get_name() << " already has pattern " << argument_types[0]->to_string() << std::endl;
             continue;
         }
 
@@ -535,9 +543,12 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
            auto helper_function = hir::HIR::create<hir::Function>(
                helper_function_type, function.get_location(),
                std::move(copied_function_body));
-               */
+        */
+        std::cout << function.get_name() << " takes " << argument_types[0]->to_string() << std::endl;
         specializing_patterns[function.get_id()].insert(
-            std::make_pair(argument_types, specialized_function_type));
+            std::make_pair(argument_types, specialized_function_type)
+        );
+        std::cout << argument_types[0]->to_string() << " was inserted" << std::endl;
 
         pattern_index += 1;
     }

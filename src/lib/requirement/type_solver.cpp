@@ -27,32 +27,49 @@ TypeBinding::verify() const
     const auto from_solved = type_solver->solve(from());
     const auto to_solved = type_solver->solve(to());
 
+    if(
+        (from()->is_type<UnionType>() && from()->as<UnionType>()._is_by_compiler())
+        || (from_solved->is_type<UnionType>() && from_solved->as<UnionType>()._is_by_compiler())
+        || (to()->is_type<UnionType>() && to()->as<UnionType>()._is_by_compiler())
+        || (to_solved->is_type<UnionType>() && to_solved->as<UnionType>()._is_by_compiler())
+    )//ignores types about generics
+    {
+        return std::nullopt;
+    }
+
     if (!from()->is_same_as(*from_solved, true))
     {
-        return std::make_pair(from(), from_solved);
+        //if(
+        //    !(from()->is_type<requirement::UnionType>() && from()->as<requirement::UnionType>()._can_be_treated_as(*from_solved).first)
+        //    &&
+        //    !(from_solved->is_type<requirement::UnionType>() && from_solved->as<requirement::UnionType>()._can_be_treated_as(*from()).first)
+        //)
+        //{
+            return std::make_pair(from(), from_solved);
+        //}
     }
     if (!to()->is_same_as(*to_solved, true))
     {
-         if(
-            !(to()->is_type<requirement::UnionType>() && to()->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
-            &&
-            !(to_solved->is_type<requirement::UnionType>() && to_solved->as<requirement::UnionType>()._can_be_treated_as(*to()).first)
-        )
-        {
+        //if(
+        //    !(to()->is_type<requirement::UnionType>() && to()->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
+        //    &&
+        //    !(to_solved->is_type<requirement::UnionType>() && to_solved->as<requirement::UnionType>()._can_be_treated_as(*to()).first)
+        //)
+        //{
             return std::make_pair(to(), to_solved);
-        }
+        //}
     }
     if (!from()->is_same_as(*to_solved, true))
     {
-        if(
-            !(from()->is_type<requirement::UnionType>() && from()->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
-            ||
-            !(from_solved->is_type<requirement::UnionType>() && from_solved->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
-        )
-        {
+        //if(
+        //    !(from()->is_type<requirement::UnionType>() && from()->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
+        //    ||
+        //    !(from_solved->is_type<requirement::UnionType>() && from_solved->as<requirement::UnionType>()._can_be_treated_as(*to_solved).first)
+        //)
+        //{
 
             return std::make_pair(from(), to_solved);
-        }
+        //}
     }
     return std::nullopt;
 }
