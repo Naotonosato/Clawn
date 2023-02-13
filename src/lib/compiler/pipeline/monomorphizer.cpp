@@ -406,7 +406,7 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
         if (specializing_patterns.count(function.get_id()) &&
             specializing_patterns[function.get_id()].contains(argument_types))
         {
-            std::cout << function.get_name() << " already has pattern " << argument_types[0]->to_string() << std::endl;
+            std::cout << function.get_id() << ":" << specializing_patterns[function.get_id()].get_body().begin()->first[0]->get_solved()->to_string() << " already has pattern " << argument_types[0]->to_string() << std::endl;
             continue;
         }
 

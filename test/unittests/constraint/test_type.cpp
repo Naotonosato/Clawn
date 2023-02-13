@@ -119,3 +119,15 @@ TEST_F(TypeTest, SearchableByTypeVector)
     // map[{t1,t2}] should be equal to map[{t3,t4}]
     ASSERT_EQ(first, second);
 }
+
+TEST_F(TypeTest, SearchableByTypeVector2)
+{
+    auto t1 = requirement::Type::create<requirement::UnsolvedType>(type_solver);
+    auto t2 = requirement::Type::create<requirement::IntegerType>(type_solver);
+    requirement::SearchableByTypeVector<int> map;
+    type_solver->bind(t1,t2,dummy_location);
+    map.insert(std::make_pair(std::vector{t1},0));
+    ASSERT_FALSE(map.contains(std::vector{t2}));
+    // map[{t1,t2}] should be equal to map[{t3,t4}]
+    //ASSERT_EQ(first, second);
+}

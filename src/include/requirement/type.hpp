@@ -441,9 +441,9 @@ class SearchableByTypeVector
     {
         for (auto& pair : data)
         {
-            if (Type::is_same_as(pair.first, key, false))
+            if (Type::is_same_as(pair.first, key,false))
             {
-                std::cout << pair.first[0]->to_string() << " is " << key[0]->to_string() << std::endl;
+                std::cout << pair.first[0]->to_string(true) << " is " << key[0]->to_string(true) << std::endl;
                 return true;
             }
         }
