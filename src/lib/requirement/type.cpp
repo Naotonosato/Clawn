@@ -795,6 +795,41 @@ const std::set<std::shared_ptr<Type>>& TypeSet::get_data() const
     return *data;
 }
 
+
+void TypesVectorWithoutDuplicates::insert(const std::vector<std::shared_ptr<Type>>& types)
+{
+    if( !contains(types))
+    {
+        data.push_back(types);
+    }
+}
+
+bool TypesVectorWithoutDuplicates::contains(const std::vector<std::shared_ptr<Type>>& types) const
+{
+    for (auto& types_:data)
+    {
+        if(types_.size() != types.size()) {return false;}
+        bool contains = true;
+        for (int i = 0; i < types.size(); i+=1)
+        {
+            if(!types_[i]->is_same_as(*types[i],false))
+            {
+                contains = false;
+                break;
+            }
+        }
+        if(contains) {return true;}
+    }
+    return false;
+}
+
+const std::vector<std::vector<std::shared_ptr<Type>>>& TypesVectorWithoutDuplicates::get_data() const
+{
+    return data;
+}
+
+
+
 TypeEnvironment::TypeEnvironment() : solver(std::make_shared<TypeSolver>(*this))
 {
     add_identifier_and_type("[GLOBAL]/Integer",
@@ -849,11 +884,9 @@ void TypeEnvironment::register_instanciation(
     //std::cout << function_type->get_name() << " with arg " << arguments_types[0]->to_string() << std::endl;
     if (arguments_types[0]->is_type<UnionType>() && arguments_types[0]->as<UnionType>()._is_by_compiler())
     {
-        std::cout << arguments_types[0]->to_string() << " was ignored" << std::endl;
         return;
     }
-    std::cout << function_type->get_name() << " is instanciated with arg: " << arguments_types[0]->to_string() << std::endl;
-    instantiations[function_type].push_back(arguments_types);
+    instantiations[function_type].insert(arguments_types);
 }
 
 void TypeEnvironment::register_element_type(std::shared_ptr<Type> from,
@@ -911,13 +944,13 @@ std::optional<std::shared_ptr<Type>> TypeEnvironment::get_return_type(
     return std::nullopt;
 }
 
-const SearchableByType<std::vector<TypeEnvironment::ArgumentTypes>>&
+const SearchableByType<TypesVectorWithoutDuplicates>&
 TypeEnvironment::get_instantiations() const
 {
     return instantiations;
 }
 
-const std::vector<TypeEnvironment::ArgumentTypes>
+const TypesVectorWithoutDuplicates
 TypeEnvironment::get_instantiations(
     const std::shared_ptr<requirement::Type> generics) const
 {
@@ -926,6 +959,9 @@ TypeEnvironment::get_instantiations(
     {
         return {};
     }
+
+    return instantiations.at(generics);
+    /*
     auto found_candidates = instantiations.at(generics);
     auto result_set =
         std::set(found_candidates.begin(), found_candidates.end());
@@ -934,6 +970,7 @@ TypeEnvironment::get_instantiations(
             result_set.begin(), result_set.end());  // There is no duplication.
 
     return result_unique;
+    */
 }
 
 void TypeEnvironment::dump_named_types()

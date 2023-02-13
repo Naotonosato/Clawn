@@ -429,13 +429,13 @@ class SearchableByType
 // This class is used for searching return type of a (generic) function from
 // passed argument types. This takes O(NM) for every search.(M is size of key.)
 template <typename ValueType>
-class SearchableByTypeVector
+class SearchableByTypes
 {
     private:
     std::map<std::vector<std::shared_ptr<Type>>, ValueType> data;
 
     public:
-    SearchableByTypeVector() = default;
+    SearchableByTypes() = default;
 
     bool contains(const std::vector<std::shared_ptr<Type>>& key) const
     {
@@ -443,7 +443,6 @@ class SearchableByTypeVector
         {
             if (Type::is_same_as(pair.first, key,false))
             {
-                std::cout << pair.first[0]->to_string(true) << " is " << key[0]->to_string(true) << std::endl;
                 return true;
             }
         }
@@ -472,7 +471,7 @@ class SearchableByTypeVector
         }
         throw std::out_of_range(
             "key vector does not exist in container class "
-            "'SearchableByTypeVector'.");
+            "'SearchableByTypes'.");
     }
 
     auto insert(std::pair<std::vector<std::shared_ptr<Type>>, ValueType> pair)
@@ -498,6 +497,18 @@ class TypeSet
     const std::set<std::shared_ptr<Type>>& get_data() const;
 };
 
+class TypesVectorWithoutDuplicates
+{
+    private:
+    std::vector<std::vector<std::shared_ptr<Type>>> data;
+
+    public:
+    TypesVectorWithoutDuplicates() : data(std::vector<std::vector<std::shared_ptr<Type>>>()) {}
+    void insert(const std::vector<std::shared_ptr<Type>>& types);
+    bool contains(const std::vector<std::shared_ptr<Type>>& types) const;
+    const std::vector<std::vector<std::shared_ptr<Type>>>& get_data() const;
+};
+
 class TypeEnvironment
 {
     public:
@@ -508,8 +519,8 @@ class TypeEnvironment
     std::unordered_map<std::string, std::shared_ptr<Type>> identifier_type_map;
     //  std::unordered_multimap<std::shared_ptr<Type>,
     //               std::vector<std::shared_ptr<Type>>>
-    SearchableByType<std::vector<ArgumentTypes>> instantiations;
-    SearchableByType<SearchableByTypeVector<std::shared_ptr<Type>>>
+    SearchableByType<TypesVectorWithoutDuplicates> instantiations;
+    SearchableByType<SearchableByTypes<std::shared_ptr<Type>>>
         return_types;
     SearchableByType<std::unordered_map<std::string, std::shared_ptr<Type>>>
         structure_element_types;
@@ -549,9 +560,9 @@ class TypeEnvironment
     std::optional<std::shared_ptr<Type>> get_return_type(
         std::shared_ptr<Type> function_type,
         const ArgumentTypes& argument_types) const;
-    const SearchableByType<std::vector<ArgumentTypes>>& get_instantiations()
+    const SearchableByType<TypesVectorWithoutDuplicates>& get_instantiations()
         const;
-    const std::vector<ArgumentTypes> get_instantiations(
+    const TypesVectorWithoutDuplicates get_instantiations(
         const std::shared_ptr<Type> generics_type) const;
     std::shared_ptr<TypeSolver> get_solver() const;
 

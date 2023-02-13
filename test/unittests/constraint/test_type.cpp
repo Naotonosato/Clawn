@@ -102,7 +102,7 @@ TEST_F(TypeTest, SearchableByType)
     ASSERT_EQ(map[t1], map[t2]);
 }
 
-TEST_F(TypeTest, SearchableByTypeVector)
+TEST_F(TypeTest, SearchableByTypes)
 {
     auto t1 = requirement::Type::create<requirement::UnsolvedType>(type_solver);
     auto t2 = requirement::Type::create<requirement::UnsolvedType>(type_solver);
@@ -111,7 +111,7 @@ TEST_F(TypeTest, SearchableByTypeVector)
     type_solver->bind(t3, t1, dummy_location);
     type_solver->bind(t4, t2, dummy_location);
     // t3 is t1, t4 is t2
-    requirement::SearchableByTypeVector<std::string> map;
+    requirement::SearchableByTypes<std::string> map;
     map[{t1, t2}] = "linked to {t1,t2}";
     type_solver->bind(t1, t2, dummy_location);
     auto first = map[{t1, t2}];
@@ -124,7 +124,7 @@ TEST_F(TypeTest, SearchableByTypeVector2)
 {
     auto t1 = requirement::Type::create<requirement::UnsolvedType>(type_solver);
     auto t2 = requirement::Type::create<requirement::IntegerType>(type_solver);
-    requirement::SearchableByTypeVector<int> map;
+    requirement::SearchableByTypes<int> map;
     type_solver->bind(t1,t2,dummy_location);
     map.insert(std::make_pair(std::vector{t1},0));
     ASSERT_FALSE(map.contains(std::vector{t2}));

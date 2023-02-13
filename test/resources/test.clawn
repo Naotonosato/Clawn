@@ -1,12 +1,17 @@
 function f(x)
 {
-    return if (x == 0)
-    {
-        =>0
-    } else
-    {
-        => f(10)
-    }
+    return x
 }
 
-print(int_to_str(f(10)))
+function g(functor,argument)
+{
+    res = functor(argument)
+    return res
+}
+
+function high(functor,argument,argument2)
+{
+    return functor(argument,argument2)
+}
+
+print(result = high(g,f,"string!"))

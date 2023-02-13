@@ -75,6 +75,14 @@ objects.
 
 */
 
+using SpecializingPatterns = requirement::SearchableByType<
+        requirement::SearchableByTypes<
+            std::shared_ptr<requirement::Type>
+            >
+        >;
+
+
+
 std::vector<std::shared_ptr<requirement::Type>> replace_arguments_types(
     const hir::Function& function, const requirement::FunctionType& type,
     requirement::TypeEnvironment& type_environment)
@@ -84,7 +92,7 @@ std::vector<std::shared_ptr<requirement::Type>> replace_arguments_types(
     std::map<std::shared_ptr<requirement::Type>,
              std::vector<std::shared_ptr<requirement::Type>>>
         argument_candidates_map;
-    auto candidates = type_environment.get_instantiations(function.get_type());
+    auto candidates = type_environment.get_instantiations(function.get_type()).get_data();
     // if(candidates.size() <= 1){return {};}
     requirement::TypeSet result_type_candidates_no_duplicates;
 
@@ -149,9 +157,6 @@ std::vector<std::shared_ptr<requirement::Type>> replace_arguments_types(
 
         for (auto& candidate_ : candidates_no_duplicates.get_data())
         {
-            // std::cout << function.get_name() << " takes(tag) " <<
-            // std::to_string(index)<< candidate_->get_solved()->to_string() <<
-            // std::endl;
             tags.insert(std::make_pair(std::to_string(index), candidate_));
             index += 1;
         }
@@ -168,10 +173,7 @@ std::vector<std::shared_ptr<requirement::Type>> replace_arguments_types(
                 tags, type_solver, true);
         type_solver->bind(argument_type, argument_type_to_replace,
                           function.get_location(), false);
-        // std::cout << function.get_name() << " takes " <<
-        // argument_type_to_replace->to_string() << std::endl;
     }
-    // auto replaced_argument_types = type.get_argument_types();
     std::map<std::string, std::shared_ptr<requirement::Type>> result_type_tags;
     unsigned int index = 0;
 
@@ -191,11 +193,11 @@ std::vector<std::shared_ptr<requirement::Type>> replace_arguments_types(
     return {};  // replaced_argument_types;
 }
 
-std::unique_ptr<hir::HIR> create_root_function(
+std::unique_ptr<hir::HIR> fix_function(
     const hir::Function& function,
     const requirement::FunctionType& function_type,
     requirement::TypeEnvironment& type_environment,
-    const requirement::SearchableByTypeVector<
+    const requirement::SearchableByTypes<
         std::shared_ptr<requirement::Type>>&
         specialized_functions)  
     //This function is complex and should be split.
@@ -203,7 +205,7 @@ std::unique_ptr<hir::HIR> create_root_function(
     auto location = function.get_location();
     auto argument_types = function_type.get_argument_types();
     auto argument_pattern =
-        type_environment.get_instantiations(function.get_type());
+        type_environment.get_instantiations(function.get_type()).get_data();
 
     size_t argument_index = 0;
 
@@ -298,8 +300,8 @@ std::unique_ptr<hir::HIR> create_root_function(
             unboxed_arguments.push_back(std::move(unboxed));
         }
 
-        std::cout << "ating" << std::endl;
-        std::cout << specialized_functions.get_body().begin()->first[0]->get_solved()->to_string() << passed_argument_types[0]->to_string() << std::endl;
+        std::cout << "ating" << function.get_type()->to_string() << "::" << specialized_functions.get_body().size() << std::endl; 
+        std::cout << "set: " << specialized_functions.get_body().begin()->first[0]->get_solved()->to_string() << ", p:" << passed_argument_types[0]->to_string() << std::endl;
 
         auto function_type_to_call =
             specialized_functions.at(passed_argument_types);
@@ -376,44 +378,23 @@ void type_calling(const hir::FunctionCall& calling,
 std::vector<std::unique_ptr<hir::HIR>> monomorphize(
     const hir::Function& function,
     requirement::TypeEnvironment& type_environment,
-    std::unordered_map<hir::HIRID, requirement::SearchableByTypeVector<
-                                       std::shared_ptr<requirement::Type>>>&
-        specializing_patterns)
+    SpecializingPatterns& specializing_patterns)
 {
     std::vector<std::unique_ptr<hir::HIR>> specialized_functions;
     auto type_solver = type_environment.get_solver();
     auto& function_type = function.get_type()->as<requirement::FunctionType>();
     auto argument_types_patterns =
-        type_environment.get_instantiations(function.get_type());
-    std::cout << function.get_name() << " has " << argument_types_patterns.size() << " pattern" << std::endl;
-    size_t pattern_index = 0;
-
-    /*size_t last_argument_types_patterns_number = 0;
-
-    while (last_argument_types_patterns_number <
-    type_environment.get_instantiations(function.get_type()).size())
-    {
-        last_argument_types_patterns_number =
-    type_environment.get_instantiations(function.get_type()).size() auto
-    argument_types_patterns
-    =type_environment.get_instantiations(function.get_type());
-    }
-    */
+        type_environment.get_instantiations(function.get_type()).get_data();
 
     for (auto& argument_types : argument_types_patterns)
     {
-        std::cout << function.get_name() << " pattern: " << argument_types[0]->to_string() << std::endl;
-        if (specializing_patterns.count(function.get_id()) &&
-            specializing_patterns[function.get_id()].contains(argument_types))
+        if (specializing_patterns.contains(function.get_type()) &&
+            specializing_patterns[function.get_type()].contains(argument_types))
         {
-            std::cout << function.get_id() << ":" << specializing_patterns[function.get_id()].get_body().begin()->first[0]->get_solved()->to_string() << " already has pattern " << argument_types[0]->to_string() << std::endl;
             continue;
         }
 
         requirement::ClonedTypeMap cloned_type_map;
-        // auto copied_function =
-        //    hir::Cloner(type_environment, cloned_type_map).visit(function);
-        //{
         auto cloned_function_body = function.get_body().accept(
             hir::Cloner(type_environment, cloned_type_map)
         );
@@ -430,21 +411,11 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
                     type_solver, name));
         }
 
-        auto cloned_function_type =
-            requirement::Type::create<requirement::FunctionType>(
-                type_solver, function_type.get_name() + suffix,
-                cloned_function_arguments_types,
-                function_type.get_argument_names(),
-                cloned_function_body->get_type(),
-                function_type.is_polymorphic());
-
         auto copied_function = hir::HIR::create<hir::Function>(
             function.get_type()->clone(cloned_type_map,
                                        function_type.get_name() + suffix),
-            // cloned_function_type,
             function.get_location(), function.get_name() + suffix,
             std::move(cloned_function_body));
-        //}
 
         type_solver->remap(cloned_type_map, function.get_location());
         auto& copied_function_type =
@@ -469,7 +440,7 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
             auto argument_type = argument_types[i];
             auto argument_type_of_copied_function =
                 argument_types_of_copied_function
-                    [i];  // get_argument_types()[i];
+                    [i];
             type_solver->bind(argument_type_of_copied_function, argument_type,
                               function.get_location());
         }
@@ -498,9 +469,9 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
                     {
                         type_solver->bind(
                             variable.get_type(),
-                            type_environment.get_type_by_identifier(
-                                variable_name),
-                            function.get_location());  // global variables are
+                            type_environment.get_type_by_identifier(variable_name),
+                            function.get_location()
+                        );                             // global variables are
                                                        // independent of what
                                                        // arguments function
                                                        // takes, so they need to
@@ -532,27 +503,12 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphize(
             copied_function_type.get_return_type());
 
         auto specialized_function_type = copied_function->get_type();
-
         specialized_functions.push_back(std::move(copied_function));
-        /*   auto helper_function_type =
-               constraint::Type::create<constraint::FunctionType>(
-                   type_solver, function.get_type()->get_name() +
-           suffix, argument_types,
-           copied_function_body->get_type());
-
-           auto helper_function = hir::HIR::create<hir::Function>(
-               helper_function_type, function.get_location(),
-               std::move(copied_function_body));
-        */
-        std::cout << function.get_name() << " takes " << argument_types[0]->to_string() << std::endl;
-        specializing_patterns[function.get_id()].insert(
+        specializing_patterns[function.get_type()].insert(
             std::make_pair(argument_types, specialized_function_type)
         );
-        std::cout << argument_types[0]->to_string() << " was inserted" << std::endl;
 
-        pattern_index += 1;
     }
-    // replace_arguments_types(function, function_type, type_environment);
 
     return specialized_functions;
 }
@@ -665,10 +621,12 @@ void type_element(const hir::AccessList& accessing,
             if (list_type.get_name() == builtins::STRUCTURE_LIST_NAME)
             {
                 auto element_type = list_type.get_element_type("pointer");
-                type_solver->bind(accessing.get_type(),
-                                  element_type->as<requirement::ReferenceType>()
-                                      .get_reference_to(),
-                                  accessing.get_location());
+                type_solver->bind(
+                                accessing.get_type(),
+                                element_type->as<requirement::ReferenceType>()
+                                    .get_reference_to(),
+                                accessing.get_location()
+                            );
             }
         },
         utils::Default(), [](const auto&) {});
@@ -677,6 +635,7 @@ void type_element(const hir::AccessList& accessing,
 void type_element(const hir::BinaryExpression& addition,
                   requirement::TypeEnvironment& type_environment)
 {
+    // deal with code like : `[] + elm`
     utils::Match{addition.get_targets().first.get().get_type()->get_variant()}(
         utils::Type<requirement::StructureType>(),
         [&addition,
@@ -711,9 +670,7 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
     std::shared_ptr<requirement::TypeEnvironment> type_environment)
 {
     std::vector<std::unique_ptr<hir::HIR>> specialized_functions;
-    std::unordered_map<hir::HIRID, requirement::SearchableByTypeVector<
-                                       std::shared_ptr<requirement::Type>>>
-        specializing_patterns;
+    SpecializingPatterns specializing_patterns;
 
     auto monomorphizer = [&type_environment, &specializing_patterns,
                           &specialized_functions](const hir::HIR& child) {
@@ -803,8 +760,6 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
             target.walk(dereferencing_typer);
             unsolved_expressions = 0;
             target.walk(unsolved_expression_counter);
-            // std::cout << "unsolved expressions: " << unsolved_expressions <<
-            // std::endl;
             if (unsolved_expressions >= previous_unsolved_expressions)
             {
                 break;
@@ -848,11 +803,11 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
                         .is_polymorphic())
                 {
                     fixed_functions.insert(std::make_pair(
-                        id, create_root_function(
+                        id, fix_function(
                                 function,
                                 function.get_type()
                                     ->as<requirement::FunctionType>(),
-                                *type_environment, specializing_patterns[id])));
+                                *type_environment, specializing_patterns[function.get_type()])));
                 }
             },
             utils::Default(), [](const auto&) {});
@@ -881,7 +836,7 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
     resolve(hir);
     hir.walk(function_typer);
     resolve(hir);
-    hir.walk(function_fixer);
+    hir.walk(function_fixer); // create root function of each instanciations
 
     for (auto& fixed_function : fixed_functions)
     {
@@ -895,7 +850,7 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
             auto id = hir_->get_basic_info().get_id();
             if (fixed_functions.count(id))
             {
-                hir_.swap(fixed_functions[id]);
+                hir_.swap(fixed_functions[id]); //swap functions to fixed functions to treat them generic functions
             }
             if (hir_->is_type<hir::Block>())
             {
