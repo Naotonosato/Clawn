@@ -17,7 +17,7 @@
 namespace clawn::compiler
 {
 /*
-This is how clawn compiler monomorphizes generics.
+This is how Clawn compiler monomorphizes generics.
 
 for this code,
 
@@ -802,12 +802,15 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
                         ->as<requirement::FunctionType>()
                         .is_polymorphic())
                 {
-                    fixed_functions.insert(std::make_pair(
-                        id, fix_function(
-                                function,
-                                function.get_type()
-                                    ->as<requirement::FunctionType>(),
-                                *type_environment, specializing_patterns[function.get_type()])));
+                    fixed_functions.insert(
+                        std::make_pair(
+                            id, fix_function(
+                                    function,
+                                    function.get_type()->as<requirement::FunctionType>(),
+                                    *type_environment,
+                                    specializing_patterns[function.get_type()])
+                                )
+                            );
                 }
             },
             utils::Default(), [](const auto&) {});
@@ -836,7 +839,7 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
     resolve(hir);
     hir.walk(function_typer);
     resolve(hir);
-    hir.walk(function_fixer); // create root function of each instanciations
+    hir.walk(function_fixer);
 
     for (auto& fixed_function : fixed_functions)
     {
@@ -844,7 +847,9 @@ std::vector<std::unique_ptr<hir::HIR>> monomorphizer(
     }
 
     if (hir.is_type<hir::Root>())
+    //walk hir and find hir(function node) to replace
     {
+        //codes below are written on the premise of functions are in top or level 2 block. But this premise would be broken in the future.
         for (auto& hir_ : hir.as_mutable<hir::Root>().get_hirs())
         {
             auto id = hir_->get_basic_info().get_id();

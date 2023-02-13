@@ -184,7 +184,7 @@ class UnionType : public TypeBase
     unsigned int get_tag_info_index() const;
     std::shared_ptr<Type> get_tag_info_type() const;
     std::shared_ptr<Type> get_element_type(unsigned int index) const;
-    bool _is_by_compiler() const;  // this is not good idea
+    bool _is_by_compiler() const;  // maybe this is not good idea
     std::pair<bool,std::optional<std::shared_ptr<Type>>> _can_be_treated_as(const Type& type) const; //maybe this will be duplicated because verifier ignores union type(by compiler).
 };
 
@@ -339,8 +339,11 @@ class Type
         return std::holds_alternative<TypeKind>(content);
     }
     bool operator==(const Type& other) = delete;
+    // second parameter swithces how this function determines equality of types.
+    // if it's true, any unsolved type is determined to be same as any type.
+    // third parameter will be obsoluted.
     bool is_same_as(const Type& other, bool allow_unsolved_type = true,
-                    bool strict_at_function = false) const;
+                    bool strict_at_function = false) const; 
     static bool is_same_as(const std::vector<std::shared_ptr<Type>>& x,
                            const std::vector<std::shared_ptr<Type>>& y,
                            bool allow_unsolved_type = true,
@@ -348,8 +351,9 @@ class Type
     std::string to_string(bool debug = false) const;
     std::shared_ptr<Type> get_solved() const;
     std::shared_ptr<Type> clone(
-        ClonedTypeMap&,
-        std::optional<const std::string> new_name = std::nullopt) const;
+            ClonedTypeMap&,
+            std::optional<const std::string> new_name = std::nullopt
+        ) const;
     std::shared_ptr<Type> get_pointer_to() const;
 };
 
@@ -517,8 +521,6 @@ class TypeEnvironment
     private:
     std::shared_ptr<TypeSolver> solver;
     std::unordered_map<std::string, std::shared_ptr<Type>> identifier_type_map;
-    //  std::unordered_multimap<std::shared_ptr<Type>,
-    //               std::vector<std::shared_ptr<Type>>>
     SearchableByType<TypesVectorWithoutDuplicates> instantiations;
     SearchableByType<SearchableByTypes<std::shared_ptr<Type>>>
         return_types;
