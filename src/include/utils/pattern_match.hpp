@@ -18,7 +18,7 @@ struct is_comparable<
 };
 
 class _TypeBase
-{
+{p
 };
 
 class _Type

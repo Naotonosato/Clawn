@@ -300,12 +300,12 @@ std::unique_ptr<hir::HIR> fix_function(
             unboxed_arguments.push_back(std::move(unboxed));
         }
 
-        std::cout << "ating" << function.get_type()->to_string() << "::" << specialized_functions.get_body().size() << std::endl; 
-        std::cout << "set: " << specialized_functions.get_body().begin()->first[0]->get_solved()->to_string() << ", p:" << passed_argument_types[0]->to_string() << std::endl;
+        //std::cout << "ating" << function.get_type()->to_string() << "::" << specialized_functions.get_body().size() << std::endl; 
+        //std::cout << "set: " << specialized_functions.get_body().begin()->first[0]->get_solved()->to_string() << ", p:" << passed_argument_types[0]->to_string() << std::endl;
 
         auto function_type_to_call =
             specialized_functions.at(passed_argument_types);
-        std::cout << "ated" << std::endl;
+        //std::cout << "ated" << std::endl;
         auto function_to_call = hir::HIR::create<hir::Variable>(
             function_type_to_call, function_type_to_call->get_name(),
             function.get_location());
